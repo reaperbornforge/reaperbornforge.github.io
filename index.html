@@ -93,6 +93,32 @@
       flex-shrink: 0;
     }
 
+    /* ── VIEW TOGGLE ── */
+    .view-toggle {
+      display: flex;
+      border: 1px solid #2a2f3a;
+      overflow: hidden;
+    }
+    .toggle-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      background: transparent;
+      border: none;
+      color: rgba(232,228,216,.45);
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .toggle-btn.active {
+      background: #C8102E;
+      color: #0A0C10;
+      font-weight: 600;
+    }
+
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -1005,7 +1031,10 @@
         <span class="led" style="background:rgba(232,228,216,.6);box-shadow:0 0 6px rgba(232,228,216,.2);"></span>HIRE
       </a>
     </nav>
-    <div>FILE · RFB-001 / MMXXVI</div>
+    <div class="view-toggle">
+      <a class="toggle-btn" id="btn-studio" href="/">Studio</a>
+      <a class="toggle-btn" id="btn-recruiter" href="/?view=recruiter">Recruiter</a>
+    </div>
   </header>
 
   <!-- ── STUDIO VIEW ── -->
@@ -1497,16 +1526,21 @@
       var dotsS = document.querySelector('.status-dots-studio');
       var dotsR = document.querySelector('.status-dots-recruiter');
 
+      var btnS = document.getElementById('btn-studio');
+      var btnR = document.getElementById('btn-recruiter');
+
       if (view === 'recruiter') {
         studio.style.display = 'none';
         recruiter.style.display = 'block';
         if (dotsS) dotsS.style.display = 'none';
         if (dotsR) dotsR.style.display = 'flex';
+        if (btnR) btnR.classList.add('active');
       } else {
         studio.style.display = 'block';
         recruiter.style.display = 'none';
         if (dotsS) dotsS.style.display = 'flex';
         if (dotsR) dotsR.style.display = 'none';
+        if (btnS) btnS.classList.add('active');
       }
     })();
 
