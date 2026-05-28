@@ -93,30 +93,6 @@
       flex-shrink: 0;
     }
 
-    /* ── VIEW TOGGLE ── */
-    .view-toggle {
-      display: flex;
-      border: 1px solid #2a2f3a;
-      overflow: hidden;
-    }
-    .toggle-btn {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      background: transparent;
-      border: none;
-      color: rgba(232,228,216,.45);
-      cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-    .toggle-btn.active {
-      background: #C8102E;
-      color: #0A0C10;
-      font-weight: 600;
-    }
-
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -803,6 +779,14 @@
       color: rgba(232,228,216,.4);
       margin-bottom: 24px;
     }
+    .rec-card-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.35);
+      margin-bottom: 6px;
+    }
     .rec-card-block {
       margin-bottom: 16px;
     }
@@ -1021,10 +1005,7 @@
         <span class="led" style="background:rgba(232,228,216,.6);box-shadow:0 0 6px rgba(232,228,216,.2);"></span>HIRE
       </a>
     </nav>
-    <div class="view-toggle">
-      <button class="toggle-btn active" id="btn-studio" onclick="setView('studio')">Studio</button>
-      <button class="toggle-btn" id="btn-recruiter" onclick="setView('recruiter')">Recruiter</button>
-    </div>
+    <div>FILE · RFB-001 / MMXXVI</div>
   </header>
 
   <!-- ── STUDIO VIEW ── -->
@@ -1395,6 +1376,7 @@
           <img class="rec-card-cover" src="assets/LOALogo.png" alt="Legacy of Allard cover">
           <div class="rec-card-num">PROJECT · I</div>
           <h3 class="rec-card-title">Legacy of Allard</h3>
+          <div class="rec-card-role">Role — Solo Game Designer &amp; Unity Developer</div>
           <div class="rec-card-kind">Tactical Multiplayer RPG · 2024 — present</div>
           <div class="rec-card-block">
             <div class="rec-card-label">Problem</div>
@@ -1415,6 +1397,7 @@
           <img class="rec-card-cover" src="assets/HVCLogo.png" alt="Head Volley Clash cover">
           <div class="rec-card-num">PROJECT · II</div>
           <h3 class="rec-card-title">Head Volley Clash</h3>
+          <div class="rec-card-role">Role — Solo Game Designer &amp; Unity Developer</div>
           <div class="rec-card-kind">Arcade Mobile · F2P · 2024 — present</div>
           <div class="rec-card-block">
             <div class="rec-card-label">Problem</div>
@@ -1435,6 +1418,7 @@
           <img class="rec-card-cover" src="assets/TRTLogo.png" alt="Tiny Ruins Tycoon cover">
           <div class="rec-card-num">PROJECT · III</div>
           <h3 class="rec-card-title">Tiny Ruins Tycoon</h3>
+          <div class="rec-card-role">Role — Solo Game Designer &amp; Unity Developer</div>
           <div class="rec-card-kind">Idle / Management · 2024</div>
           <div class="rec-card-block">
             <div class="rec-card-label">Problem</div>
@@ -1504,39 +1488,26 @@
   </footer>
 
   <script>
-    // ─── View toggle ───
+    // ─── View selection via URL param ───
     (function () {
-      function setView(mode) {
-        var studio = document.getElementById('studio-view');
-        var recruiter = document.getElementById('recruiter-view');
-        var btnS = document.getElementById('btn-studio');
-        var btnR = document.getElementById('btn-recruiter');
-        var dotsS = document.querySelector('.status-dots-studio');
-        var dotsR = document.querySelector('.status-dots-recruiter');
+      var params = new URLSearchParams(window.location.search);
+      var view = params.get('view');
+      var studio = document.getElementById('studio-view');
+      var recruiter = document.getElementById('recruiter-view');
+      var dotsS = document.querySelector('.status-dots-studio');
+      var dotsR = document.querySelector('.status-dots-recruiter');
 
-        if (mode === 'recruiter') {
-          studio.style.display = 'none';
-          recruiter.style.display = 'block';
-          btnS.classList.remove('active');
-          btnR.classList.add('active');
-          if (dotsS) dotsS.style.display = 'none';
-          if (dotsR) dotsR.style.display = 'flex';
-        } else {
-          studio.style.display = 'block';
-          recruiter.style.display = 'none';
-          btnS.classList.add('active');
-          btnR.classList.remove('active');
-          if (dotsS) dotsS.style.display = 'flex';
-          if (dotsR) dotsR.style.display = 'none';
-        }
-        localStorage.setItem('rfView', mode);
-        window.scrollTo(0, 0);
+      if (view === 'recruiter') {
+        studio.style.display = 'none';
+        recruiter.style.display = 'block';
+        if (dotsS) dotsS.style.display = 'none';
+        if (dotsR) dotsR.style.display = 'flex';
+      } else {
+        studio.style.display = 'block';
+        recruiter.style.display = 'none';
+        if (dotsS) dotsS.style.display = 'flex';
+        if (dotsR) dotsR.style.display = 'none';
       }
-
-      window.setView = setView;
-
-      var saved = localStorage.getItem('rfView');
-      if (saved === 'recruiter') setView('recruiter');
     })();
 
     // ─── Ember particles (hero section) ───
