@@ -256,6 +256,22 @@
       background: rgba(200,16,46,.06);
     }
 
+    /* ── CARD COVERS ── */
+    .card-cover {
+      display: block;
+      width: calc(100% + 56px);
+      margin: -28px -28px 22px;
+      height: auto;
+      object-fit: cover;
+    }
+    .rec-card-cover {
+      display: block;
+      width: calc(100% + 56px);
+      margin: -28px -28px 22px;
+      height: auto;
+      object-fit: cover;
+    }
+
     /* Dossier card */
     .dossier {
       border: 1px solid #1a1d24;
@@ -562,7 +578,7 @@
     /* ── LINKS ── */
     .links-row {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
     .link-box {
@@ -1105,6 +1121,7 @@
         <!-- I — Legacy of Allard (wide) -->
         <div class="project-card wide reveal">
           <div class="project-glow"></div>
+          <img class="card-cover" src="assets/LOALogo.png" alt="Legacy of Allard cover">
           <div class="project-card-head">
             <span class="project-glyph">I</span>
             <span class="project-status">
@@ -1134,6 +1151,7 @@
         <!-- II — Head Volley Clash -->
         <div class="project-card reveal" style="transition-delay:70ms">
           <div class="project-glow"></div>
+          <img class="card-cover" src="assets/HVCLogo.png" alt="Head Volley Clash cover">
           <div class="project-card-head">
             <span class="project-glyph">II</span>
             <span class="project-status">
@@ -1163,6 +1181,7 @@
         <!-- III — Tiny Ruins Tycoon -->
         <a class="project-card reveal" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="transition-delay:140ms">
           <div class="project-glow"></div>
+          <img class="card-cover" src="assets/TRTLogo.png" alt="Tiny Ruins Tycoon cover">
           <div class="project-card-head">
             <span class="project-glyph">III</span>
             <span class="project-status">
@@ -1288,6 +1307,10 @@
           <div class="link-box-label">Discord</div>
           <div class="link-box-val">zDarkReaper</div>
         </a>
+        <a class="link-box" href="assets/Resume_-_Otavio_Rosindo.pdf" target="_blank">
+          <div class="link-box-label">Resume</div>
+          <div class="link-box-val">Download PDF →</div>
+        </a>
       </div>
     </section>
 
@@ -1348,6 +1371,7 @@
 
         <!-- Legacy of Allard -->
         <div class="rec-card">
+          <img class="rec-card-cover" src="assets/LOALogo.png" alt="Legacy of Allard cover">
           <div class="rec-card-num">PROJECT · I</div>
           <h3 class="rec-card-title">Legacy of Allard</h3>
           <div class="rec-card-kind">Tactical Multiplayer RPG · 2024 — present</div>
@@ -1367,6 +1391,7 @@
 
         <!-- Head Volley Clash -->
         <div class="rec-card">
+          <img class="rec-card-cover" src="assets/HVCLogo.png" alt="Head Volley Clash cover">
           <div class="rec-card-num">PROJECT · II</div>
           <h3 class="rec-card-title">Head Volley Clash</h3>
           <div class="rec-card-kind">Arcade Mobile · F2P · 2024 — present</div>
@@ -1386,6 +1411,7 @@
 
         <!-- Tiny Ruins Tycoon -->
         <div class="rec-card">
+          <img class="rec-card-cover" src="assets/TRTLogo.png" alt="Tiny Ruins Tycoon cover">
           <div class="rec-card-num">PROJECT · III</div>
           <h3 class="rec-card-title">Tiny Ruins Tycoon</h3>
           <div class="rec-card-kind">Idle / Management · 2024</div>
@@ -1443,7 +1469,7 @@
       <div class="rec-hire-actions">
         <a href="mailto:reaperbornforge@gmail.com" class="rec-hire-btn primary">reaperbornforge@gmail.com →</a>
         <a href="https://www.linkedin.com/in/otavioantonio/" target="_blank" rel="noreferrer" class="rec-hire-btn secondary">LinkedIn →</a>
-        <a href="assets/resume.pdf" target="_blank" class="rec-hire-btn secondary">Download Resume →</a>
+        <a href="assets/Resume_-_Otavio_Rosindo.pdf" target="_blank" class="rec-hire-btn secondary">Download Resume →</a>
       </div>
     </div>
 
