@@ -417,6 +417,36 @@
       box-shadow: 0 0 32px rgba(200,16,46,.15) inset;
     }
     .project-card.wide { grid-column: span 2; }
+
+    /* ── ARTIFACT GRID (Studio §02) ── */
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .artifact-card {
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 1.25rem;
+      border-radius: 8px;
+    }
+    .artifact-card img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 22px;
+    }
+    .artifact-card .description {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
     .project-glow {
       position: absolute;
       top: 0; right: 0;
@@ -1116,10 +1146,10 @@
         <h2 class="section-title">Artifacts in the forge</h2>
         <span class="section-line"></span>
       </div>
-      <div class="projects-grid">
+      <div class="artifact-grid">
 
-        <!-- I — Legacy of Allard (wide) -->
-        <div class="project-card wide reveal">
+        <!-- I — Legacy of Allard -->
+        <div class="project-card artifact-card reveal">
           <div class="project-glow"></div>
           <img class="card-cover" src="assets/LOALogo.png" alt="Legacy of Allard cover">
           <div class="project-card-head">
@@ -1131,7 +1161,7 @@
           </div>
           <h3 class="project-title">Legacy of Allard</h3>
           <div class="project-kind">Tactical Multiplayer RPG · 2024 — present</div>
-          <p class="project-blurb">Tactical multiplayer RPG with a published WebGL prototype and a live Steam page. Built around grid-based combat, party synergy, and progression systems.</p>
+          <p class="project-blurb description">Tactical multiplayer RPG with a published WebGL prototype and a live Steam page. Built around grid-based combat, party synergy, and progression systems.</p>
           <div class="stack-row">
             <span class="stack-pill">Unity</span>
             <span class="stack-pill">C#</span>
@@ -1149,7 +1179,7 @@
         </div>
 
         <!-- II — Head Volley Clash -->
-        <div class="project-card reveal" style="transition-delay:70ms">
+        <div class="project-card artifact-card reveal" style="transition-delay:70ms">
           <div class="project-glow"></div>
           <img class="card-cover" src="assets/HVCLogo.png" alt="Head Volley Clash cover">
           <div class="project-card-head">
@@ -1161,7 +1191,7 @@
           </div>
           <h3 class="project-title">Head Volley Clash</h3>
           <div class="project-kind">Arcade Mobile · F2P · 2024 — present</div>
-          <p class="project-blurb">Mobile arcade F2P with seasonal passes, skin shop and a fully implemented economy. Designed for short, replayable sessions and long-tail retention. ~330 daily installs at launch. Organic reach across Brazil, Russia, India, and Mexico with zero paid marketing. ~40 monthly active users with no updates since release.</p>
+          <p class="project-blurb description">Mobile arcade F2P with seasonal passes, skin shop and a fully implemented economy. Designed for short, replayable sessions and long-tail retention. ~330 daily installs at launch. Organic reach across Brazil, Russia, India, and Mexico with zero paid marketing. ~40 monthly active users with no updates since release.</p>
           <div class="stack-row">
             <span class="stack-pill">Unity</span>
             <span class="stack-pill">Firebase</span>
@@ -1179,7 +1209,7 @@
         </div>
 
         <!-- III — Tiny Ruins Tycoon -->
-        <a class="project-card reveal" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="transition-delay:140ms">
+        <a class="project-card artifact-card reveal" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="transition-delay:140ms">
           <div class="project-glow"></div>
           <img class="card-cover" src="assets/TRTLogo.png" alt="Tiny Ruins Tycoon cover">
           <div class="project-card-head">
@@ -1191,7 +1221,7 @@
           </div>
           <h3 class="project-title">Tiny Ruins Tycoon</h3>
           <div class="project-kind">Idle / Management · 2024</div>
-          <p class="project-blurb">Idle management mobile prototype. Era-based progression with a data-driven economy. A sandbox for testing loop pacing and offline-progress balancing.</p>
+          <p class="project-blurb description">Idle management mobile prototype. Era-based progression with a data-driven economy. A sandbox for testing loop pacing and offline-progress balancing.</p>
           <div class="stack-row">
             <span class="stack-pill">Unity</span>
             <span class="stack-pill">Data-driven</span>
