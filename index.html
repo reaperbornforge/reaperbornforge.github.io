@@ -93,6 +93,30 @@
       flex-shrink: 0;
     }
 
+    /* ── VIEW TOGGLE ── */
+    .view-toggle {
+      display: flex;
+      border: 1px solid #2a2f3a;
+      overflow: hidden;
+    }
+    .toggle-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      background: transparent;
+      border: none;
+      color: rgba(232,228,216,.45);
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .toggle-btn.active {
+      background: #C8102E;
+      color: #0A0C10;
+      font-weight: 600;
+    }
+
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -201,19 +225,7 @@
       height: 100%;
       object-fit: cover;
     }
-    /* ── PROJECT screenshots ── */
-    .project-screenshot {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      margin: -28px -28px 22px;
-      width: calc(100% + 56px);
-      border-bottom: 1px solid #1a1d24;
-      opacity: .85;
-      transition: opacity .3s;
-    }
-    .project-card:hover .project-screenshot { opacity: 1; }
+
     /* ── STAT values – higher contrast ── */
     .stat-value {
       font-family: 'Cinzel', serif;
@@ -656,12 +668,239 @@
       justify-content: space-between;
     }
 
+    /* ── RECRUITER VIEW ── */
+    .rec-hero {
+      padding: 80px 64px;
+      border-bottom: 1px solid #1a1d24;
+      background:
+        radial-gradient(ellipse 60% 60% at 30% 50%, rgba(200,16,46,.07), transparent 60%);
+    }
+    .rec-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 24px;
+    }
+    .rec-name {
+      font-family: 'Cinzel', serif;
+      font-size: 72px;
+      font-weight: 600;
+      color: #E8E4D8;
+      line-height: 1;
+      letter-spacing: -.005em;
+      margin-bottom: 16px;
+    }
+    .rec-role {
+      font-size: 22px;
+      color: rgba(232,228,216,.82);
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    .rec-seeking {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .08em;
+      color: rgba(232,228,216,.48);
+      margin-bottom: 28px;
+    }
+    .rec-chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .rec-summary {
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(232,228,216,.75);
+      font-weight: 300;
+      max-width: 680px;
+      border-left: 2px solid #C8102E;
+      padding-left: 20px;
+    }
+
+    /* Recruiter sections */
+    .rec-section {
+      padding: 80px 64px;
+      border-bottom: 1px solid #15181f;
+    }
+
+    /* Recruiter project cards */
+    .rec-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .rec-card {
+      border: 1px solid #1a1d24;
+      background: rgba(15,18,25,.5);
+      padding: 28px;
+      transition: border-color .3s, background .3s;
+    }
+    .rec-card:hover {
+      border-color: rgba(200,16,46,.4);
+      background: rgba(200,16,46,.03);
+    }
+    .rec-card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .24em;
+      color: #C8102E;
+      margin-bottom: 12px;
+    }
+    .rec-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #E8E4D8;
+      margin-bottom: 6px;
+      letter-spacing: .01em;
+    }
+    .rec-card-kind {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.4);
+      margin-bottom: 24px;
+    }
+    .rec-card-block {
+      margin-bottom: 16px;
+    }
+    .rec-card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 6px;
+    }
+    .rec-card-text {
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(232,228,216,.72);
+      font-weight: 300;
+    }
+    .rec-card-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px dashed #2a2f3a;
+    }
+    .rec-card-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #C8102E;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      transition: color .2s;
+    }
+    .rec-card-link:hover { color: #e01530; }
+    .rec-card-link.secondary { color: rgba(232,228,216,.45); }
+    .rec-card-link.secondary:hover { color: rgba(232,228,216,.78); }
+
+    /* Recruiter skills */
+    .rec-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+    }
+    .rec-skill-col {
+      border-top: 1px solid #C8102E;
+      padding-top: 18px;
+    }
+    .rec-skill-col-head {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #E8E4D8;
+      margin: 0 0 20px;
+      letter-spacing: .03em;
+    }
+    .rec-skill-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .06em;
+      color: rgba(232,228,216,.78);
+      padding: 12px 0;
+      border-bottom: 1px solid #15181f;
+    }
+
+    /* Recruiter hire CTA */
+    .rec-hire {
+      padding: 80px 64px;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(200,16,46,.08), transparent 60%);
+    }
+    .rec-hire-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 24px;
+    }
+    .rec-hire-head {
+      font-family: 'Cinzel', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #E8E4D8;
+      margin-bottom: 12px;
+      letter-spacing: .01em;
+    }
+    .rec-hire-sub {
+      font-size: 16px;
+      color: rgba(232,228,216,.6);
+      font-weight: 300;
+      margin-bottom: 36px;
+      max-width: 540px;
+      line-height: 1.6;
+    }
+    .rec-hire-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .rec-hire-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .rec-hire-btn.primary {
+      background: #C8102E;
+      color: #0A0C10;
+      border: 1px solid #C8102E;
+    }
+    .rec-hire-btn.primary:hover { background: #e01530; border-color: #e01530; }
+    .rec-hire-btn.secondary {
+      background: transparent;
+      color: rgba(232,228,216,.78);
+      border: 1px solid #2a2f3a;
+    }
+    .rec-hire-btn.secondary:hover {
+      border-color: rgba(200,16,46,.5);
+      color: #E8E4D8;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .hero-title { font-size: 72px; }
       .hero-title-sub { font-size: 64px; }
       .hero-grid { grid-template-columns: 1fr; }
       .dossier { display: none; }
+      .rec-projects-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -685,6 +924,13 @@
       .service-arrow { display: none; }
       .links-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .term-headline { font-size: 32px; }
+      .rec-hero { padding: 48px 24px; }
+      .rec-name { font-size: 48px; }
+      .rec-section { padding: 56px 24px; }
+      .rec-skills-grid { grid-template-columns: 1fr; gap: 28px; }
+      .rec-hire { padding: 56px 24px; }
+      .rec-hire-head { font-size: 32px; }
+      .rec-hire-actions { flex-direction: column; }
     }
   </style>
 </head>
@@ -716,7 +962,7 @@
       </svg>
       <span class="status-brand-text">RF · DOSSIER</span>
     </div>
-    <nav class="status-dots" aria-label="Navigation">
+    <nav class="status-dots status-dots-studio" aria-label="Navigation">
       <a class="status-dot-item" href="#about" style="text-decoration:none;color:inherit;">
         <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>SIGNAL
       </a>
@@ -727,335 +973,481 @@
         <span class="led" style="background:rgba(232,228,216,.6);box-shadow:0 0 6px rgba(232,228,216,.2);"></span>BRASIL · REMOTE
       </a>
     </nav>
-    <div>FILE · RFB-001 / MMXXVI</div>
+    <nav class="status-dots status-dots-recruiter" style="display:none" aria-label="Recruiter navigation">
+      <a class="status-dot-item" href="#rec-projects" style="text-decoration:none;color:inherit;">
+        <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>WORK
+      </a>
+      <a class="status-dot-item" href="#rec-skills" style="text-decoration:none;color:inherit;">
+        <span class="led" style="background:#8B0E1F;box-shadow:0 0 8px #8B0E1F;"></span>SKILLS
+      </a>
+      <a class="status-dot-item" href="#rec-hire" style="text-decoration:none;color:inherit;">
+        <span class="led" style="background:rgba(232,228,216,.6);box-shadow:0 0 6px rgba(232,228,216,.2);"></span>HIRE
+      </a>
+    </nav>
+    <div class="view-toggle">
+      <button class="toggle-btn active" id="btn-studio" onclick="setView('studio')">Studio</button>
+      <button class="toggle-btn" id="btn-recruiter" onclick="setView('recruiter')">Recruiter</button>
+    </div>
   </header>
 
-  <!-- ── HERO ── -->
-  <div class="hero">
-    <canvas id="ember-canvas"></canvas>
-    <div class="hero-inner">
-      <div class="reveal hero-callsign" style="justify-content:space-between;align-items:center;">
-        <div style="display:flex;align-items:center;gap:14px;">
-          <span class="hero-callsign-line"></span>
-          CALLSIGN · zDarkReaper · OTÁVIO ANTONIO
+  <!-- ── STUDIO VIEW ── -->
+  <div id="studio-view">
+
+    <!-- ── HERO ── -->
+    <div class="hero">
+      <canvas id="ember-canvas"></canvas>
+      <div class="hero-inner">
+        <div class="reveal hero-callsign" style="justify-content:space-between;align-items:center;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span class="hero-callsign-line"></span>
+            CALLSIGN · zDarkReaper · OTÁVIO ANTONIO
+          </div>
+          <a href="#about" class="hero-logo-stamp" aria-label="Reaperborn Forge">
+            <img src="assets/logo.png" alt="Reaperborn Forge logo">
+          </a>
         </div>
-        <a href="#about" class="hero-logo-stamp" aria-label="Reaperborn Forge">
-          <img src="assets/logo.png" alt="Reaperborn Forge logo">
+
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="reveal" style="transition-delay:80ms">
+              <h1 class="hero-title">
+                Reaperborn<br>
+                <span class="hero-title-sub">Forge</span><span style="color:#8B0E1F;">.</span>
+              </h1>
+              <p class="hero-tag">
+                Independent game studio &amp; design dossier — forging systems that play themselves into your habits, from mobile arcade to tactical multiplayer RPGs.
+              </p>
+              <p class="hero-recruit">
+                Game Designer and Unity Developer — open to junior and mid positions at game studios in Brazil and remote.
+              </p>
+              <div class="hero-chips">
+                <span class="chip chip-accent">● Open for collab</span>
+                <span class="chip">Unity · C#</span>
+                <span class="chip">Systems Design</span>
+                <span class="chip">F2P Economy</span>
+                <span class="chip">LiveOps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dossier card -->
+          <div class="reveal" style="transition-delay:200ms">
+            <div class="dossier">
+              <div class="dossier-head">
+                <span>// OPERATOR FILE</span>
+                <span>v.1.0</span>
+              </div>
+              <div class="d-row"><span class="d-key">Operator</span><span class="d-val">Otávio Antonio</span></div>
+              <div class="d-row"><span class="d-key">Forge</span><span class="d-val">Reaperborn · Est. 2023</span></div>
+              <div class="d-row"><span class="d-key">Class</span><span class="d-val">Game Designer / Unity Dev</span></div>
+              <div class="d-row"><span class="d-key">Region</span><span class="d-val">Brasil · Remote</span></div>
+              <div class="d-row"><span class="d-key">Discipline</span><span class="d-val">Systems · F2P · LiveOps</span></div>
+              <div class="d-row"><span class="d-key">Engine</span><span class="d-val">Unity · C#</span></div>
+              <div style="margin-top:6px;">
+                <div class="d-key">Active projects</div>
+                <div class="d-bar"><div class="d-bar-fill" style="width:72%"></div></div>
+                <div class="d-key" style="margin-top:14px;">Forge load</div>
+                <div class="d-bar"><div class="d-bar-fill" style="width:86%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── §01 ABOUT ── -->
+    <section id="about">
+      <span class="section-tag">// 01 · CODEX</span>
+      <div class="section-head">
+        <span class="section-num">§01</span>
+        <h2 class="section-title">Codex entry</h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="about-box">
+        <div class="reveal">
+          <p class="about-text">
+            Game Designer and Unity Developer focused on systems, gameplay loops, and F2P economy design. Building games under the Reaperborn Forge studio — from mobile arcade to tactical multiplayer RPGs. Driven by the craft of making systems that feel good to play and keep players coming back.
+          </p>
+        </div>
+        <div class="reveal" style="transition-delay:150ms">
+          <div class="stat-box">
+            <div class="stat-cell">
+              <div class="stat-key">Active titles</div>
+              <div class="stat-value">03</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-key">Years forging</div>
+              <div class="stat-value">03+</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-key">Engine</div>
+              <div class="stat-value">Unity</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-key">Status</div>
+              <div class="stat-value stat-value-accent">Open</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── §02 PROJECTS ── -->
+    <section id="projects">
+      <span class="section-tag">// 02 · ARTIFACTS</span>
+      <div class="section-head">
+        <span class="section-num">§02</span>
+        <h2 class="section-title">Artifacts in the forge</h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- I — Legacy of Allard (wide) -->
+        <div class="project-card wide reveal">
+          <div class="project-glow"></div>
+          <div class="project-card-head">
+            <span class="project-glyph">I</span>
+            <span class="project-status">
+              <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+              In active development
+            </span>
+          </div>
+          <h3 class="project-title">Legacy of Allard</h3>
+          <div class="project-kind">Tactical Multiplayer RPG · 2024 — present</div>
+          <p class="project-blurb">Tactical multiplayer RPG with a published WebGL prototype and a live Steam page. Built around grid-based combat, party synergy, and progression systems.</p>
+          <div class="stack-row">
+            <span class="stack-pill">Unity</span>
+            <span class="stack-pill">C#</span>
+            <span class="stack-pill">PlayFab</span>
+            <span class="stack-pill">WebGL</span>
+          </div>
+          <div class="project-foot" style="flex-direction:column;gap:10px;align-items:flex-start;">
+            <a href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer" style="color:#C8102E;text-decoration:none;display:flex;justify-content:space-between;width:100%;">
+              <span>Steam page</span><span>→</span>
+            </a>
+            <a href="https://game.playallard.com" target="_blank" rel="noreferrer" style="color:rgba(232,228,216,.55);text-decoration:none;display:flex;justify-content:space-between;width:100%;">
+              <span>Play alpha</span><span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- II — Head Volley Clash -->
+        <div class="project-card reveal" style="transition-delay:70ms">
+          <div class="project-glow"></div>
+          <div class="project-card-head">
+            <span class="project-glyph">II</span>
+            <span class="project-status">
+              <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+              In development
+            </span>
+          </div>
+          <h3 class="project-title">Head Volley Clash</h3>
+          <div class="project-kind">Arcade Mobile · F2P · 2024 — present</div>
+          <p class="project-blurb">Mobile arcade F2P with seasonal passes, skin shop and a fully implemented economy. Designed for short, replayable sessions and long-tail retention. ~330 daily installs at launch. Organic reach across Brazil, Russia, India, and Mexico with zero paid marketing. ~40 monthly active users with no updates since release.</p>
+          <div class="stack-row">
+            <span class="stack-pill">Unity</span>
+            <span class="stack-pill">Firebase</span>
+            <span class="stack-pill">Economy</span>
+            <span class="stack-pill">LiveOps</span>
+          </div>
+          <div class="project-foot" style="flex-direction:column;gap:10px;align-items:flex-start;">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer" style="color:#C8102E;text-decoration:none;display:flex;justify-content:space-between;width:100%;">
+              <span>Google Play</span><span>→</span>
+            </a>
+            <a href="https://zdarkreaper.itch.io/head-volley-clash" target="_blank" rel="noreferrer" style="color:rgba(232,228,216,.55);text-decoration:none;display:flex;justify-content:space-between;width:100%;">
+              <span>Itch.io</span><span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- III — Tiny Ruins Tycoon -->
+        <a class="project-card reveal" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="transition-delay:140ms">
+          <div class="project-glow"></div>
+          <div class="project-card-head">
+            <span class="project-glyph">III</span>
+            <span class="project-status">
+              <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+              Prototype
+            </span>
+          </div>
+          <h3 class="project-title">Tiny Ruins Tycoon</h3>
+          <div class="project-kind">Idle / Management · 2024</div>
+          <p class="project-blurb">Idle management mobile prototype. Era-based progression with a data-driven economy. A sandbox for testing loop pacing and offline-progress balancing.</p>
+          <div class="stack-row">
+            <span class="stack-pill">Unity</span>
+            <span class="stack-pill">Data-driven</span>
+            <span class="stack-pill">Idle loops</span>
+          </div>
+          <div class="project-foot">
+            <span>Play prototype</span>
+            <span class="project-foot-arrow">→</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── §03 SKILLS ── -->
+    <section id="skills">
+      <span class="section-tag">// 03 · ARSENAL</span>
+      <div class="section-head">
+        <span class="section-num">§03</span>
+        <h2 class="section-title">Arsenal</h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="skills-box">
+        <div class="skill-col reveal">
+          <h3 class="skill-col-head">Design</h3>
+          <div class="skill-row"><span>Game Design</span><span class="skill-level">EXPERT</span></div>
+          <div class="skill-row"><span>Systems Design</span><span class="skill-level">EXPERT</span></div>
+          <div class="skill-row"><span>Progression Design</span><span class="skill-level">ADVANCED</span></div>
+          <div class="skill-row"><span>F2P Economy Design</span><span class="skill-level">EXPERT</span></div>
+          <div class="skill-row"><span>Gameplay Design</span><span class="skill-level">ADVANCED</span></div>
+          <div class="skill-row"><span>UI/UX for Games</span><span class="skill-level">ADVANCED</span></div>
+        </div>
+        <div class="skill-col reveal" style="transition-delay:100ms">
+          <h3 class="skill-col-head">Engineering</h3>
+          <div class="skill-row"><span>Unity</span><span class="skill-level">EXPERT</span></div>
+          <div class="skill-row"><span>C#</span><span class="skill-level">EXPERT</span></div>
+          <div class="skill-row"><span>Git</span><span class="skill-level">ADVANCED</span></div>
+          <div class="skill-row"><span>Firebase / Firestore</span><span class="skill-level">ADVANCED</span></div>
+          <div class="skill-row"><span>PlayFab / Azure</span><span class="skill-level">INTERMEDIATE</span></div>
+        </div>
+        <div class="skill-col reveal" style="transition-delay:200ms">
+          <h3 class="skill-col-head">Production</h3>
+          <div class="skill-row"><span>Prototyping</span><span class="skill-level">EXPERT</span></div>
+          <div class="skill-row"><span>QA Basics</span><span class="skill-level">ADVANCED</span></div>
+          <div class="skill-row"><span>LiveOps Mindset</span><span class="skill-level">ADVANCED</span></div>
+          <div class="skill-row"><span>Data-Driven Tuning</span><span class="skill-level">ADVANCED</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── §04 SERVICES ── -->
+    <section id="services">
+      <span class="section-tag">// 04 · COMMISSIONS</span>
+      <div class="section-head">
+        <span class="section-num">§04</span>
+        <h2 class="section-title">Commissions accepted</h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="services-list">
+        <div class="service-row reveal">
+          <span class="service-num">01</span>
+          <span class="service-name">Game Design</span>
+          <span class="service-txt">Systems, progression and F2P economy from blueprint to live tuning.</span>
+          <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
+        </div>
+        <div class="service-row reveal" style="transition-delay:60ms">
+          <span class="service-num">02</span>
+          <span class="service-name">Unity Development</span>
+          <span class="service-txt">Production-grade Unity / C# implementation, tools and pipelines.</span>
+          <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
+        </div>
+        <div class="service-row reveal" style="transition-delay:120ms">
+          <span class="service-num">03</span>
+          <span class="service-name">Prototyping</span>
+          <span class="service-txt">Fast, focused prototypes to validate loops before they cost a roadmap.</span>
+          <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
+        </div>
+        <div class="service-row reveal" style="transition-delay:180ms">
+          <span class="service-num">04</span>
+          <span class="service-name">Design Consulting</span>
+          <span class="service-txt">External eyes on your systems, economy or onboarding.</span>
+          <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── §05 LINKS ── -->
+    <section id="links">
+      <span class="section-tag">// 05 · CONDUITS</span>
+      <div class="section-head">
+        <span class="section-num">§05</span>
+        <h2 class="section-title">Conduits</h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="links-row reveal">
+        <a class="link-box" href="mailto:reaperbornforge@gmail.com">
+          <div class="link-box-label">Email</div>
+          <div class="link-box-val">reaperbornforge@gmail.com</div>
+        </a>
+        <a class="link-box" href="https://zdarkreaper.itch.io" target="_blank" rel="noreferrer">
+          <div class="link-box-label">Itch.io</div>
+          <div class="link-box-val">zdarkreaper.itch.io</div>
+        </a>
+        <a class="link-box" href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer">
+          <div class="link-box-label">Steam</div>
+          <div class="link-box-val">Legacy of Allard</div>
+        </a>
+        <a class="link-box" href="https://www.linkedin.com/in/otavioantonio/" target="_blank" rel="noreferrer">
+          <div class="link-box-label">LinkedIn</div>
+          <div class="link-box-val">in/otavioantonio</div>
+        </a>
+        <a class="link-box" href="#contact">
+          <div class="link-box-label">Discord</div>
+          <div class="link-box-val">zDarkReaper</div>
         </a>
       </div>
+    </section>
 
-      <div class="hero-grid">
-        <div class="hero-left">
-          <div class="reveal" style="transition-delay:80ms">
-            <h1 class="hero-title">
-              Reaperborn<br>
-              <span class="hero-title-sub">Forge</span><span style="color:#8B0E1F;">.</span>
-            </h1>
-            <p class="hero-tag">
-              Independent game studio &amp; design dossier — forging systems that play themselves into your habits, from mobile arcade to tactical multiplayer RPGs.
-            </p>
-            <p class="hero-recruit">
-              Game Designer and Unity Developer — open to junior and mid positions at game studios in Brazil and remote.
-            </p>
-            <div class="hero-chips">
-              <span class="chip chip-accent">● Open for collab</span>
-              <span class="chip">Unity · C#</span>
-              <span class="chip">Systems Design</span>
-              <span class="chip">F2P Economy</span>
-              <span class="chip">LiveOps</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dossier card -->
-        <div class="reveal" style="transition-delay:200ms">
-          <div class="dossier">
-            <div class="dossier-head">
-              <span>// OPERATOR FILE</span>
-              <span>v.1.0</span>
-            </div>
-            <div class="d-row"><span class="d-key">Operator</span><span class="d-val">Otávio Antonio</span></div>
-            <div class="d-row"><span class="d-key">Forge</span><span class="d-val">Reaperborn · Est. 2023</span></div>
-            <div class="d-row"><span class="d-key">Class</span><span class="d-val">Game Designer / Unity Dev</span></div>
-            <div class="d-row"><span class="d-key">Region</span><span class="d-val">Brasil · Remote</span></div>
-            <div class="d-row"><span class="d-key">Discipline</span><span class="d-val">Systems · F2P · LiveOps</span></div>
-            <div class="d-row"><span class="d-key">Engine</span><span class="d-val">Unity · C#</span></div>
-            <div style="margin-top:6px;">
-              <div class="d-key">Active projects</div>
-              <div class="d-bar"><div class="d-bar-fill" style="width:72%"></div></div>
-              <div class="d-key" style="margin-top:14px;">Forge load</div>
-              <div class="d-bar"><div class="d-bar-fill" style="width:86%"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── §01 ABOUT ── -->
-  <section id="about">
-    <span class="section-tag">// 01 · CODEX</span>
-    <div class="section-head">
-      <span class="section-num">§01</span>
-      <h2 class="section-title">Codex entry</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="about-box">
+    <!-- ── CONTACT ── -->
+    <div class="contact-section" id="contact">
       <div class="reveal">
-        <p class="about-text">
-          Game Designer and Unity Developer focused on systems, gameplay loops, and F2P economy design. Building games under the Reaperborn Forge studio — from mobile arcade to tactical multiplayer RPGs. Driven by the craft of making systems that feel good to play and keep players coming back.
-        </p>
-      </div>
-      <div class="reveal" style="transition-delay:150ms">
-        <div class="stat-box">
-          <div class="stat-cell">
-            <div class="stat-key">Active titles</div>
-            <div class="stat-value">03</div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span>// SIGNAL · OUTBOUND</span>
+            <span>STATUS · LISTENING</span>
           </div>
-          <div class="stat-cell">
-            <div class="stat-key">Years forging</div>
-            <div class="stat-value">03+</div>
-          </div>
-          <div class="stat-cell">
-            <div class="stat-key">Engine</div>
-            <div class="stat-value">Unity</div>
-          </div>
-          <div class="stat-cell">
-            <div class="stat-key">Status</div>
-            <div class="stat-value stat-value-accent">Open</div>
+          <div class="terminal-body">
+            <div><span class="term-prompt">$</span> ping reaperbornforge --status</div>
+            <div class="term-response">&gt; signal acquired · forge online · ready for commissions</div>
+            <h2 class="term-headline">
+              Have a system <span class="term-headline-italic">worth forging?</span>
+            </h2>
+            <p class="term-sub">
+              Drop a line. Game design, systems consulting, Unity collaboration — all signals welcome.
+            </p>
+            <a href="mailto:reaperbornforge@gmail.com" class="term-cta">
+              reaperbornforge@gmail.com →
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ── §02 PROJECTS ── -->
-  <section id="projects">
-    <span class="section-tag">// 02 · ARTIFACTS</span>
-    <div class="section-head">
-      <span class="section-num">§02</span>
-      <h2 class="section-title">Artifacts in the forge</h2>
-      <span class="section-line"></span>
+  </div><!-- /#studio-view -->
+
+  <!-- ── RECRUITER VIEW ── -->
+  <div id="recruiter-view" style="display:none">
+
+    <!-- Hero -->
+    <div class="rec-hero">
+      <div class="rec-eyebrow">// CANDIDATE · GAME DESIGNER</div>
+      <h1 class="rec-name">Otávio Antonio</h1>
+      <p class="rec-role">Game Designer &amp; Unity Developer</p>
+      <p class="rec-seeking">Seeking junior / mid positions at game studios — Brazil &amp; remote</p>
+      <div class="rec-chips">
+        <span class="chip chip-accent">● Open to hire</span>
+        <span class="chip">Unity · C#</span>
+        <span class="chip">Systems Design</span>
+        <span class="chip">F2P Economy</span>
+        <span class="chip">LiveOps</span>
+      </div>
+      <p class="rec-summary">3 years designing and shipping games solo — from a mobile arcade F2P with 330 daily installs at launch, to a tactical multiplayer RPG now on Steam.</p>
     </div>
-    <div class="projects-grid">
 
-      <!-- I — Legacy of Allard (wide) -->
-      <div class="project-card wide reveal">
-        <div class="project-glow"></div>
-        <img class="project-screenshot" src="assets/screenshots/legacy-of-allard.jpg" alt="Legacy of Allard screenshot" loading="lazy">
-        <div class="project-card-head">
-          <span class="project-glyph">I</span>
-          <span class="project-status">
-            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
-            In active development
-          </span>
-        </div>
-        <h3 class="project-title">Legacy of Allard</h3>
-        <div class="project-kind">Tactical Multiplayer RPG · 2024 — present</div>
-        <p class="project-blurb">Tactical multiplayer RPG with a published WebGL prototype and a live Steam page. Built around grid-based combat, party synergy, and progression systems.</p>
-        <div class="stack-row">
-          <span class="stack-pill">Unity</span>
-          <span class="stack-pill">C#</span>
-          <span class="stack-pill">PlayFab</span>
-          <span class="stack-pill">WebGL</span>
-        </div>
-        <div class="project-foot" style="flex-direction:column;gap:10px;align-items:flex-start;">
-          <a href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer" style="color:#C8102E;text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-            <span>Steam page</span><span>→</span>
-          </a>
-          <a href="https://game.playallard.com" target="_blank" rel="noreferrer" style="color:rgba(232,228,216,.55);text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-            <span>Play alpha</span><span>→</span>
-          </a>
-        </div>
+    <!-- Projects -->
+    <div class="rec-section" id="rec-projects">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Selected Work</h2>
+        <span class="section-line"></span>
       </div>
+      <div class="rec-projects-grid">
 
-      <!-- II — Head Volley Clash -->
-      <div class="project-card reveal" style="transition-delay:70ms">
-        <div class="project-glow"></div>
-        <img class="project-screenshot" src="assets/screenshots/head-volley-clash.jpg" alt="Head Volley Clash screenshot" loading="lazy">
-        <div class="project-card-head">
-          <span class="project-glyph">II</span>
-          <span class="project-status">
-            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
-            In development
-          </span>
+        <!-- Legacy of Allard -->
+        <div class="rec-card">
+          <div class="rec-card-num">PROJECT · I</div>
+          <h3 class="rec-card-title">Legacy of Allard</h3>
+          <div class="rec-card-kind">Tactical Multiplayer RPG · 2024 — present</div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Problem</div>
+            <p class="rec-card-text">Design a tactical multiplayer RPG — grid-based combat, party synergy, and progression — and ship a playable version before committing to a full launch.</p>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Proof</div>
+            <p class="rec-card-text">WebGL prototype live and playable. Steam page published and indexed.</p>
+          </div>
+          <div class="rec-card-links">
+            <a href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer" class="rec-card-link"><span>Steam page</span><span>→</span></a>
+            <a href="https://game.playallard.com" target="_blank" rel="noreferrer" class="rec-card-link secondary"><span>Play alpha</span><span>→</span></a>
+          </div>
         </div>
-        <h3 class="project-title">Head Volley Clash</h3>
-        <div class="project-kind">Arcade Mobile · F2P · 2024 — present</div>
-        <p class="project-blurb">Mobile arcade F2P with seasonal passes, skin shop and a fully implemented economy. Designed for short, replayable sessions and long-tail retention. ~330 daily installs at launch. Organic reach across Brazil, Russia, India, and Mexico with zero paid marketing. ~40 monthly active users with no updates since release.</p>
-        <div class="stack-row">
-          <span class="stack-pill">Unity</span>
-          <span class="stack-pill">Firebase</span>
-          <span class="stack-pill">Economy</span>
-          <span class="stack-pill">LiveOps</span>
-        </div>
-        <div class="project-foot" style="flex-direction:column;gap:10px;align-items:flex-start;">
-          <a href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer" style="color:#C8102E;text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-            <span>Google Play</span><span>→</span>
-          </a>
-          <a href="https://zdarkreaper.itch.io/head-volley-clash" target="_blank" rel="noreferrer" style="color:rgba(232,228,216,.55);text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-            <span>Itch.io</span><span>→</span>
-          </a>
-        </div>
-      </div>
 
-      <!-- III — Tiny Ruins Tycoon -->
-      <a class="project-card reveal" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="transition-delay:140ms">
-        <div class="project-glow"></div>
-        <img class="project-screenshot" src="assets/screenshots/tiny-ruins-tycoon.jpg" alt="Tiny Ruins Tycoon screenshot" loading="lazy">
-        <div class="project-card-head">
-          <span class="project-glyph">III</span>
-          <span class="project-status">
-            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
-            Prototype
-          </span>
+        <!-- Head Volley Clash -->
+        <div class="rec-card">
+          <div class="rec-card-num">PROJECT · II</div>
+          <h3 class="rec-card-title">Head Volley Clash</h3>
+          <div class="rec-card-kind">Arcade Mobile · F2P · 2024 — present</div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Problem</div>
+            <p class="rec-card-text">Design and ship a complete F2P mobile game — economy, seasonal passes, skin shop — solo, from zero to live on Google Play.</p>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Proof</div>
+            <p class="rec-card-text">~330 daily installs at launch. Organic reach across Brazil, Russia, India, and Mexico — zero paid marketing. ~40 MAU with no updates since release.</p>
+          </div>
+          <div class="rec-card-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer" class="rec-card-link"><span>Google Play</span><span>→</span></a>
+            <a href="https://zdarkreaper.itch.io/head-volley-clash" target="_blank" rel="noreferrer" class="rec-card-link secondary"><span>Itch.io</span><span>→</span></a>
+          </div>
         </div>
-        <h3 class="project-title">Tiny Ruins Tycoon</h3>
-        <div class="project-kind">Idle / Management · 2024</div>
-        <p class="project-blurb">Idle management mobile prototype. Era-based progression with a data-driven economy. A sandbox for testing loop pacing and offline-progress balancing.</p>
-        <div class="stack-row">
-          <span class="stack-pill">Unity</span>
-          <span class="stack-pill">Data-driven</span>
-          <span class="stack-pill">Idle loops</span>
-        </div>
-        <div class="project-foot">
-          <span>Play prototype</span>
-          <span class="project-foot-arrow">→</span>
-        </div>
-      </a>
 
-    </div>
-  </section>
-
-  <!-- ── §03 SKILLS ── -->
-  <section id="skills">
-    <span class="section-tag">// 03 · ARSENAL</span>
-    <div class="section-head">
-      <span class="section-num">§03</span>
-      <h2 class="section-title">Arsenal</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="skills-box">
-      <div class="skill-col reveal">
-        <h3 class="skill-col-head">Design</h3>
-        <div class="skill-row"><span>Game Design</span><span class="skill-level">EXPERT</span></div>
-        <div class="skill-row"><span>Systems Design</span><span class="skill-level">EXPERT</span></div>
-        <div class="skill-row"><span>Progression Design</span><span class="skill-level">ADVANCED</span></div>
-        <div class="skill-row"><span>F2P Economy Design</span><span class="skill-level">EXPERT</span></div>
-        <div class="skill-row"><span>Gameplay Design</span><span class="skill-level">ADVANCED</span></div>
-        <div class="skill-row"><span>UI/UX for Games</span><span class="skill-level">ADVANCED</span></div>
-      </div>
-      <div class="skill-col reveal" style="transition-delay:100ms">
-        <h3 class="skill-col-head">Engineering</h3>
-        <div class="skill-row"><span>Unity</span><span class="skill-level">EXPERT</span></div>
-        <div class="skill-row"><span>C#</span><span class="skill-level">EXPERT</span></div>
-        <div class="skill-row"><span>Git</span><span class="skill-level">ADVANCED</span></div>
-        <div class="skill-row"><span>Firebase / Firestore</span><span class="skill-level">ADVANCED</span></div>
-        <div class="skill-row"><span>PlayFab / Azure</span><span class="skill-level">INTERMEDIATE</span></div>
-      </div>
-      <div class="skill-col reveal" style="transition-delay:200ms">
-        <h3 class="skill-col-head">Production</h3>
-        <div class="skill-row"><span>Prototyping</span><span class="skill-level">EXPERT</span></div>
-        <div class="skill-row"><span>QA Basics</span><span class="skill-level">ADVANCED</span></div>
-        <div class="skill-row"><span>LiveOps Mindset</span><span class="skill-level">ADVANCED</span></div>
-        <div class="skill-row"><span>Data-Driven Tuning</span><span class="skill-level">ADVANCED</span></div>
+        <!-- Tiny Ruins Tycoon -->
+        <div class="rec-card">
+          <div class="rec-card-num">PROJECT · III</div>
+          <h3 class="rec-card-title">Tiny Ruins Tycoon</h3>
+          <div class="rec-card-kind">Idle / Management · 2024</div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Problem</div>
+            <p class="rec-card-text">Validate idle loop pacing and offline-progress balancing before committing to a full build.</p>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Proof</div>
+            <p class="rec-card-text">Working prototype with era-based progression and a data-driven economy, published and playable on itch.io.</p>
+          </div>
+          <div class="rec-card-links">
+            <a href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" class="rec-card-link"><span>Play prototype</span><span>→</span></a>
+          </div>
+        </div>
 
       </div>
     </div>
-  </section>
 
-  <!-- ── §04 SERVICES ── -->
-  <section id="services">
-    <span class="section-tag">// 04 · COMMISSIONS</span>
-    <div class="section-head">
-      <span class="section-num">§04</span>
-      <h2 class="section-title">Commissions accepted</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="services-list">
-      <div class="service-row reveal">
-        <span class="service-num">01</span>
-        <span class="service-name">Game Design</span>
-        <span class="service-txt">Systems, progression and F2P economy from blueprint to live tuning.</span>
-        <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
+    <!-- Skills -->
+    <div class="rec-section" id="rec-skills">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Skills</h2>
+        <span class="section-line"></span>
       </div>
-      <div class="service-row reveal" style="transition-delay:60ms">
-        <span class="service-num">02</span>
-        <span class="service-name">Unity Development</span>
-        <span class="service-txt">Production-grade Unity / C# implementation, tools and pipelines.</span>
-        <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
-      </div>
-      <div class="service-row reveal" style="transition-delay:120ms">
-        <span class="service-num">03</span>
-        <span class="service-name">Prototyping</span>
-        <span class="service-txt">Fast, focused prototypes to validate loops before they cost a roadmap.</span>
-        <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
-      </div>
-      <div class="service-row reveal" style="transition-delay:180ms">
-        <span class="service-num">04</span>
-        <span class="service-name">Design Consulting</span>
-        <span class="service-txt">External eyes on your systems, economy or onboarding.</span>
-        <a href="#contact" class="service-arrow" style="text-decoration:none;">→</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── §05 LINKS ── -->
-  <section id="links">
-    <span class="section-tag">// 05 · CONDUITS</span>
-    <div class="section-head">
-      <span class="section-num">§05</span>
-      <h2 class="section-title">Conduits</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="links-row reveal">
-      <a class="link-box" href="mailto:reaperbornforge@gmail.com">
-        <div class="link-box-label">Email</div>
-        <div class="link-box-val">reaperbornforge@gmail.com</div>
-      </a>
-      <a class="link-box" href="https://zdarkreaper.itch.io" target="_blank" rel="noreferrer">
-        <div class="link-box-label">Itch.io</div>
-        <div class="link-box-val">zdarkreaper.itch.io</div>
-      </a>
-      <a class="link-box" href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer">
-        <div class="link-box-label">Steam</div>
-        <div class="link-box-val">Legacy of Allard</div>
-      </a>
-      <a class="link-box" href="https://www.linkedin.com/in/otavioantonio/" target="_blank" rel="noreferrer">
-        <div class="link-box-label">LinkedIn</div>
-        <div class="link-box-val">in/otavioantonio</div>
-      </a>
-      <a class="link-box" href="#contact">
-        <div class="link-box-label">Discord</div>
-        <div class="link-box-val">zDarkReaper</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ── -->
-  <div class="contact-section" id="contact">
-    <div class="reveal">
-      <div class="terminal">
-        <div class="terminal-bar">
-          <span>// SIGNAL · OUTBOUND</span>
-          <span>STATUS · LISTENING</span>
+      <div class="rec-skills-grid">
+        <div class="rec-skill-col">
+          <h3 class="rec-skill-col-head">Design Skills</h3>
+          <div class="rec-skill-item">Game Design</div>
+          <div class="rec-skill-item">Systems Design</div>
+          <div class="rec-skill-item">F2P Economy Design</div>
+          <div class="rec-skill-item">Progression Design</div>
+          <div class="rec-skill-item">Gameplay Design</div>
+          <div class="rec-skill-item">UI/UX for Games</div>
         </div>
-        <div class="terminal-body">
-          <div><span class="term-prompt">$</span> ping reaperbornforge --status</div>
-          <div class="term-response">&gt; signal acquired · forge online · ready for commissions</div>
-          <h2 class="term-headline">
-            Have a system <span class="term-headline-italic">worth forging?</span>
-          </h2>
-          <p class="term-sub">
-            Drop a line. Game design, systems consulting, Unity collaboration — all signals welcome.
-          </p>
-          <a href="mailto:reaperbornforge@gmail.com" class="term-cta">
-            reaperbornforge@gmail.com →
-          </a>
+        <div class="rec-skill-col">
+          <h3 class="rec-skill-col-head">Technical Skills</h3>
+          <div class="rec-skill-item">Unity</div>
+          <div class="rec-skill-item">C#</div>
+          <div class="rec-skill-item">Firebase / Firestore</div>
+          <div class="rec-skill-item">PlayFab / Azure</div>
+          <div class="rec-skill-item">Git</div>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Hire CTA -->
+    <div class="rec-hire" id="rec-hire">
+      <div class="rec-hire-label">// OPEN TO HIRE</div>
+      <h2 class="rec-hire-head">Let's build something.</h2>
+      <p class="rec-hire-sub">
+        Junior or mid game designer / Unity developer — available for studios in Brazil and remote worldwide.
+      </p>
+      <div class="rec-hire-actions">
+        <a href="mailto:reaperbornforge@gmail.com" class="rec-hire-btn primary">reaperbornforge@gmail.com →</a>
+        <a href="https://www.linkedin.com/in/otavioantonio/" target="_blank" rel="noreferrer" class="rec-hire-btn secondary">LinkedIn →</a>
+        <a href="assets/resume.pdf" target="_blank" class="rec-hire-btn secondary">Download Resume →</a>
+      </div>
+    </div>
+
+  </div><!-- /#recruiter-view -->
 
   <!-- ── FOOTER ── -->
   <footer>
@@ -1065,6 +1457,41 @@
   </footer>
 
   <script>
+    // ─── View toggle ───
+    (function () {
+      function setView(mode) {
+        var studio = document.getElementById('studio-view');
+        var recruiter = document.getElementById('recruiter-view');
+        var btnS = document.getElementById('btn-studio');
+        var btnR = document.getElementById('btn-recruiter');
+        var dotsS = document.querySelector('.status-dots-studio');
+        var dotsR = document.querySelector('.status-dots-recruiter');
+
+        if (mode === 'recruiter') {
+          studio.style.display = 'none';
+          recruiter.style.display = 'block';
+          btnS.classList.remove('active');
+          btnR.classList.add('active');
+          if (dotsS) dotsS.style.display = 'none';
+          if (dotsR) dotsR.style.display = 'flex';
+        } else {
+          studio.style.display = 'block';
+          recruiter.style.display = 'none';
+          btnS.classList.add('active');
+          btnR.classList.remove('active');
+          if (dotsS) dotsS.style.display = 'flex';
+          if (dotsR) dotsR.style.display = 'none';
+        }
+        localStorage.setItem('rfView', mode);
+        window.scrollTo(0, 0);
+      }
+
+      window.setView = setView;
+
+      var saved = localStorage.getItem('rfView');
+      if (saved === 'recruiter') setView('recruiter');
+    })();
+
     // ─── Ember particles (hero section) ───
     (function () {
       const cv = document.getElementById('ember-canvas');
