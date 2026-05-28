@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reaperborn Forge — Portfolio</title>
+  <meta name="description" content="Reaperborn Forge — Independent game studio. Game Design, Unity Development, F2P Systems.">
+  <meta property="og:title" content="Reaperborn Forge">
+  <meta property="og:description" content="Independent game studio forging systems that play themselves into your habits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #0A0C10;
+      color: #E8E4D8;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-image:
+        linear-gradient(rgba(232,228,216,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,228,216,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Cursor canvas (fixed overlay) ── */
+    #cursor-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── Reveal animation ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── STATUS BAR ── */
+    .status-bar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 14px 32px;
+      border-bottom: 1px solid #1a1d24;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.55);
+      background: rgba(13,16,22,.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .status-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .status-brand-text {
+      font-family: 'Cinzel', serif;
+      letter-spacing: .32em;
+      color: #E8E4D8;
+    }
+    .status-dots {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+    }
+    .status-dot-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .led {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 64px 64px 80px;
+      min-height: 680px;
+      overflow: hidden;
+      border-bottom: 1px solid #1a1d24;
+      background:
+        radial-gradient(ellipse 80% 70% at 70% 50%, rgba(200,16,46,.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 10% 90%, rgba(139,14,31,.08), transparent 60%);
+    }
+    #ember-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-callsign {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero-callsign-line {
+      display: inline-block;
+      width: 36px;
+      height: 1px;
+      background: #C8102E;
+      opacity: .7;
+      flex-shrink: 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: stretch;
+      min-height: 540px;
+      margin-top: 32px;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 96px;
+      font-weight: 600;
+      line-height: .94;
+      color: #E8E4D8;
+      letter-spacing: -.005em;
+    }
+    .hero-title-sub {
+      color: #8B0E1F;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 84px;
+    }
+    .hero-tag {
+      margin-top: 36px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: rgba(232,228,216,.78);
+      font-weight: 300;
+      max-width: 580px;
+    }
+    .hero-chips {
+      margin-top: 32px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border: 1px solid #1f2530;
+      color: rgba(232,228,216,.75);
+      background: rgba(15,18,25,.6);
+    }
+    .chip-accent {
+      border-color: rgba(200,16,46,.5);
+      color: #C8102E;
+      background: rgba(200,16,46,.06);
+    }
+
+    /* Dossier card */
+    .dossier {
+      border: 1px solid #1a1d24;
+      background: rgba(13,16,22,.85);
+      padding: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: rgba(232,228,216,.7);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 100%;
+    }
+    .dossier-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed #2a2f3a;
+      color: #C8102E;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+    .d-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 14px;
+    }
+    .d-key {
+      color: rgba(232,228,216,.4);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 10px;
+    }
+    .d-val { color: #E8E4D8; }
+    .d-bar {
+      height: 4px;
+      background: #15181f;
+      position: relative;
+      margin-top: 4px;
+    }
+    .d-bar-fill {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      background: #C8102E;
+      box-shadow: 0 0 8px #C8102E;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 80px 64px;
+      border-bottom: 1px solid #15181f;
+      position: relative;
+    }
+    .section-tag {
+      position: absolute;
+      top: 24px; right: 32px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.35);
+    }
+    .section-head {
+      margin-bottom: 48px;
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      border-bottom: 1px solid #15181f;
+      padding-bottom: 24px;
+    }
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .24em;
+      color: #C8102E;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 36px;
+      font-weight: 500;
+      color: #E8E4D8;
+      letter-spacing: .01em;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: #15181f;
+      align-self: center;
+    }
+
+    /* ── ABOUT ── */
+    .about-box {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .about-text {
+      font-size: 17px;
+      line-height: 1.65;
+      color: rgba(232,228,216,.82);
+      font-weight: 300;
+    }
+    .stat-box {
+      border: 1px solid #1a1d24;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: #15181f;
+    }
+    .stat-cell {
+      background: #0A0C10;
+      padding: 18px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .stat-key {
+      font-size: 9px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.5);
+    }
+    .stat-value {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      color: #E8E4D8;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+    .stat-value-accent { color: #C8102E; }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .project-card {
+      border: 1px solid #1a1d24;
+      background: rgba(15,18,25,.5);
+      padding: 28px;
+      position: relative;
+      transition: border-color .3s, background .3s, box-shadow .3s;
+      cursor: pointer;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .project-card:hover {
+      border-color: #C8102E;
+      background: rgba(200,16,46,.05);
+      box-shadow: 0 0 32px rgba(200,16,46,.15) inset;
+    }
+    .project-card.wide { grid-column: span 2; }
+    .project-glow {
+      position: absolute;
+      top: 0; right: 0;
+      width: 60px; height: 60px;
+      background: radial-gradient(circle at top right, rgba(200,16,46,.4), transparent 70%);
+      opacity: 0;
+      transition: opacity .3s;
+      pointer-events: none;
+    }
+    .project-card:hover .project-glow { opacity: 1; }
+    .project-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .project-glyph {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: #8B0E1F;
+      letter-spacing: .12em;
+      border: 1px solid #2a2f3a;
+      padding: 4px 10px;
+    }
+    .project-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .18em;
+      color: rgba(232,228,216,.55);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .project-title {
+      font-family: 'Cinzel', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: #E8E4D8;
+      margin: 0 0 6px;
+      letter-spacing: .01em;
+    }
+    .project-kind {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 18px;
+    }
+    .project-blurb {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(232,228,216,.7);
+      font-weight: 300;
+      margin-bottom: 22px;
+    }
+    .stack-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .stack-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border: 1px solid #2a2f3a;
+      color: rgba(232,228,216,.65);
+    }
+    .project-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.55);
+      padding-top: 16px;
+      border-top: 1px dashed #2a2f3a;
+      margin-top: 18px;
+    }
+    .project-foot-arrow { color: #C8102E; }
+
+    /* ── SKILLS ── */
+    .skills-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .skill-col {
+      border-top: 1px solid #C8102E;
+      padding-top: 18px;
+    }
+    .skill-col-head {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #E8E4D8;
+      margin: 0 0 18px;
+      letter-spacing: .04em;
+    }
+    .skill-row {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .06em;
+      color: rgba(232,228,216,.78);
+      padding: 12px 0;
+      border-bottom: 1px solid #15181f;
+      display: flex;
+      justify-content: space-between;
+    }
+    .skill-level {
+      color: #C8102E;
+      font-size: 9px;
+      letter-spacing: .18em;
+    }
+
+    /* ── SERVICES ── */
+    .services-list { display: flex; flex-direction: column; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 60px 240px 1fr 60px;
+      gap: 24px;
+      padding: 24px 0;
+      align-items: center;
+      border-top: 1px solid #15181f;
+      transition: background .3s, padding-left .3s;
+      cursor: pointer;
+    }
+    .service-row:hover {
+      background: linear-gradient(90deg, rgba(200,16,46,.06), transparent 80%);
+      padding-left: 16px;
+    }
+    .service-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .18em;
+      color: #C8102E;
+    }
+    .service-name {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #E8E4D8;
+      letter-spacing: .01em;
+    }
+    .service-txt {
+      font-size: 14px;
+      line-height: 1.55;
+      color: rgba(232,228,216,.65);
+      font-weight: 300;
+    }
+    .service-arrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #C8102E;
+      text-align: right;
+    }
+
+    /* ── LINKS ── */
+    .links-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .link-box {
+      border: 1px solid #1a1d24;
+      background: rgba(15,18,25,.5);
+      padding: 22px 20px;
+      transition: border-color .3s, background .3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .link-box:hover {
+      border-color: #C8102E;
+      background: rgba(200,16,46,.05);
+    }
+    .link-box-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 12px;
+    }
+    .link-box-val {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      color: #E8E4D8;
+      letter-spacing: .02em;
+    }
+
+    /* ── CONTACT terminal ── */
+    .contact-section {
+      padding: 80px 64px;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(200,16,46,.10), transparent 60%);
+      border-bottom: 1px solid #15181f;
+    }
+    .terminal {
+      border: 1px solid #2a2f3a;
+      background: rgba(8,10,14,.85);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #E8E4D8;
+      overflow: hidden;
+    }
+    .terminal-bar {
+      background: #15181f;
+      padding: 10px 16px;
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2a2f3a;
+    }
+    .terminal-body {
+      padding: 32px 36px;
+      line-height: 1.9;
+    }
+    .term-prompt { color: #C8102E; }
+    .term-response { color: rgba(232,228,216,.6); }
+    .term-headline {
+      font-family: 'Cinzel', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #E8E4D8;
+      margin: 20px 0 8px;
+      letter-spacing: .01em;
+    }
+    .term-headline-italic {
+      font-style: italic;
+      color: #8B0E1F;
+      font-weight: 400;
+    }
+    .term-sub { color: rgba(232,228,216,.6); margin-bottom: 8px; }
+    .term-cta {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #C8102E;
+      color: #0A0C10;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background .3s;
+    }
+    .term-cta:hover { background: #e01530; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 20px 64px;
+      border-top: 1px solid #15181f;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.4);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-title { font-size: 72px; }
+      .hero-title-sub { font-size: 64px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .dossier { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .status-dots { display: none; }
+      .hero { padding: 40px 24px 56px; min-height: auto; }
+      .hero-title { font-size: 52px; }
+      .hero-title-sub { font-size: 46px; }
+      section { padding: 56px 24px; }
+      .contact-section { padding: 56px 24px; }
+      footer { padding: 20px 24px; flex-direction: column; gap: 6px; }
+      .about-box { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.wide { grid-column: span 1; }
+      .skills-box { grid-template-columns: 1fr; gap: 24px; }
+      .service-row {
+        grid-template-columns: 48px 1fr;
+        grid-template-rows: auto auto;
+        gap: 8px 16px;
+      }
+      .service-txt { grid-column: 2; }
+      .service-arrow { display: none; }
+      .links-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .term-headline { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="cursor-canvas"></canvas>
+
+  <!-- ── STATUS BAR ── -->
+  <header class="status-bar">
+    <div class="status-brand">
+      <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="sg" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#C8102E" stop-opacity=".35"/>
+            <stop offset="60%" stop-color="#C8102E" stop-opacity=".05"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#sg)"/>
+        <circle cx="32" cy="32" r="28.5" stroke="#C8102E" stroke-opacity=".55" stroke-width=".8"/>
+        <circle cx="32" cy="32" r="24" stroke="#E8E4D8" stroke-opacity=".35" stroke-width=".6" stroke-dasharray="1 3"/>
+        <text x="32" y="38" text-anchor="middle" font-size="20" letter-spacing="2" fill="#E8E4D8" font-family="Cinzel,serif" font-weight="700">RF</text>
+        <g stroke="#C8102E" stroke-opacity=".7" stroke-width="1">
+          <line x1="32" y1="4" x2="32" y2="9"/>
+          <line x1="32" y1="55" x2="32" y2="60"/>
+          <line x1="4" y1="32" x2="9" y2="32"/>
+          <line x1="55" y1="32" x2="60" y2="32"/>
+        </g>
+      </svg>
+      <span class="status-brand-text">RF · DOSSIER</span>
+    </div>
+    <nav class="status-dots" aria-label="Navigation">
+      <a class="status-dot-item" href="#about" style="text-decoration:none;color:inherit;">
+        <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>SIGNAL
+      </a>
+      <a class="status-dot-item" href="#projects" style="text-decoration:none;color:inherit;">
+        <span class="led" style="background:#8B0E1F;box-shadow:0 0 8px #8B0E1F;"></span>FORGE ACTIVE
+      </a>
+      <a class="status-dot-item" href="#contact" style="text-decoration:none;color:inherit;">
+        <span class="led" style="background:rgba(232,228,216,.6);box-shadow:0 0 6px rgba(232,228,216,.2);"></span>BRASIL · REMOTE
+      </a>
+    </nav>
+    <div>FILE · RFB-001 / MMXXVI</div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <canvas id="ember-canvas"></canvas>
+    <div class="hero-inner">
+      <div class="reveal hero-callsign">
+        <span class="hero-callsign-line"></span>
+        CALLSIGN · zDarkReaper · OTÁVIO ANTONIO
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="reveal" style="transition-delay:80ms">
+            <h1 class="hero-title">
+              Reaperborn<br>
+              <span class="hero-title-sub">Forge</span><span style="color:#8B0E1F;">.</span>
+            </h1>
+            <p class="hero-tag">
+              Independent game studio &amp; design dossier — forging systems that play themselves into your habits, from mobile arcade to tactical multiplayer RPGs.
+            </p>
+            <div class="hero-chips">
+              <span class="chip chip-accent">● Open for collab</span>
+              <span class="chip">Unity · C#</span>
+              <span class="chip">Systems Design</span>
+              <span class="chip">F2P Economy</span>
+              <span class="chip">LiveOps</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dossier card -->
+        <div class="reveal" style="transition-delay:200ms">
+          <div class="dossier">
+            <div class="dossier-head">
+              <span>// OPERATOR FILE</span>
+              <span>v.1.0</span>
+            </div>
+            <div class="d-row"><span class="d-key">Operator</span><span class="d-val">Otávio Antonio</span></div>
+            <div class="d-row"><span class="d-key">Forge</span><span class="d-val">Reaperborn · Est. 2023</span></div>
+            <div class="d-row"><span class="d-key">Class</span><span class="d-val">Game Designer / Unity Dev</span></div>
+            <div class="d-row"><span class="d-key">Region</span><span class="d-val">Brasil · Remote</span></div>
+            <div class="d-row"><span class="d-key">Discipline</span><span class="d-val">Systems · F2P · LiveOps</span></div>
+            <div class="d-row"><span class="d-key">Engine</span><span class="d-val">Unity · C#</span></div>
+            <div style="margin-top:6px;">
+              <div class="d-key">Active projects</div>
+              <div class="d-bar"><div class="d-bar-fill" style="width:72%"></div></div>
+              <div class="d-key" style="margin-top:14px;">Forge load</div>
+              <div class="d-bar"><div class="d-bar-fill" style="width:86%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── §01 ABOUT ── -->
+  <section id="about">
+    <span class="section-tag">// 01 · CODEX</span>
+    <div class="section-head">
+      <span class="section-num">§01</span>
+      <h2 class="section-title">Codex entry</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="about-box">
+      <div class="reveal">
+        <p class="about-text">
+          Game Designer and Unity Developer focused on systems, gameplay loops, and F2P economy design. Building games under the Reaperborn Forge studio — from mobile arcade to tactical multiplayer RPGs. Driven by the craft of making systems that feel good to play and keep players coming back.
+        </p>
+      </div>
+      <div class="reveal" style="transition-delay:150ms">
+        <div class="stat-box">
+          <div class="stat-cell">
+            <div class="stat-key">Active titles</div>
+            <div class="stat-value">03</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-key">Years forging</div>
+            <div class="stat-value">03+</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-key">Engine</div>
+            <div class="stat-value">Unity</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-key">Status</div>
+            <div class="stat-value stat-value-accent">Open</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── §02 PROJECTS ── -->
+  <section id="projects">
+    <span class="section-tag">// 02 · ARTIFACTS</span>
+    <div class="section-head">
+      <span class="section-num">§02</span>
+      <h2 class="section-title">Artifacts in the forge</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="projects-grid">
+
+      <!-- I — Legacy of Allard (wide) -->
+      <a class="project-card wide reveal" href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer">
+        <div class="project-glow"></div>
+        <div class="project-card-head">
+          <span class="project-glyph">I</span>
+          <span class="project-status">
+            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+            In active development
+          </span>
+        </div>
+        <h3 class="project-title">Legacy of Allard</h3>
+        <div class="project-kind">Tactical Multiplayer RPG · 2024 — present</div>
+        <p class="project-blurb">Tactical multiplayer RPG with a published WebGL prototype and a live Steam page. Built around grid-based combat, party synergy, and progression systems.</p>
+        <div class="stack-row">
+          <span class="stack-pill">Unity</span>
+          <span class="stack-pill">C#</span>
+          <span class="stack-pill">PlayFab</span>
+          <span class="stack-pill">WebGL</span>
+        </div>
+        <div class="project-foot">
+          <span>Steam page</span>
+          <span class="project-foot-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- II — Head Volley Clash -->
+      <div class="project-card reveal" style="transition-delay:70ms">
+        <div class="project-glow"></div>
+        <div class="project-card-head">
+          <span class="project-glyph">II</span>
+          <span class="project-status">
+            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+            In development
+          </span>
+        </div>
+        <h3 class="project-title">Head Volley Clash</h3>
+        <div class="project-kind">Arcade Mobile · F2P · 2024 — present</div>
+        <p class="project-blurb">Mobile arcade F2P with seasonal passes, skin shop and a fully implemented economy. Designed for short, replayable sessions and long-tail retention.</p>
+        <div class="stack-row">
+          <span class="stack-pill">Unity</span>
+          <span class="stack-pill">Firebase</span>
+          <span class="stack-pill">Economy</span>
+          <span class="stack-pill">LiveOps</span>
+        </div>
+        <div class="project-foot">
+          <span>Devlog</span>
+          <span class="project-foot-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- III — Tiny Ruins Tycoon -->
+      <div class="project-card reveal" style="transition-delay:140ms">
+        <div class="project-glow"></div>
+        <div class="project-card-head">
+          <span class="project-glyph">III</span>
+          <span class="project-status">
+            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+            Prototype
+          </span>
+        </div>
+        <h3 class="project-title">Tiny Ruins Tycoon</h3>
+        <div class="project-kind">Idle / Management · 2024</div>
+        <p class="project-blurb">Idle management mobile prototype. Era-based progression with a data-driven economy. A sandbox for testing loop pacing and offline-progress balancing.</p>
+        <div class="stack-row">
+          <span class="stack-pill">Unity</span>
+          <span class="stack-pill">Data-driven</span>
+          <span class="stack-pill">Idle loops</span>
+        </div>
+        <div class="project-foot">
+          <span>Build notes</span>
+          <span class="project-foot-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- IV — Arquivos do Ceifador -->
+      <div class="project-card reveal" style="transition-delay:210ms">
+        <div class="project-glow"></div>
+        <div class="project-card-head">
+          <span class="project-glyph">IV</span>
+          <span class="project-status">
+            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+            Ongoing
+          </span>
+        </div>
+        <h3 class="project-title">Arquivos do Ceifador</h3>
+        <div class="project-kind">Devlog · Research · 2023 — present</div>
+        <p class="project-blurb">Field notes on systems design, F2P economies and the craft of shipping small games. Public archive of teardowns and process diaries.</p>
+        <div class="stack-row">
+          <span class="stack-pill">Notes</span>
+          <span class="stack-pill">Systems</span>
+          <span class="stack-pill">Postmortems</span>
+        </div>
+        <div class="project-foot">
+          <span>Read archive</span>
+          <span class="project-foot-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- V — Upgrades Diários -->
+      <div class="project-card reveal" style="transition-delay:280ms">
+        <div class="project-glow"></div>
+        <div class="project-card-head">
+          <span class="project-glyph">V</span>
+          <span class="project-status">
+            <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
+            Continuous
+          </span>
+        </div>
+        <h3 class="project-title">Upgrades Diários</h3>
+        <div class="project-kind">Daily Practice · Daily</div>
+        <p class="project-blurb">A daily ritual of small upgrades — tools, prototypes, micro-systems. The whetstone behind every shipped project.</p>
+        <div class="stack-row">
+          <span class="stack-pill">Microprojects</span>
+          <span class="stack-pill">Tooling</span>
+          <span class="stack-pill">Studies</span>
+        </div>
+        <div class="project-foot">
+          <span>See upgrades</span>
+          <span class="project-foot-arrow">→</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── §03 SKILLS ── -->
+  <section id="skills">
+    <span class="section-tag">// 03 · ARSENAL</span>
+    <div class="section-head">
+      <span class="section-num">§03</span>
+      <h2 class="section-title">Arsenal</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="skills-box">
+      <div class="skill-col reveal">
+        <h3 class="skill-col-head">Design</h3>
+        <div class="skill-row"><span>Game Design</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>Systems Design</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>Progression Design</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>F2P Economy Design</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>Gameplay Design</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>UI/UX for Games</span><span class="skill-level">ADVANCED</span></div>
+      </div>
+      <div class="skill-col reveal" style="transition-delay:100ms">
+        <h3 class="skill-col-head">Engineering</h3>
+        <div class="skill-row"><span>Unity</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>C#</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>Git</span><span class="skill-level">ADVANCED</span></div>
+        <div class="skill-row"><span>Firebase / Firestore</span><span class="skill-level">ADVANCED</span></div>
+        <div class="skill-row"><span>PlayFab / Azure</span><span class="skill-level">ADVANCED</span></div>
+      </div>
+      <div class="skill-col reveal" style="transition-delay:200ms">
+        <h3 class="skill-col-head">Production</h3>
+        <div class="skill-row"><span>Prototyping</span><span class="skill-level">EXPERT</span></div>
+        <div class="skill-row"><span>QA Basics</span><span class="skill-level">ADVANCED</span></div>
+        <div class="skill-row"><span>LiveOps Mindset</span><span class="skill-level">ADVANCED</span></div>
+        <div class="skill-row"><span>Data-Driven Tuning</span><span class="skill-level">ADVANCED</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── §04 SERVICES ── -->
+  <section id="services">
+    <span class="section-tag">// 04 · COMMISSIONS</span>
+    <div class="section-head">
+      <span class="section-num">§04</span>
+      <h2 class="section-title">Commissions accepted</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="services-list">
+      <div class="service-row reveal">
+        <span class="service-num">01</span>
+        <span class="service-name">Game Design</span>
+        <span class="service-txt">Systems, progression and F2P economy from blueprint to live tuning.</span>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row reveal" style="transition-delay:60ms">
+        <span class="service-num">02</span>
+        <span class="service-name">Unity Development</span>
+        <span class="service-txt">Production-grade Unity / C# implementation, tools and pipelines.</span>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row reveal" style="transition-delay:120ms">
+        <span class="service-num">03</span>
+        <span class="service-name">Prototyping</span>
+        <span class="service-txt">Fast, focused prototypes to validate loops before they cost a roadmap.</span>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row reveal" style="transition-delay:180ms">
+        <span class="service-num">04</span>
+        <span class="service-name">Design Consulting</span>
+        <span class="service-txt">External eyes on your systems, economy or onboarding.</span>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row reveal" style="transition-delay:240ms">
+        <span class="service-num">05</span>
+        <span class="service-name">QA &amp; Game Testing</span>
+        <span class="service-txt">Structured testing passes with systems-aware notes.</span>
+        <span class="service-arrow">→</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── §05 LINKS ── -->
+  <section id="links">
+    <span class="section-tag">// 05 · CONDUITS</span>
+    <div class="section-head">
+      <span class="section-num">§05</span>
+      <h2 class="section-title">Conduits</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="links-row reveal">
+      <a class="link-box" href="mailto:reaperbornforge@gmail.com">
+        <div class="link-box-label">Email</div>
+        <div class="link-box-val">reaperbornforge@gmail.com</div>
+      </a>
+      <a class="link-box" href="https://zdarkreaper.itch.io" target="_blank" rel="noreferrer">
+        <div class="link-box-label">Itch.io</div>
+        <div class="link-box-val">zdarkreaper.itch.io</div>
+      </a>
+      <a class="link-box" href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer">
+        <div class="link-box-label">Steam</div>
+        <div class="link-box-val">Legacy of Allard</div>
+      </a>
+      <a class="link-box" href="https://www.linkedin.com/in/otavioantonio/" target="_blank" rel="noreferrer">
+        <div class="link-box-label">LinkedIn</div>
+        <div class="link-box-val">in/otavioantonio</div>
+      </a>
+      <a class="link-box" href="#contact">
+        <div class="link-box-label">Discord</div>
+        <div class="link-box-val">zDarkReaper</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <div class="contact-section" id="contact">
+    <div class="reveal">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span>// SIGNAL · OUTBOUND</span>
+          <span>STATUS · LISTENING</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="term-prompt">$</span> ping reaperbornforge --status</div>
+          <div class="term-response">&gt; signal acquired · forge online · ready for commissions</div>
+          <h2 class="term-headline">
+            Have a system <span class="term-headline-italic">worth forging?</span>
+          </h2>
+          <p class="term-sub">
+            Drop a line. Game design, systems consulting, Unity collaboration — all signals welcome.
+          </p>
+          <a href="mailto:reaperbornforge@gmail.com" class="term-cta">
+            reaperbornforge@gmail.com →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>© Reaperborn Forge · MMXXVI</span>
+    <span>// Forged in Unity · Tempered by iteration</span>
+    <span>EOF</span>
+  </footer>
+
+  <script>
+    // ─── Ember particles (hero section) ───
+    (function () {
+      const cv = document.getElementById('ember-canvas');
+      if (!cv) return;
+      const ctx = cv.getContext('2d');
+      const COLOR = '#C8102E', TINT = '#FFB199', DENSITY = 36;
+      let w, h, dpr, raf;
+      const ps = [];
+
+      function resize() {
+        const r = cv.getBoundingClientRect();
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        cv.width = r.width * dpr;
+        cv.height = r.height * dpr;
+        w = r.width; h = r.height;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      for (let i = 0; i < DENSITY; i++) {
+        ps.push({
+          x: Math.random() * 1280, y: Math.random() * 680,
+          vy: 0.15 + Math.random() * 0.5,
+          vx: (Math.random() - 0.5) * 0.2,
+          r: 0.5 + Math.random() * 1.6,
+          a: 0.2 + Math.random() * 0.6,
+          f: Math.random() * Math.PI * 2,
+          hs: Math.random(),
+        });
+      }
+
+      function tick() {
+        ctx.clearRect(0, 0, cv.width, cv.height);
+        ctx.save();
+        ctx.scale(dpr, dpr);
+        for (const p of ps) {
+          p.y -= p.vy;
+          p.x += p.vx + Math.sin(p.f) * 0.15;
+          p.f += 0.04;
+          if (p.y < -4) { p.y = h + 4; p.x = Math.random() * w; }
+          const c = p.hs > 0.7 ? TINT : COLOR;
+          const flick = 0.7 + Math.sin(p.f * 2) * 0.3;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = c;
+          ctx.globalAlpha = p.a * flick;
+          ctx.shadowColor = c;
+          ctx.shadowBlur = 8;
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+        ctx.restore();
+        raf = requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+
+    // ─── Ember cursor (fixed canvas, full viewport) ───
+    (function () {
+      const cv = document.getElementById('cursor-canvas');
+      if (!cv) return;
+      const ctx = cv.getContext('2d');
+      const COLOR = '#C8102E';
+      let dpr, w, h, raf;
+      const sparks = [];
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = window.innerWidth; h = window.innerHeight;
+        cv.width = w * dpr; cv.height = h * dpr;
+        cv.style.width = w + 'px'; cv.style.height = h + 'px';
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      window.addEventListener('mousemove', function (e) {
+        for (let i = 0; i < 2; i++) {
+          sparks.push({
+            x: e.clientX + (Math.random() - 0.5) * 4,
+            y: e.clientY + (Math.random() - 0.5) * 4,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: -0.4 - Math.random() * 0.8,
+            life: 1,
+            r: 0.6 + Math.random() * 1.4,
+          });
+        }
+        if (sparks.length > 180) sparks.splice(0, sparks.length - 180);
+      });
+
+      function tick() {
+        ctx.clearRect(0, 0, cv.width, cv.height);
+        ctx.save();
+        ctx.scale(dpr, dpr);
+        for (let i = sparks.length - 1; i >= 0; i--) {
+          const s = sparks[i];
+          s.x += s.vx; s.y += s.vy; s.life -= 0.018;
+          if (s.life <= 0) { sparks.splice(i, 1); continue; }
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r * s.life, 0, Math.PI * 2);
+          ctx.fillStyle = COLOR;
+          ctx.globalAlpha = s.life;
+          ctx.shadowColor = COLOR;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+        ctx.restore();
+        raf = requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+
+    // ─── Scroll reveal ───
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
