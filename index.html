@@ -258,20 +258,40 @@
       background: rgba(200,16,46,.06);
     }
 
-    /* ── CARD COVERS ── */
-    .card-cover {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: unset;
-      margin-bottom: 22px;
-    }
+    /* ── CARD COVERS (neutral placeholders — no generated art) ── */
+    .card-cover,
     .rec-card-cover {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: unset;
+      display: flex;
+      align-items: flex-end;
+      height: 132px;
       margin-bottom: 22px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #1a1d24;
+      background:
+        radial-gradient(ellipse 90% 130% at 18% 0%, rgba(200,16,46,.12), transparent 62%),
+        linear-gradient(135deg, #13161d 0%, #0b0d12 100%);
+    }
+    .cover-glyph {
+      position: absolute;
+      top: -10px;
+      right: 14px;
+      font-family: 'Cinzel', serif;
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 1;
+      color: rgba(232,228,216,.06);
+      letter-spacing: .04em;
+      pointer-events: none;
+    }
+    .cover-tag {
+      position: relative;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.5);
     }
 
     /* Dossier card */
@@ -735,7 +755,26 @@
       font-size: 22px;
       color: rgba(232,228,216,.82);
       font-weight: 300;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      max-width: 620px;
+    }
+    .rec-tech {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: .12em;
+      color: rgba(232,228,216,.5);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .rec-tech::before {
+      content: "";
+      display: inline-block;
+      width: 22px;
+      height: 1px;
+      background: rgba(200,16,46,.6);
+      flex-shrink: 0;
     }
     .rec-seeking {
       font-family: 'JetBrains Mono', monospace;
@@ -925,12 +964,23 @@
       font-weight: 600;
       transition: background .2s, color .2s, border-color .2s;
     }
+    button.rec-hire-btn {
+      cursor: pointer;
+      border-radius: 0;
+      line-height: 1;
+    }
     .rec-hire-btn.primary {
       background: #C8102E;
       color: #0A0C10;
       border: 1px solid #C8102E;
     }
     .rec-hire-btn.primary:hover { background: #e01530; border-color: #e01530; }
+    .rec-hire-btn.primary.copied,
+    .rec-hire-btn.primary.copied:hover {
+      background: #1f8a4c;
+      border-color: #1f8a4c;
+      color: #0A0C10;
+    }
     .rec-hire-btn.secondary {
       background: transparent;
       color: rgba(232,228,216,.78);
@@ -1152,7 +1202,7 @@
         <!-- I — Legacy of Allard -->
         <div class="project-card artifact-card reveal">
           <div class="project-glow"></div>
-          <img class="card-cover" src="assets/LOALogo.png" alt="Legacy of Allard cover">
+          <div class="card-cover"><span class="cover-glyph">I</span><span class="cover-tag">Tactical Multiplayer RPG</span></div>
           <div class="project-card-head">
             <span class="project-glyph">I</span>
             <span class="project-status">
@@ -1182,7 +1232,7 @@
         <!-- II — Head Volley Clash -->
         <div class="project-card artifact-card reveal" style="transition-delay:70ms">
           <div class="project-glow"></div>
-          <img class="card-cover" src="assets/HVCLogo.png" alt="Head Volley Clash cover">
+          <div class="card-cover"><span class="cover-glyph">II</span><span class="cover-tag">Arcade Mobile · F2P</span></div>
           <div class="project-card-head">
             <span class="project-glyph">II</span>
             <span class="project-status">
@@ -1212,7 +1262,7 @@
         <!-- III — Tiny Ruins Tycoon -->
         <a class="project-card artifact-card reveal" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="transition-delay:140ms">
           <div class="project-glow"></div>
-          <img class="card-cover" src="assets/TRTLogo.png" alt="Tiny Ruins Tycoon cover">
+          <div class="card-cover"><span class="cover-glyph">III</span><span class="cover-tag">Idle / Management</span></div>
           <div class="project-card-head">
             <span class="project-glyph">III</span>
             <span class="project-status">
@@ -1377,9 +1427,10 @@
 
     <!-- Hero -->
     <div class="rec-hero">
-      <div class="rec-eyebrow">// CANDIDATE · GAME DESIGNER</div>
-      <h1 class="rec-name">Otávio Antonio</h1>
-      <p class="rec-role">Game Designer &amp; Unity Developer</p>
+      <div class="rec-eyebrow">// CANDIDATE · OTÁVIO ANTONIO</div>
+      <h1 class="rec-name">Game Designer</h1>
+      <p class="rec-role">Product-focused — building gameplay loops, progression and F2P economy that keep players coming back.</p>
+      <p class="rec-tech">Unity / C# development</p>
       <p class="rec-seeking">Seeking junior / mid positions at game studios — Brazil &amp; remote</p>
       <div class="rec-chips">
         <span class="chip chip-accent">● Open to hire</span>
@@ -1402,18 +1453,18 @@
 
         <!-- Legacy of Allard -->
         <div class="rec-card">
-          <img class="rec-card-cover" src="assets/LOALogo.png" alt="Legacy of Allard cover">
+          <div class="rec-card-cover"><span class="cover-glyph">I</span><span class="cover-tag">Tactical Multiplayer RPG</span></div>
           <div class="rec-card-num">PROJECT · I</div>
           <h3 class="rec-card-title">Legacy of Allard</h3>
           <div class="rec-card-role">Role — Game Designer &amp; Unity Developer · Small team</div>
           <div class="rec-card-kind">Tactical Multiplayer RPG · 2022 — present</div>
           <div class="rec-card-block">
             <div class="rec-card-label">Problem</div>
-            <p class="rec-card-text">Design a tactical multiplayer RPG — grid-based combat, party synergy, and progression — and ship a playable version before committing to a full launch.</p>
+            <p class="rec-card-text">A networked tactical RPG is enormous scope for a small team — grid-based combat, party synergy and progression all have to hold together before any of them are proven fun. The real risk was sinking years into systems that might never validate, so the goal was to get the core loop playable and technically viable before committing to a full launch.</p>
           </div>
           <div class="rec-card-block">
             <div class="rec-card-label">Proof</div>
-            <p class="rec-card-text">WebGL prototype live and playable. Steam page published and indexed.</p>
+            <p class="rec-card-text">Shipped a browser-playable WebGL alpha with no install friction, backed by PlayFab for accounts and multiplayer, so the grid-combat loop could be tested end to end. A public Steam page went live alongside it to build wishlists and gauge real interest ahead of full production.</p>
           </div>
           <div class="rec-card-links">
             <a href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer" class="rec-card-link"><span>Steam page</span><span>→</span></a>
@@ -1423,18 +1474,18 @@
 
         <!-- Head Volley Clash -->
         <div class="rec-card">
-          <img class="rec-card-cover" src="assets/HVCLogo.png" alt="Head Volley Clash cover">
+          <div class="rec-card-cover"><span class="cover-glyph">II</span><span class="cover-tag">Arcade Mobile · F2P</span></div>
           <div class="rec-card-num">PROJECT · II</div>
           <h3 class="rec-card-title">Head Volley Clash</h3>
           <div class="rec-card-role">Role — Solo Game Designer &amp; Unity Developer</div>
           <div class="rec-card-kind">Arcade Mobile · F2P · 2024 — present</div>
           <div class="rec-card-block">
             <div class="rec-card-label">Problem</div>
-            <p class="rec-card-text">Design and ship a complete F2P mobile game — economy, seasonal passes, skin shop — solo, from zero to live on Google Play.</p>
+            <p class="rec-card-text">Shipping a full free-to-play title solo means owning every layer at once — the core arcade loop, a balanced virtual economy, seasonal passes and a skin shop — and getting it stable enough to survive real players. With no team to split design, engineering or LiveOps, the challenge was taking it from zero to live on Google Play without any piece falling over.</p>
           </div>
           <div class="rec-card-block">
             <div class="rec-card-label">Proof</div>
-            <p class="rec-card-text">~330 daily installs at launch. Organic reach across Brazil, Russia, India, and Mexico — zero paid marketing. ~40 MAU with no updates since release.</p>
+            <p class="rec-card-text">Launched to ~330 daily installs and pulled organic reach across Brazil, Russia, India and Mexico with zero paid marketing — evidence the loop and store presence could acquire players on their own. It still holds ~40 monthly active users despite no updates since release, which points to genuine retention rather than a launch-day spike.</p>
           </div>
           <div class="rec-card-links">
             <a href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer" class="rec-card-link"><span>Google Play</span><span>→</span></a>
@@ -1444,18 +1495,18 @@
 
         <!-- Tiny Ruins Tycoon -->
         <div class="rec-card">
-          <img class="rec-card-cover" src="assets/TRTLogo.png" alt="Tiny Ruins Tycoon cover">
+          <div class="rec-card-cover"><span class="cover-glyph">III</span><span class="cover-tag">Idle / Management</span></div>
           <div class="rec-card-num">PROJECT · III</div>
           <h3 class="rec-card-title">Tiny Ruins Tycoon</h3>
           <div class="rec-card-role">Role — Solo Game Designer &amp; Unity Developer</div>
           <div class="rec-card-kind">Idle / Management · 2025</div>
           <div class="rec-card-block">
             <div class="rec-card-label">Problem</div>
-            <p class="rec-card-text">Validate idle loop pacing and offline-progress balancing before committing to a full build.</p>
+            <p class="rec-card-text">Idle games live or die on pacing — reward cadence and offline-progress balance have to feel generous without quietly breaking the economy. The goal was to test that math cheaply and lock in the pacing before sinking time into a full build.</p>
           </div>
           <div class="rec-card-block">
             <div class="rec-card-label">Proof</div>
-            <p class="rec-card-text">Working prototype with era-based progression and a data-driven economy, published and playable on itch.io.</p>
+            <p class="rec-card-text">Built a playable prototype with era-based progression driven by a data-driven economy, so the numbers could be re-tuned without touching code. Published on itch.io to test loop pacing against real sessions before scaling it up.</p>
           </div>
           <div class="rec-card-links">
             <a href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" class="rec-card-link"><span>Play prototype</span><span>→</span></a>
@@ -1496,12 +1547,12 @@
     <!-- Hire CTA -->
     <div class="rec-hire" id="rec-hire">
       <div class="rec-hire-label">// OPEN TO HIRE</div>
-      <h2 class="rec-hire-head">Let's build something.</h2>
+      <h2 class="rec-hire-head">Let's design systems players come back to.</h2>
       <p class="rec-hire-sub">
-        Junior or mid game designer / Unity developer — available for studios in Brazil and remote worldwide.
+        Product-focused game designer — gameplay loops, progression and F2P economy, built and shipped in Unity. Open to junior and mid roles at studios in Brazil and remote worldwide.
       </p>
       <div class="rec-hire-actions">
-        <a href="mailto:reaperbornforge@gmail.com" class="rec-hire-btn primary">reaperbornforge@gmail.com →</a>
+        <button type="button" class="rec-hire-btn primary copy-email" data-copy-email="otaviorosindo@gmail.com">otaviorosindo@gmail.com →</button>
         <a href="https://www.linkedin.com/in/otavioantonio/" target="_blank" rel="noreferrer" class="rec-hire-btn secondary">LinkedIn →</a>
         <a href="assets/Resume%20-%20Otavio%20Rosindo.pdf" target="_blank" class="rec-hire-btn secondary">Download Resume →</a>
       </div>
@@ -1542,6 +1593,53 @@
         if (dotsR) dotsR.style.display = 'none';
         if (btnS) btnS.classList.add('active');
       }
+    })();
+
+    // ─── Copy-to-clipboard email buttons ───
+    (function () {
+      var FEEDBACK_MS = 2000;
+      var buttons = document.querySelectorAll('[data-copy-email]');
+      buttons.forEach(function (btn) {
+        var original = btn.innerHTML;
+        var timer = null;
+
+        function confirm() {
+          if (timer) clearTimeout(timer);
+          btn.classList.add('copied');
+          btn.innerHTML = 'Copiado! ✓';
+          timer = setTimeout(function () {
+            btn.classList.remove('copied');
+            btn.innerHTML = original;
+          }, FEEDBACK_MS);
+        }
+
+        function fallbackCopy(text) {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.top = '-9999px';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); } catch (err) {}
+          document.body.removeChild(ta);
+        }
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var email = btn.getAttribute('data-copy-email');
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(confirm).catch(function () {
+              fallbackCopy(email);
+              confirm();
+            });
+          } else {
+            fallbackCopy(email);
+            confirm();
+          }
+        });
+      });
     })();
 
     // ─── Ember particles (hero section) ───
