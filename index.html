@@ -258,40 +258,24 @@
       background: rgba(200,16,46,.06);
     }
 
-    /* ── CARD COVERS (neutral placeholders — no generated art) ── */
+    /* ── CARD COVERS (itch.io key art, 630x500) ── */
     .card-cover,
     .rec-card-cover {
-      display: flex;
-      align-items: flex-end;
-      height: 132px;
+      display: block;
+      aspect-ratio: 630 / 500;
       margin-bottom: 22px;
-      padding: 16px;
       position: relative;
       overflow: hidden;
       border: 1px solid #1a1d24;
-      background:
-        radial-gradient(ellipse 90% 130% at 18% 0%, rgba(200,16,46,.12), transparent 62%),
-        linear-gradient(135deg, #13161d 0%, #0b0d12 100%);
+      background: #0b0d12;
     }
-    .cover-glyph {
-      position: absolute;
-      top: -10px;
-      right: 14px;
-      font-family: 'Cinzel', serif;
-      font-size: 64px;
-      font-weight: 600;
-      line-height: 1;
-      color: rgba(232,228,216,.06);
-      letter-spacing: .04em;
-      pointer-events: none;
-    }
-    .cover-tag {
-      position: relative;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      color: rgba(232,228,216,.5);
+    .artifact-card .card-cover img,
+    .rec-card .rec-card-cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
     }
 
     /* Dossier card */
@@ -1202,7 +1186,7 @@
         <!-- I — Legacy of Allard -->
         <div class="project-card artifact-card reveal">
           <div class="project-glow"></div>
-          <div class="card-cover"><span class="cover-glyph">I</span><span class="cover-tag">Tactical Multiplayer RPG</span></div>
+          <div class="card-cover"><img src="assets/Legacy_of_Allard_itch_cover_630x500.png" alt="Legacy of Allard cover art" loading="lazy" width="630" height="500"></div>
           <div class="project-card-head">
             <span class="project-glyph">I</span>
             <span class="project-status">
@@ -1232,7 +1216,7 @@
         <!-- II — Head Volley Clash -->
         <div class="project-card artifact-card reveal" style="transition-delay:70ms">
           <div class="project-glow"></div>
-          <div class="card-cover"><span class="cover-glyph">II</span><span class="cover-tag">Arcade Mobile · F2P</span></div>
+          <div class="card-cover"><img src="assets/Head_Volley_Clash_itch_cover_630x500.png" alt="Head Volley Clash cover art" loading="lazy" width="630" height="500"></div>
           <div class="project-card-head">
             <span class="project-glyph">II</span>
             <span class="project-status">
@@ -1262,7 +1246,7 @@
         <!-- III — Tiny Ruins Tycoon -->
         <a class="project-card artifact-card reveal" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="transition-delay:140ms">
           <div class="project-glow"></div>
-          <div class="card-cover"><span class="cover-glyph">III</span><span class="cover-tag">Idle / Management</span></div>
+          <div class="card-cover"><img src="assets/Tiny_Ruins_Tycoon_itch_cover_630x500.png" alt="Tiny Ruins Tycoon cover art" loading="lazy" width="630" height="500"></div>
           <div class="project-card-head">
             <span class="project-glyph">III</span>
             <span class="project-status">
@@ -1453,7 +1437,7 @@
 
         <!-- Legacy of Allard -->
         <div class="rec-card">
-          <div class="rec-card-cover"><span class="cover-glyph">I</span><span class="cover-tag">Tactical Multiplayer RPG</span></div>
+          <div class="rec-card-cover"><img src="assets/Legacy_of_Allard_itch_cover_630x500.png" alt="Legacy of Allard cover art" loading="lazy" width="630" height="500"></div>
           <div class="rec-card-num">PROJECT · I</div>
           <h3 class="rec-card-title">Legacy of Allard</h3>
           <div class="rec-card-role">Role — Game Designer &amp; Unity Developer · Small team</div>
@@ -1474,7 +1458,7 @@
 
         <!-- Head Volley Clash -->
         <div class="rec-card">
-          <div class="rec-card-cover"><span class="cover-glyph">II</span><span class="cover-tag">Arcade Mobile · F2P</span></div>
+          <div class="rec-card-cover"><img src="assets/Head_Volley_Clash_itch_cover_630x500.png" alt="Head Volley Clash cover art" loading="lazy" width="630" height="500"></div>
           <div class="rec-card-num">PROJECT · II</div>
           <h3 class="rec-card-title">Head Volley Clash</h3>
           <div class="rec-card-role">Role — Solo Game Designer &amp; Unity Developer</div>
@@ -1495,7 +1479,7 @@
 
         <!-- Tiny Ruins Tycoon -->
         <div class="rec-card">
-          <div class="rec-card-cover"><span class="cover-glyph">III</span><span class="cover-tag">Idle / Management</span></div>
+          <div class="rec-card-cover"><img src="assets/Tiny_Ruins_Tycoon_itch_cover_630x500.png" alt="Tiny Ruins Tycoon cover art" loading="lazy" width="630" height="500"></div>
           <div class="rec-card-num">PROJECT · III</div>
           <h3 class="rec-card-title">Tiny Ruins Tycoon</h3>
           <div class="rec-card-role">Role — Solo Game Designer &amp; Unity Developer</div>
