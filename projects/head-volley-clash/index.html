@@ -126,6 +126,20 @@
           <div class="decision-body">
             <p class="i18n-en">Standard power-up placement, spawning on the court or dropping automatically, tends to feel either predictable or unfair to whoever didn't get one. I wanted unpredictability without either side feeling cheated. Power-ups arrive carried by birds flying above the players, and a player has to choose to jump and hit one to claim it. What they get can help them, like a super jump, or hurt them, like a raised net or a tiny ball. Every match plays out differently because of it, and since nothing is ever handed to either player for free, it holds up as fair even when it goes badly for someone.</p>
             <p class="i18n-pt">Posicionamento padrão de power-up, nascendo em ponto fixo da quadra ou caindo automaticamente, tende a parecer previsível ou injusto pra quem não pegou. Eu queria imprevisibilidade sem nenhum dos dois lados se sentir lesado. Os power-ups chegam carregados por pássaros voando acima dos jogadores, e o jogador precisa escolher pular e acertar o pássaro pra reivindicar um. O que ele recebe pode ajudar, como um super pulo, ou atrapalhar, como uma rede alta ou uma bola minúscula. Cada partida acaba sendo diferente por causa disso, e como nada é dado de graça pra nenhum dos lados, o sistema se sustenta como justo mesmo quando o resultado é ruim pra alguém.</p>
+            <div class="artifact-doc">
+              <div class="artifact-doc-head">
+                <span class="stamp"><span class="i18n-en">// GDD · POWER-UPS · EFFECTS ROSTER</span><span class="i18n-pt">// GDD · POWER-UPS · LISTA DE EFEITOS</span></span>
+              </div>
+              <div class="artifact-roster">
+                <span class="roster-item"><span class="i18n-en">Super Jump</span><span class="i18n-pt">Super Pulo</span></span>
+                <span class="roster-item"><span class="i18n-en">Super Speed</span><span class="i18n-pt">Super Velocidade</span></span>
+                <span class="roster-item"><span class="i18n-en">Half Speed</span><span class="i18n-pt">Meia Velocidade</span></span>
+                <span class="roster-item"><span class="i18n-en">Big Ball</span><span class="i18n-pt">Bola Grande</span></span>
+                <span class="roster-item"><span class="i18n-en">Small Ball</span><span class="i18n-pt">Bola Pequena</span></span>
+                <span class="roster-item"><span class="i18n-en">High Net</span><span class="i18n-pt">Rede Alta</span></span>
+                <span class="roster-item"><span class="i18n-en">Low Net</span><span class="i18n-pt">Rede Baixa</span></span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="decision">
@@ -133,6 +147,26 @@
           <div class="decision-body">
             <p class="i18n-en">If match rewards pay the same amount regardless of performance, every session feels identical and skill stops mattering. I tied coin payouts to how a player actually performed: a win pays more than a loss, and stringing wins together builds a multiplier on top of that. Performance compounds directly into currency instead of every match paying out the same.</p>
             <p class="i18n-pt">Se a recompensa da partida pagasse o mesmo valor independente do desempenho, toda sessão pareceria igual e habilidade deixaria de importar. Atrelei o pagamento de coins ao desempenho real do jogador: uma vitória paga mais que uma derrota, e encadear vitórias constrói um multiplicador em cima disso. Desempenho vira moeda de forma direta, em vez de toda partida pagar o mesmo valor.</p>
+            <div class="artifact-doc">
+              <div class="artifact-doc-head">
+                <span class="stamp"><span class="i18n-en">// GDD · MATCH REWARDS TABLE</span><span class="i18n-pt">// GDD · TABELA DE RECOMPENSAS POR PARTIDA</span></span>
+                <span>FIG. 02</span>
+              </div>
+              <table class="artifact-table">
+                <thead>
+                  <tr><th><span class="i18n-en">Event</span><span class="i18n-pt">Evento</span></th><th><span class="i18n-en">Reward</span><span class="i18n-pt">Recompensa</span></th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="event"><span class="i18n-en">Win vs. Normal AI</span><span class="i18n-pt">Vitória vs. IA Normal</span></td><td><span class="i18n-en">50-100 coins</span><span class="i18n-pt">50-100 coins</span></td></tr>
+                  <tr><td class="event"><span class="i18n-en">Win vs. higher difficulty</span><span class="i18n-pt">Vitória vs. dificuldade mais alta</span></td><td><span class="i18n-en">100-250 coins</span><span class="i18n-pt">100-250 coins</span></td></tr>
+                  <tr><td class="event"><span class="i18n-en">Loss</span><span class="i18n-pt">Derrota</span></td><td><span class="i18n-en">20-40 coins</span><span class="i18n-pt">20-40 coins</span></td></tr>
+                  <tr><td class="event"><span class="i18n-en">Perfect set (zero points conceded)</span><span class="i18n-pt">Set perfeito (zero pontos sofridos)</span></td><td><span class="i18n-en">+50 coins</span><span class="i18n-pt">+50 coins</span></td></tr>
+                  <tr><td class="event"><span class="i18n-en">Long rally (10+ touches)</span><span class="i18n-pt">Rally longo (10+ toques)</span></td><td><span class="i18n-en">+25 coins</span><span class="i18n-pt">+25 coins</span></td></tr>
+                  <tr><td class="event"><span class="i18n-en">First win of the day</span><span class="i18n-pt">Primeira vitória do dia</span></td><td><span class="i18n-en">+200 coins</span><span class="i18n-pt">+200 coins</span></td></tr>
+                  <tr><td class="event"><span class="i18n-en">Win streak (3, 5, 10)</span><span class="i18n-pt">Sequência de vitórias (3, 5, 10)</span></td><td><span class="i18n-en">Progressive bonus</span><span class="i18n-pt">Bônus progressivo</span></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
         <div class="decision">

@@ -573,6 +573,35 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
 }
 .artifact-table tr:last-child .tier { color: #C8102E; }
 
+/* Inline artifacts sitting inside a decision block */
+.decision-body .artifact-doc { margin-top: 26px; }
+
+/* Effects roster: a light list, deliberately not a table */
+.artifact-roster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 22px;
+}
+.roster-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border: 1px solid #1f2530;
+  background: rgba(15,18,25,.5);
+  color: rgba(232,228,216,.78);
+}
+
+/* First column of the rewards table. Same weight as .tier, but no accent on
+   the last row: there the final row is just the last row, not a top tier. */
+.artifact-table .event {
+  color: #E8E4D8;
+  letter-spacing: .06em;
+  font-size: 13px;
+}
+
 /* ══════════════════════════════════════════════════════════════
    GALLERY
    ══════════════════════════════════════════════════════════════ */
@@ -832,6 +861,9 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
   .gdd-quote blockquote p { font-size: 14px; }
   .artifact-table th, .artifact-table td { padding-left: 16px; padding-right: 16px; }
   .artifact-table td { font-size: 13px; }
+  .artifact-table .event { font-size: 12px; }
+  .artifact-roster { padding: 16px; gap: 6px; }
+  .roster-item { font-size: 11px; padding: 6px 9px; letter-spacing: .06em; }
   .chart-figure { padding: 20px 18px 18px; }
   .bars-v { height: 190px; gap: 6px; }
   .bars-labels { gap: 6px; }
