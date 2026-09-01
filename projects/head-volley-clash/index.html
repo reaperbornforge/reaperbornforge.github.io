@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Head Volley Clash · Case Study · Reaperborn Forge</title>
-  <meta name="description" content="Head Volley Clash. Arcade Mobile - F2P. Case study by Otávio Antonio, Game Designer and Unity Developer.">
+  <meta name="description" content="Head Volley Clash: a solo-built free-to-play mobile volleyball game, from core loop to economy, monetization and live release on Google Play. Case study by Otávio Antonio.">
   <meta property="og:title" content="Head Volley Clash · Case Study">
-  <meta property="og:description" content="A free-to-play arcade title taken from zero to live on Google Play solo, with the virtual economy, season pass and shop owned end to end.">
+  <meta property="og:description" content="A complete F2P mobile title designed, built and shipped solo in Unity. Roughly 35,000 organic installs in seven months.">
   <meta property="og:image" content="/assets/Head_Volley_Clash_itch_cover_630x500.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="stylesheet" href="/assets/case.css">
+  <script src="/assets/i18n.js"></script>
 </head>
 <body>
 
@@ -43,11 +44,17 @@
     <nav class="status-crumbs" aria-label="Breadcrumb">
       <a href="/?view=recruiter">Recruiter</a>
       <span aria-hidden="true">/</span>
-      <a href="/?view=recruiter#rec-projects">Selected Work</a>
+      <a href="/?view=recruiter#rec-projects"><span class="i18n-en">Selected Work</span><span class="i18n-pt">Trabalhos</span></a>
       <span aria-hidden="true">/</span>
       <span class="current">Head Volley Clash</span>
     </nav>
-    <a class="back-btn" href="/?view=recruiter#rec-projects"><span aria-hidden="true">←</span> Back</a>
+    <div class="header-controls">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="toggle-btn" data-set-lang="en">EN</button>
+        <button type="button" class="toggle-btn" data-set-lang="pt">PT</button>
+      </div>
+      <a class="back-btn" href="/?view=recruiter#rec-projects"><span aria-hidden="true">←</span> <span class="i18n-en">Back</span><span class="i18n-pt">Voltar</span></a>
+    </div>
   </header>
 
   <main>
@@ -56,52 +63,35 @@
     <section class="case-hero">
       <div class="case-hero-grid">
         <div>
-          <div class="case-eyebrow">// CASE STUDY · PROJECT · II</div>
+          <div class="case-eyebrow">// <span class="i18n-en">CASE STUDY · PROJECT · II</span><span class="i18n-pt">ESTUDO DE CASO · PROJETO · II</span></div>
           <h1 class="case-title">Head Volley Clash</h1>
-          <p class="case-logline">A free-to-play arcade title taken from zero to live on Google Play solo, with the virtual economy, season pass and shop owned end to end.</p>
+          <p class="case-logline i18n-en">A fast-paced 2D mobile volleyball game, built as a complete F2P product from core gameplay through economy, monetization and account persistence. Designed, built and shipped solo, using Unity and Firebase.</p>
+          <p class="case-logline i18n-pt">Um jogo mobile de vôlei 2D rápido, construído como produto F2P completo, do gameplay central até economia, monetização e persistência de conta. Projetado, construído e lançado sozinho, usando Unity e Firebase.</p>
 
-          <div class="case-meta">
+          <div class="case-meta case-meta-hvc">
             <div class="case-meta-cell">
-              <div class="case-meta-key">Role</div>
-              <div class="case-meta-val">Solo Game Designer and Unity Developer</div>
+              <div class="case-meta-key"><span class="i18n-en">Role</span><span class="i18n-pt">Papel</span></div>
+              <div class="case-meta-val"><span class="i18n-en">Solo Game Designer &amp; Unity Developer</span><span class="i18n-pt">Game Designer &amp; Unity Developer solo</span></div>
             </div>
             <div class="case-meta-cell">
-              <div class="case-meta-key">Period</div>
-              <div class="case-meta-val">2024 to present</div>
+              <div class="case-meta-key"><span class="i18n-en">Period</span><span class="i18n-pt">Período</span></div>
+              <div class="case-meta-val"><span class="i18n-en">2024, present</span><span class="i18n-pt">2024, presente</span></div>
             </div>
-            <div class="case-meta-cell">
-              <div class="case-meta-key">Type</div>
-              <div class="case-meta-val">Arcade Mobile &middot; F2P</div>
-            </div>
-            <div class="case-meta-cell">
-              <div class="case-meta-key">Platform</div>
-              <div class="case-meta-val">Android (Google Play) &middot; itch.io</div>
-            </div>
-            <div class="case-meta-cell">
-              <div class="case-meta-key">Stack</div>
-              <div class="case-meta-val">Unity &middot; C# &middot; Firebase / Firestore</div>
-            </div>
-            <div class="case-meta-cell">
-              <div class="case-meta-key">Status</div>
-              <div class="case-meta-val">Live on Google Play</div>
+            <div class="case-meta-cell case-meta-wide">
+              <div class="case-meta-key"><span class="i18n-en">Stack</span><span class="i18n-pt">Stack</span></div>
+              <div class="case-meta-val">Unity · Firebase/Firestore · Unity Ads · Unity IAP · Google Play</div>
             </div>
           </div>
 
           <div class="chips">
-            <span class="chip chip-accent">● Live on Google Play</span>
-            <span class="chip">Unity &middot; C#</span>
-            <span class="chip">F2P economy</span>
-            <span class="chip">Season pass</span>
-            <span class="chip">LiveOps</span>
+            <span class="chip chip-accent">● <span class="i18n-en">Live on Google Play</span><span class="i18n-pt">Ao vivo na Google Play</span></span>
           </div>
 
           <div class="case-actions">
             <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer">
-              <span class="play-icon" aria-hidden="true">▶</span>Play on Google Play
+              <span class="play-icon" aria-hidden="true">▶</span><span class="i18n-en">Play on Google Play</span><span class="i18n-pt">Jogar na Google Play</span>
             </a>
-            <a class="ghost-btn" href="https://zdarkreaper.itch.io/head-volley-clash" target="_blank" rel="noreferrer">Itch.io page <span aria-hidden="true">→</span></a>
           </div>
-          <p class="case-meta-val" style="margin-top:14px;color:rgba(232,228,216,.35);font-size:10px;letter-spacing:.18em;text-transform:uppercase;">Google Play &middot; Android</p>
         </div>
 
         <div class="case-cover">
@@ -110,20 +100,16 @@
       </div>
     </section>
 
-    <!-- ── §01 CONTEXT AND RISK ── -->
+    <!-- ── §01 CONTEXT AND STAKES ── -->
     <section class="case-section" id="context">
       <div class="section-head">
         <span class="section-num">§01</span>
-        <h2 class="section-title">Context and Risk</h2>
+        <h2 class="section-title"><span class="i18n-en">Context and stakes</span><span class="i18n-pt">Contexto e risco</span></h2>
         <span class="section-line"></span>
       </div>
       <div class="case-body">
-        <p class="case-lead">Shipping a full free-to-play title solo means owning every layer at once: the core arcade loop, a balanced virtual economy, seasonal passes and a skin shop, then getting it stable enough to survive real players. With no team to split design, engineering or LiveOps, the challenge was taking it from zero to live on Google Play without any piece falling over.</p>
-          <div class="case-placeholder">
-            <div class="case-placeholder-tag">Draft · constraints</div>
-            <p>To fill: the hard constraints behind this project. Team size, budget, calendar, engine or platform limits, and anything that was fixed before design started.</p>
-            <p>To fill: the single biggest thing that could have gone wrong, and why that risk was the one worth designing around first.</p>
-          </div>
+        <p class="i18n-en case-lead">I wanted to ship a complete free-to-play title on my own, not a prototype. A real live product with a working economy, monetization and a store, something a recruiter could open and press play on today. The harder question wasn't whether the volleyball game would be fun, it was whether one person could carry every layer of it at once: game feel, AI opponents, a store, IAP, ads, and a live economy that had to hold up under real players with no one else there to catch what broke.</p>
+        <p class="i18n-pt case-lead">Eu queria lançar um título free-to-play completo sozinho, não um protótipo. Um produto realmente ao vivo, com economia funcional, monetização e loja, algo que um recrutador pudesse abrir e jogar hoje. A pergunta mais difícil não era se o jogo de vôlei seria divertido, era se uma pessoa conseguiria carregar todas as camadas ao mesmo tempo: sensação de jogo, IA dos oponentes, loja, IAP, anúncios, e uma economia ao vivo que precisava se sustentar com jogadores reais sem ninguém mais ali pra segurar o que quebrasse.</p>
       </div>
     </section>
 
@@ -131,15 +117,45 @@
     <section class="case-section" id="decisions">
       <div class="section-head">
         <span class="section-num">§02</span>
-        <h2 class="section-title">Design Decisions</h2>
+        <h2 class="section-title"><span class="i18n-en">Design decisions</span><span class="i18n-pt">Decisões de design</span></h2>
         <span class="section-line"></span>
       </div>
-      <div class="case-body">
-          <div class="case-placeholder">
-            <div class="case-placeholder-tag">Draft · decision log</div>
-            <p>To fill: three to five decisions that actually shaped the game. For each one, state the problem, the options considered, the call made, and the trade-off accepted.</p>
-            <p>To fill: at least one decision that was later reversed, and what the reversal cost.</p>
+      <div class="decisions">
+        <div class="decision">
+          <div class="decision-idx">01 / 05</div>
+          <div class="decision-body">
+            <p class="i18n-en">Standard power-up placement, spawning on the court or dropping automatically, tends to feel either predictable or unfair to whoever didn't get one. I wanted unpredictability without either side feeling cheated. Power-ups arrive carried by birds flying above the players, and a player has to choose to jump and hit one to claim it. What they get can help them, like a super jump, or hurt them, like a raised net or a tiny ball. Every match plays out differently because of it, and since nothing is ever handed to either player for free, it holds up as fair even when it goes badly for someone.</p>
+            <p class="i18n-pt">Posicionamento padrão de power-up, nascendo em ponto fixo da quadra ou caindo automaticamente, tende a parecer previsível ou injusto pra quem não pegou. Eu queria imprevisibilidade sem nenhum dos dois lados se sentir lesado. Os power-ups chegam carregados por pássaros voando acima dos jogadores, e o jogador precisa escolher pular e acertar o pássaro pra reivindicar um. O que ele recebe pode ajudar, como um super pulo, ou atrapalhar, como uma rede alta ou uma bola minúscula. Cada partida acaba sendo diferente por causa disso, e como nada é dado de graça pra nenhum dos lados, o sistema se sustenta como justo mesmo quando o resultado é ruim pra alguém.</p>
           </div>
+        </div>
+        <div class="decision">
+          <div class="decision-idx">02 / 05</div>
+          <div class="decision-body">
+            <p class="i18n-en">If match rewards pay the same amount regardless of performance, every session feels identical and skill stops mattering. I tied coin payouts to how a player actually performed: a win pays more than a loss, and stringing wins together builds a multiplier on top of that. Performance compounds directly into currency instead of every match paying out the same.</p>
+            <p class="i18n-pt">Se a recompensa da partida pagasse o mesmo valor independente do desempenho, toda sessão pareceria igual e habilidade deixaria de importar. Atrelei o pagamento de coins ao desempenho real do jogador: uma vitória paga mais que uma derrota, e encadear vitórias constrói um multiplicador em cima disso. Desempenho vira moeda de forma direta, em vez de toda partida pagar o mesmo valor.</p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-idx">03 / 05</div>
+          <div class="decision-body">
+            <p class="i18n-en">An energy system that quietly runs dry or feels punitive pushes players away instead of bringing them back. Energy limits how long someone can play in one sitting, but it's refillable through missions or a capped daily ad, never a hard wall. The intent is that running out leaves a player wanting one more match, not resenting the game. One gap I caught myself while writing the design document: the timer needs to run on Firebase's server clock, not the device's local one, since a local clock can be reset to fake regeneration.</p>
+            <p class="i18n-pt">Um sistema de energia que esvazia silenciosamente ou parece punitivo afasta o jogador em vez de trazer ele de volta. A energia limita quanto tempo alguém joga numa única sessão, mas é reabastecível por missões ou um anúncio diário limitado, nunca uma parede rígida. A intenção é que ficar sem energia deixe o jogador querendo mais uma partida, não com raiva do jogo. Um gap que eu mesmo peguei enquanto escrevia o documento de design: o timer precisa rodar no relógio de servidor do Firebase, não no relógio local do dispositivo, já que o relógio local pode ser resetado pra falsificar a regeneração.</p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-idx">04 / 05</div>
+          <div class="decision-body">
+            <p class="i18n-en">Without a clear rule for which currency unlocks which tier, a shop risks devaluing its own rarest items over time. The shop splits cosmetics into four tiers. Common costs coins only, rare can go either way depending on the item, and epic and legendary cost gems only. That last rule came directly from the design document, before any shop code existed: never sell a legendary for coins, because it devalues what makes it feel legendary. The whole tiered currency structure exists to enforce that one line.</p>
+            <p class="i18n-pt">Sem uma regra clara de qual moeda destrava qual nível, uma loja corre o risco de desvalorizar seus próprios itens mais raros com o tempo. A loja divide os cosméticos em quatro níveis. Comum custa só coins, Raro pode custar coins ou gems dependendo do item, e Épico e Lendário custam só gems. Essa última regra veio direto do documento de design, antes de existir uma linha sequer de código da loja: nunca vender um Lendário por coins, porque isso desvaloriza o que faz ele parecer lendário. Toda a estrutura de moedas em camadas existe pra sustentar essa única frase.</p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-idx">05 / 05</div>
+          <div class="decision-body">
+            <p class="i18n-en">A starter offer shown to every player at signup tends to get ignored, since a brand new player has no context yet for what any of it is worth. The Starter Pack only triggers after a specific moment: a player's first win, or the first time they hit zero energy. That's the point where coins, an elite cosmetic and energy refills actually mean something to them. The Volley Pass runs ten reward tiers across a season on a free and a premium track, giving players with more time invested a reason to log in daily instead of only when they feel like it.</p>
+            <p class="i18n-pt">Uma oferta inicial mostrada pra todo jogador logo no cadastro tende a ser ignorada, porque um jogador novo ainda não tem contexto pra saber o que aquilo vale. O Starter Pack só é acionado depois de um momento específico: a primeira vitória do jogador, ou a primeira vez que ele zera a energia. É nesse ponto que coins, um cosmético Elite e recarga de energia realmente significam algo pra ele. O Volley Pass roda dez níveis de recompensa ao longo de uma temporada, numa trilha gratuita e outra premium, dando ao jogador mais engajado um motivo pra voltar todo dia, não só quando ele lembra.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -147,36 +163,155 @@
     <section class="case-section" id="process">
       <div class="section-head">
         <span class="section-num">§03</span>
-        <h2 class="section-title">Process and Artifacts</h2>
+        <h2 class="section-title"><span class="i18n-en">Process and artifacts</span><span class="i18n-pt">Processo e artefatos</span></h2>
         <span class="section-line"></span>
       </div>
       <div class="case-body">
-          <div class="case-placeholder">
-            <div class="case-placeholder-tag">Draft · how the work was made</div>
-            <p>To fill: the working process. Prototyping cadence, playtest loop, how balance numbers were tuned, what was documented and what was carried in the build.</p>
-            <p>To fill: the artifacts below. Economy spreadsheets, system diagrams, progression curves, UI flows, build screenshots. Replace each slot with the real image and a one-line caption explaining what it shows.</p>
+        <p class="i18n-en">From the design document's rarity rules:</p>
+        <p class="i18n-pt">Do documento de design, seção de regras de raridade:</p>
+
+        <figure class="gdd-quote">
+          <blockquote>
+            <p class="i18n-en">Never sell a Legendary for coins, it devalues perception. Epics should always cost gems, to create perceived value.</p>
+            <p class="i18n-pt">Nunca vender Lendário por coins, devalua percepção. Épicos sempre com gems para criar valor percebido.</p>
+          </blockquote>
+          <figcaption><span class="i18n-en">Design document · rarity rules · written pre-implementation</span><span class="i18n-pt">Documento de design · regras de raridade · escrito antes da implementação</span></figcaption>
+        </figure>
+
+        <p class="i18n-en" style="margin-top:24px;">That sentence was written before a single line of shop code existed.</p>
+        <p class="i18n-pt" style="margin-top:24px;">Essa frase foi escrita antes de existir uma linha sequer de código da loja.</p>
+
+        <div class="artifact-doc">
+          <div class="artifact-doc-head">
+            <span class="stamp">// GDD · SHOP · <span class="i18n-en">RARITY TABLE</span><span class="i18n-pt">TABELA DE RARIDADE</span></span>
+            <span>FIG. 01</span>
           </div>
-        <div class="artifact-grid">
-          <div class="artifact-slot"><span class="artifact-mark" aria-hidden="true">▣</span><span>Artifact slot 01</span></div>
-          <div class="artifact-slot"><span class="artifact-mark" aria-hidden="true">▣</span><span>Artifact slot 02</span></div>
-          <div class="artifact-slot"><span class="artifact-mark" aria-hidden="true">▣</span><span>Artifact slot 03</span></div>
+          <table class="artifact-table">
+            <thead>
+              <tr>
+                <th><span class="i18n-en">Tier</span><span class="i18n-pt">Nível</span></th>
+                <th><span class="i18n-en">Currency</span><span class="i18n-pt">Moeda</span></th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr><td class="tier"><span class="i18n-en">Common</span><span class="i18n-pt">Comum</span></td><td><span class="i18n-en">Coins only</span><span class="i18n-pt">Só coins</span></td></tr>
+            <tr><td class="tier"><span class="i18n-en">Rare</span><span class="i18n-pt">Raro</span></td><td><span class="i18n-en">Coins or Gems, depending on item</span><span class="i18n-pt">Coins ou gems, dependendo do item</span></td></tr>
+            <tr><td class="tier"><span class="i18n-en">Epic</span><span class="i18n-pt">Épico</span></td><td><span class="i18n-en">Gems only</span><span class="i18n-pt">Só gems</span></td></tr>
+            <tr><td class="tier"><span class="i18n-en">Legendary</span><span class="i18n-pt">Lendário</span></td><td><span class="i18n-en">Gems only, never sellable for Coins</span><span class="i18n-pt">Só gems, nunca vendável por coins</span></td></tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+
+      <div class="case-body" style="max-width:900px;">
+        <div class="case-sub" style="margin-top:52px;"><span class="i18n-en">In game</span><span class="i18n-pt">No jogo</span></div>
+        <div class="gallery" data-gallery="/assets/HeadVolleyClash/"></div>
       </div>
     </section>
 
-    <!-- ── §04 OUTCOME ── -->
-    <section class="case-section" id="outcome">
+    <!-- ── §04 RESULT ── -->
+    <section class="case-section" id="result">
       <div class="section-head">
         <span class="section-num">§04</span>
-        <h2 class="section-title">Outcome</h2>
+        <h2 class="section-title"><span class="i18n-en">Result</span><span class="i18n-pt">Resultado</span></h2>
         <span class="section-line"></span>
       </div>
       <div class="case-body">
-        <p class="case-lead">Launched to ~330 daily installs and pulled organic reach across Brazil, Russia, India and Mexico with zero paid marketing, evidence the loop and store presence could acquire players on their own. It still holds ~40 monthly active users despite no updates since release.</p>
-          <div class="case-placeholder">
-            <div class="case-placeholder-tag">Draft · numbers and evidence</div>
-            <p>To fill: the measurable side. Installs, retention, session length, conversion, wishlists, feedback themes. Give the source and the window for every number, and say plainly where data is thin.</p>
+        <p class="i18n-en case-lead">Head Volley Clash reached roughly 35,000 organic installs across its first seven months live, with zero paid marketing, peaking at 342 installs in a single day shortly after launch. Brazil accounted for about 13.5% of that total, the rest spread internationally. The monthly curve tells the more honest story. Installs declined steadily every month after the July launch spike, from close to 8,000 that month down to around 3,500 by December, consistent with a title that had no post-launch content or live events to sustain interest. It still holds around 40 monthly active users today despite that.</p>
+        <p class="i18n-pt case-lead">Head Volley Clash chegou a cerca de 35 mil instalações orgânicas nos primeiros sete meses ao vivo, sem verba de marketing, com pico de 342 instalações num único dia logo após o lançamento. O Brasil respondeu por cerca de 13,5% desse total, o resto distribuído internacionalmente. A curva mensal conta a história mais honesta. As instalações caíram de forma constante mês a mês depois do pico de lançamento em julho, saindo de quase 8 mil naquele mês pra cerca de 3.500 em dezembro, consistente com um título sem conteúdo pós-lançamento ou eventos ao vivo pra sustentar o interesse. Ainda hoje mantém cerca de 40 usuários ativos mensais apesar disso.</p>
+
+        <figure class="chart-figure">
+          <div class="chart-title"><span class="i18n-en">Monthly installs</span><span class="i18n-pt">Instalações mensais</span></div>
+          <div class="chart-sub"><span class="i18n-en">Jun to Dec 2025 · organic · Google Play Console</span><span class="i18n-pt">Jun a Dez 2025 · orgânico · Google Play Console</span></div>
+          <div class="chart-plot">
+          <div class="bars-v">
+            <div class="bar-v">
+              <div class="bar-value"><span class="i18n-en">2,675</span><span class="i18n-pt">2.675</span></div>
+              <div class="bar-track"><div class="bar-fill" style="height:33.8%"></div></div>
+            </div>
+            <div class="bar-v">
+              <div class="bar-value"><span class="i18n-en">7,904</span><span class="i18n-pt">7.904</span></div>
+              <div class="bar-track"><div class="bar-fill" style="height:100.0%"></div></div>
+            </div>
+            <div class="bar-v">
+              <div class="bar-value"><span class="i18n-en">6,490</span><span class="i18n-pt">6.490</span></div>
+              <div class="bar-track"><div class="bar-fill" style="height:82.1%"></div></div>
+            </div>
+            <div class="bar-v">
+              <div class="bar-value"><span class="i18n-en">5,869</span><span class="i18n-pt">5.869</span></div>
+              <div class="bar-track"><div class="bar-fill" style="height:74.3%"></div></div>
+            </div>
+            <div class="bar-v">
+              <div class="bar-value"><span class="i18n-en">4,740</span><span class="i18n-pt">4.740</span></div>
+              <div class="bar-track"><div class="bar-fill" style="height:60.0%"></div></div>
+            </div>
+            <div class="bar-v">
+              <div class="bar-value"><span class="i18n-en">3,953</span><span class="i18n-pt">3.953</span></div>
+              <div class="bar-track"><div class="bar-fill" style="height:50.0%"></div></div>
+            </div>
+            <div class="bar-v">
+              <div class="bar-value"><span class="i18n-en">3,567</span><span class="i18n-pt">3.567</span></div>
+              <div class="bar-track"><div class="bar-fill" style="height:45.1%"></div></div>
+            </div>
           </div>
+          <div class="bars-labels">
+            <span><span class="i18n-en">Jun</span><span class="i18n-pt">Jun</span></span>
+            <span><span class="i18n-en">Jul</span><span class="i18n-pt">Jul</span></span>
+            <span><span class="i18n-en">Aug</span><span class="i18n-pt">Ago</span></span>
+            <span><span class="i18n-en">Sep</span><span class="i18n-pt">Set</span></span>
+            <span><span class="i18n-en">Oct</span><span class="i18n-pt">Out</span></span>
+            <span><span class="i18n-en">Nov</span><span class="i18n-pt">Nov</span></span>
+            <span><span class="i18n-en">Dec</span><span class="i18n-pt">Dez</span></span>
+          </div>
+          </div>
+          <details class="chart-data">
+            <summary><span class="i18n-en">Data table</span><span class="i18n-pt">Tabela de dados</span></summary>
+            <table>
+              <thead><tr><th><span class="i18n-en">Month</span><span class="i18n-pt">Mês</span></th><th><span class="i18n-en">Installs</span><span class="i18n-pt">Instalações</span></th></tr></thead>
+              <tbody>
+              <tr><td><span class="i18n-en">June 2025</span><span class="i18n-pt">Junho 2025</span></td><td><span class="i18n-en">2,675</span><span class="i18n-pt">2.675</span></td></tr>
+              <tr><td><span class="i18n-en">July 2025</span><span class="i18n-pt">Julho 2025</span></td><td><span class="i18n-en">7,904</span><span class="i18n-pt">7.904</span></td></tr>
+              <tr><td><span class="i18n-en">August 2025</span><span class="i18n-pt">Agosto 2025</span></td><td><span class="i18n-en">6,490</span><span class="i18n-pt">6.490</span></td></tr>
+              <tr><td><span class="i18n-en">September 2025</span><span class="i18n-pt">Setembro 2025</span></td><td><span class="i18n-en">5,869</span><span class="i18n-pt">5.869</span></td></tr>
+              <tr><td><span class="i18n-en">October 2025</span><span class="i18n-pt">Outubro 2025</span></td><td><span class="i18n-en">4,740</span><span class="i18n-pt">4.740</span></td></tr>
+              <tr><td><span class="i18n-en">November 2025</span><span class="i18n-pt">Novembro 2025</span></td><td><span class="i18n-en">3,953</span><span class="i18n-pt">3.953</span></td></tr>
+              <tr><td><span class="i18n-en">December 2025</span><span class="i18n-pt">Dezembro 2025</span></td><td><span class="i18n-en">3,567</span><span class="i18n-pt">3.567</span></td></tr>
+              </tbody>
+            </table>
+          </details>
+        </figure>
+
+        <figure class="chart-figure">
+          <div class="chart-title"><span class="i18n-en">Installs by region</span><span class="i18n-pt">Instalações por região</span></div>
+          <div class="chart-sub"><span class="i18n-en">First 7 months live · share of total installs</span><span class="i18n-pt">Primeiros 7 meses ao vivo · parcela do total</span></div>
+          <div class="bars-h">
+            <div class="bar-h-row">
+              <div class="bar-h-head">
+                <span class="bar-h-name"><span class="i18n-en">Brazil</span><span class="i18n-pt">Brasil</span></span>
+                <span class="bar-h-value"><span class="i18n-en">4,754</span><span class="i18n-pt">4.754</span><span class="pct"><span class="i18n-en">13.5%</span><span class="i18n-pt">13,5%</span></span></span>
+              </div>
+              <div class="bar-h-track"><div class="bar-h-fill" style="width:15.6%"></div></div>
+            </div>
+            <div class="bar-h-row">
+              <div class="bar-h-head">
+                <span class="bar-h-name"><span class="i18n-en">International</span><span class="i18n-pt">Internacional</span></span>
+                <span class="bar-h-value"><span class="i18n-en">30,444</span><span class="i18n-pt">30.444</span><span class="pct"><span class="i18n-en">86.5%</span><span class="i18n-pt">86,5%</span></span></span>
+              </div>
+              <div class="bar-h-track"><div class="bar-h-fill" style="width:100.0%"></div></div>
+            </div>
+          </div>
+          <details class="chart-data">
+            <summary><span class="i18n-en">Data table</span><span class="i18n-pt">Tabela de dados</span></summary>
+            <table>
+              <thead><tr><th><span class="i18n-en">Region</span><span class="i18n-pt">Região</span></th><th><span class="i18n-en">Installs</span><span class="i18n-pt">Instalações</span></th></tr></thead>
+              <tbody>
+              <tr><td><span class="i18n-en">Brazil</span><span class="i18n-pt">Brasil</span></td><td><span class="i18n-en">4,754</span><span class="i18n-pt">4.754</span></td></tr>
+              <tr><td><span class="i18n-en">International</span><span class="i18n-pt">Internacional</span></td><td><span class="i18n-en">30,444</span><span class="i18n-pt">30.444</span></td></tr>
+              <tr><td><span class="i18n-en">Total</span><span class="i18n-pt">Total</span></td><td><span class="i18n-en">35,198</span><span class="i18n-pt">35.198</span></td></tr>
+              </tbody>
+            </table>
+          </details>
+        </figure>
       </div>
     </section>
 
@@ -184,15 +319,16 @@
     <section class="case-section" id="different">
       <div class="section-head">
         <span class="section-num">§05</span>
-        <h2 class="section-title">What I Would Do Differently</h2>
+        <h2 class="section-title"><span class="i18n-en">What I would do differently</span><span class="i18n-pt">O que eu faria diferente</span></h2>
         <span class="section-line"></span>
       </div>
       <div class="case-body">
-          <div class="case-placeholder">
-            <div class="case-placeholder-tag">Draft · retrospective</div>
-            <p>To fill: what would change on a second pass. Be specific about the design call, not the outcome, and name what evidence would have caught it earlier.</p>
-            <p>To fill: what carried forward into the next project.</p>
-          </div>
+        <p class="i18n-en">Multiplayer was part of the original vision from the start, and the customization and cosmetic store were built with it in mind. Real-time physics-based netcode turned out far harder to get right solo than I expected. Volleyball's ball physics need to feel identical on both ends of a connection for a match to feel fair, and that's a much harder synchronization problem than it looks like from the outside. Rather than compromise the core game to force it in, I shelved it. If I did it again, I would prototype the multiplayer networking layer first, before building the store and cosmetic systems around the assumption that it was feasible.</p>
+        <p class="i18n-pt">Multiplayer fazia parte da visão original desde o início, e a customização e a loja de cosméticos foram construídas pensando nisso. Netcode de física em tempo real se mostrou muito mais difícil de acertar sozinho do que eu esperava. A física da bola de vôlei precisa parecer idêntica dos dois lados da conexão pra uma partida parecer justa, e esse é um problema de sincronização bem mais difícil do que parece de fora. Em vez de comprometer o jogo central pra forçar isso, deixei de lado. Se fosse fazer de novo, prototiparia a camada de rede multiplayer primeiro, antes de construir a loja e os sistemas de cosmético em cima da suposição de que era viável.</p>
+        <p class="i18n-en">The midgame economy has a soft cliff. Once a player buys out the Common and Rare cosmetics, there isn't much left worth working toward in coins before gems become the only real progression left, and closing that gap needs a mid-tier system I never got around to building.</p>
+        <p class="i18n-pt">A economia do midgame tem um platô. Depois que o jogador compra os cosméticos Comum e Raro, sobra pouca coisa que valha a pena buscar em coins antes de gems virarem a única progressão real restante, e fechar essa lacuna pede um sistema intermediário que eu nunca cheguei a construir.</p>
+        <p class="i18n-en">D1 retention wasn't tracked at launch, which limited the feedback loop. I was iterating on feel rather than data early on, and that's a gap I'd close from day one next time.</p>
+        <p class="i18n-pt">A retenção D1 não foi rastreada no lançamento, o que limitou o ciclo de feedback. Eu estava iterando por sensação, não por dado, no início, e esse é um gap que eu fecharia desde o primeiro dia numa próxima vez.</p>
       </div>
     </section>
 
@@ -200,7 +336,7 @@
          §06 · OPTIONAL EXTRA SECTION
          Reserved slot. Uncomment and fill when this project earns an extra
          beat: a teardown, a postmortem, a systems deep dive, a video, press.
-         Swap the title and keep the §06 numbering.
+         Author both languages, .i18n-en and .i18n-pt, like every block above.
          ─────────────────────────────────────────────── -->
     <!--
     <section class="case-section" id="extra">
@@ -210,24 +346,26 @@
         <span class="section-line"></span>
       </div>
       <div class="case-body">
-        <p>Content goes here.</p>
+        <p class="i18n-en">Content goes here.</p>
+        <p class="i18n-pt">Conteudo aqui.</p>
       </div>
     </section>
     -->
 
     <!-- ── PAGE NAV ── -->
     <nav class="case-nav" aria-label="Case study navigation">
-      <a class="case-nav-link" href="/projects/legacy-of-allard/"><span class="case-nav-key">Previous</span><span aria-hidden="true">←</span> Legacy of Allard</a>
-      <a class="case-nav-link" href="/projects/tiny-ruins-tycoon/"><span class="case-nav-key">Next</span>Tiny Ruins Tycoon <span aria-hidden="true">→</span></a>
+      <a class="case-nav-link" href="/projects/legacy-of-allard/"><span class="case-nav-key"><span class="i18n-en">Previous</span><span class="i18n-pt">Anterior</span></span><span aria-hidden="true">←</span> Legacy of Allard</a>
+      <a class="case-nav-link" href="/projects/tiny-ruins-tycoon/"><span class="case-nav-key"><span class="i18n-en">Next</span><span class="i18n-pt">Próximo</span></span>Tiny Ruins Tycoon <span aria-hidden="true">→</span></a>
     </nav>
 
   </main>
 
   <footer>
     <span>&copy; Reaperborn Forge · MMXXVI</span>
-    <span>// Forged in Unity · Tempered by iteration</span>
+    <span>// <span class="i18n-en">Forged in Unity · Tempered by iteration</span><span class="i18n-pt">Forjado em Unity · Temperado por iteração</span></span>
     <span>EOF</span>
   </footer>
 
+  <script src="/assets/gallery.js"></script>
 </body>
 </html>

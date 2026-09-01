@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="stylesheet" href="/assets/case.css">
+  <script src="/assets/i18n.js"></script>
 </head>
 <body>
 
@@ -47,7 +48,13 @@
       <span aria-hidden="true">/</span>
       <span class="current">Tiny Ruins Tycoon</span>
     </nav>
-    <a class="back-btn" href="/?view=recruiter#rec-projects"><span aria-hidden="true">←</span> Back</a>
+    <div class="header-controls">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="toggle-btn" data-set-lang="en">EN</button>
+        <button type="button" class="toggle-btn" data-set-lang="pt">PT</button>
+      </div>
+      <a class="back-btn" href="/?view=recruiter#rec-projects"><span aria-hidden="true">←</span> <span class="i18n-en">Back</span><span class="i18n-pt">Voltar</span></a>
+    </div>
   </header>
 
   <main>
