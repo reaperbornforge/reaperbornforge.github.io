@@ -53,7 +53,7 @@
         <button type="button" class="toggle-btn" data-set-lang="en">EN</button>
         <button type="button" class="toggle-btn" data-set-lang="pt">PT</button>
       </div>
-      <a class="back-btn" href="/?view=recruiter#rec-projects"><span aria-hidden="true">←</span> <span class="i18n-en">Back</span><span class="i18n-pt">Voltar</span></a>
+      <a class="back-btn" href="/?view=recruiter#rec-projects"><span class="i18n-en">Back</span><span class="i18n-pt">Voltar</span></a>
     </div>
   </header>
 
@@ -79,7 +79,7 @@
             </div>
             <div class="case-meta-cell case-meta-wide">
               <div class="case-meta-key"><span class="i18n-en">Stack</span><span class="i18n-pt">Stack</span></div>
-              <div class="case-meta-val">Unity · Firebase/Firestore · Unity Ads · Unity IAP · Google Play</div>
+              <div class="case-meta-val">Unity, Firebase/Firestore, Unity Ads, Unity IAP, Google Play</div>
             </div>
           </div>
 
@@ -123,13 +123,14 @@
       <div class="decisions">
         <div class="decision">
           <div class="decision-idx">01 / 05</div>
-          <div class="decision-body">
+          <div class="decision-body has-pair">
+            <div class="paired">
+              <div class="paired-text">
             <p class="i18n-en">Standard power-up placement, spawning on the court or dropping automatically, tends to feel either predictable or unfair to whoever didn't get one. I wanted unpredictability without either side feeling cheated. Power-ups arrive carried by birds flying above the players, and a player has to choose to jump and hit one to claim it. What they get can help them, like a super jump, or hurt them, like a raised net or a tiny ball. Every match plays out differently because of it, and since nothing is ever handed to either player for free, it holds up as fair even when it goes badly for someone.</p>
             <p class="i18n-pt">Posicionamento padrão de power-up, nascendo em ponto fixo da quadra ou caindo automaticamente, tende a parecer previsível ou injusto pra quem não pegou. Eu queria imprevisibilidade sem nenhum dos dois lados se sentir lesado. Os power-ups chegam carregados por pássaros voando acima dos jogadores, e o jogador precisa escolher pular e acertar o pássaro pra reivindicar um. O que ele recebe pode ajudar, como um super pulo, ou atrapalhar, como uma rede alta ou uma bola minúscula. Cada partida acaba sendo diferente por causa disso, e como nada é dado de graça pra nenhum dos lados, o sistema se sustenta como justo mesmo quando o resultado é ruim pra alguém.</p>
-            <div class="artifact-doc">
-              <div class="artifact-doc-head">
-                <span class="stamp"><span class="i18n-en">// GDD · POWER-UPS · EFFECTS ROSTER</span><span class="i18n-pt">// GDD · POWER-UPS · LISTA DE EFEITOS</span></span>
               </div>
+              <div class="paired-art">
+            <div class="artifact-doc">
               <div class="artifact-roster">
                 <span class="roster-item"><span class="i18n-en">Super Jump</span><span class="i18n-pt">Super Pulo</span></span>
                 <span class="roster-item"><span class="i18n-en">Super Speed</span><span class="i18n-pt">Super Velocidade</span></span>
@@ -140,18 +141,21 @@
                 <span class="roster-item"><span class="i18n-en">Low Net</span><span class="i18n-pt">Rede Baixa</span></span>
               </div>
             </div>
+            <div class="artifact-caption"><span class="i18n-en">The seven effects a bird can drop, helpful and harmful.</span><span class="i18n-pt">Os sete efeitos que um pássaro pode soltar, os bons e os ruins.</span></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="decision">
           <div class="decision-idx">02 / 05</div>
-          <div class="decision-body">
+          <div class="decision-body has-pair">
+            <div class="paired">
+              <div class="paired-text">
             <p class="i18n-en">If match rewards pay the same amount regardless of performance, every session feels identical and skill stops mattering. I tied coin payouts to how a player actually performed: a win pays more than a loss, and stringing wins together builds a multiplier on top of that. Performance compounds directly into currency instead of every match paying out the same.</p>
             <p class="i18n-pt">Se a recompensa da partida pagasse o mesmo valor independente do desempenho, toda sessão pareceria igual e habilidade deixaria de importar. Atrelei o pagamento de coins ao desempenho real do jogador: uma vitória paga mais que uma derrota, e encadear vitórias constrói um multiplicador em cima disso. Desempenho vira moeda de forma direta, em vez de toda partida pagar o mesmo valor.</p>
-            <div class="artifact-doc">
-              <div class="artifact-doc-head">
-                <span class="stamp"><span class="i18n-en">// GDD · MATCH REWARDS TABLE</span><span class="i18n-pt">// GDD · TABELA DE RECOMPENSAS POR PARTIDA</span></span>
-                <span>FIG. 02</span>
               </div>
+              <div class="paired-art">
+            <div class="artifact-doc">
               <table class="artifact-table">
                 <thead>
                   <tr><th><span class="i18n-en">Event</span><span class="i18n-pt">Evento</span></th><th><span class="i18n-en">Reward</span><span class="i18n-pt">Recompensa</span></th></tr>
@@ -166,6 +170,8 @@
                   <tr><td class="event"><span class="i18n-en">Win streak (3, 5, 10)</span><span class="i18n-pt">Sequência de vitórias (3, 5, 10)</span></td><td><span class="i18n-en">Progressive bonus</span><span class="i18n-pt">Bônus progressivo</span></td></tr>
                 </tbody>
               </table>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -200,9 +206,13 @@
         <h2 class="section-title"><span class="i18n-en">Process and artifacts</span><span class="i18n-pt">Processo e artefatos</span></h2>
         <span class="section-line"></span>
       </div>
-      <div class="case-body">
+      <div class="case-body case-body-wide">
+        <div class="paired paired-lead">
+          <div class="paired-text">
         <p class="i18n-en">From the design document's rarity rules:</p>
         <p class="i18n-pt">Do documento de design, seção de regras de raridade:</p>
+          </div>
+          <div class="paired-art">
 
         <figure class="gdd-quote">
           <blockquote>
@@ -211,15 +221,17 @@
           </blockquote>
           <figcaption><span class="i18n-en">Design document · rarity rules · written pre-implementation</span><span class="i18n-pt">Documento de design · regras de raridade · escrito antes da implementação</span></figcaption>
         </figure>
+          </div>
+        </div>
 
+        <div class="paired paired-lead">
+          <div class="paired-text">
         <p class="i18n-en" style="margin-top:24px;">That sentence was written before a single line of shop code existed.</p>
         <p class="i18n-pt" style="margin-top:24px;">Essa frase foi escrita antes de existir uma linha sequer de código da loja.</p>
+          </div>
+          <div class="paired-art">
 
         <div class="artifact-doc">
-          <div class="artifact-doc-head">
-            <span class="stamp">// GDD · SHOP · <span class="i18n-en">RARITY TABLE</span><span class="i18n-pt">TABELA DE RARIDADE</span></span>
-            <span>FIG. 01</span>
-          </div>
           <table class="artifact-table">
             <thead>
               <tr>
@@ -235,9 +247,11 @@
             </tbody>
           </table>
         </div>
+          </div>
+        </div>
       </div>
 
-      <div class="case-body" style="max-width:900px;">
+      <div class="case-body" style="max-width:1180px;">
         <div class="case-sub" style="margin-top:52px;"><span class="i18n-en">In game</span><span class="i18n-pt">No jogo</span></div>
         <div class="gallery" data-gallery="/assets/HeadVolleyClash/"></div>
       </div>
@@ -250,13 +264,17 @@
         <h2 class="section-title"><span class="i18n-en">Result</span><span class="i18n-pt">Resultado</span></h2>
         <span class="section-line"></span>
       </div>
-      <div class="case-body">
+      <div class="case-body case-body-wide">
+        <div class="paired">
+          <div class="paired-text">
         <p class="i18n-en case-lead">Head Volley Clash reached roughly 35,000 organic installs across its first seven months live, with zero paid marketing, peaking at 342 installs in a single day shortly after launch. Brazil accounted for about 13.5% of that total, the rest spread internationally. The monthly curve tells the more honest story. Installs declined steadily every month after the July launch spike, from close to 8,000 that month down to around 3,500 by December, consistent with a title that had no post-launch content or live events to sustain interest. It still holds around 40 monthly active users today despite that.</p>
         <p class="i18n-pt case-lead">Head Volley Clash chegou a cerca de 35 mil instalações orgânicas nos primeiros sete meses ao vivo, sem verba de marketing, com pico de 342 instalações num único dia logo após o lançamento. O Brasil respondeu por cerca de 13,5% desse total, o resto distribuído internacionalmente. A curva mensal conta a história mais honesta. As instalações caíram de forma constante mês a mês depois do pico de lançamento em julho, saindo de quase 8 mil naquele mês pra cerca de 3.500 em dezembro, consistente com um título sem conteúdo pós-lançamento ou eventos ao vivo pra sustentar o interesse. Ainda hoje mantém cerca de 40 usuários ativos mensais apesar disso.</p>
+          </div>
+          <div class="paired-art">
 
         <figure class="chart-figure">
           <div class="chart-title"><span class="i18n-en">Monthly installs</span><span class="i18n-pt">Instalações mensais</span></div>
-          <div class="chart-sub"><span class="i18n-en">Jun to Dec 2025 · organic · Google Play Console</span><span class="i18n-pt">Jun a Dez 2025 · orgânico · Google Play Console</span></div>
+          <div class="chart-sub"><span class="i18n-en">Jun to Dec 2025, organic, Google Play Console</span><span class="i18n-pt">Jun a Dez 2025, orgânico, Google Play Console</span></div>
           <div class="chart-plot">
           <div class="bars-v">
             <div class="bar-v">
@@ -317,7 +335,7 @@
 
         <figure class="chart-figure">
           <div class="chart-title"><span class="i18n-en">Installs by region</span><span class="i18n-pt">Instalações por região</span></div>
-          <div class="chart-sub"><span class="i18n-en">First 7 months live · share of total installs</span><span class="i18n-pt">Primeiros 7 meses ao vivo · parcela do total</span></div>
+          <div class="chart-sub"><span class="i18n-en">First 7 months live, share of total installs</span><span class="i18n-pt">Primeiros 7 meses ao vivo, parcela do total</span></div>
           <div class="bars-h">
             <div class="bar-h-row">
               <div class="bar-h-head">
@@ -346,6 +364,8 @@
             </table>
           </details>
         </figure>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -388,8 +408,8 @@
 
     <!-- ── PAGE NAV ── -->
     <nav class="case-nav" aria-label="Case study navigation">
-      <a class="case-nav-link" href="/projects/legacy-of-allard/"><span class="case-nav-key"><span class="i18n-en">Previous</span><span class="i18n-pt">Anterior</span></span><span aria-hidden="true">←</span> Legacy of Allard</a>
-      <a class="case-nav-link" href="/projects/tiny-ruins-tycoon/"><span class="case-nav-key"><span class="i18n-en">Next</span><span class="i18n-pt">Próximo</span></span>Tiny Ruins Tycoon <span aria-hidden="true">→</span></a>
+      <a class="case-nav-link" href="/projects/legacy-of-allard/"><span class="case-nav-key"><span class="i18n-en">Previous</span><span class="i18n-pt">Anterior</span></span>Legacy of Allard</a>
+      <a class="case-nav-link" href="/projects/tiny-ruins-tycoon/"><span class="case-nav-key"><span class="i18n-en">Next</span><span class="i18n-pt">Próximo</span></span>Tiny Ruins Tycoon</a>
     </nav>
 
   </main>

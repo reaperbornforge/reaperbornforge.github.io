@@ -606,7 +606,7 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
 /* ══════════════════════════════════════════════════════════════
    GALLERY
    ══════════════════════════════════════════════════════════════ */
-.gallery { max-width: 900px; margin: 36px 0 0; outline: none; }
+.gallery { max-width: 1180px; margin: 36px 0 0; outline: none; }
 .gallery:focus-visible { outline: 1px solid rgba(200,16,46,.6); outline-offset: 6px; }
 .gallery-stage {
   position: relative;
@@ -855,6 +855,64 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
 .chart-data td:last-child, .chart-data th:last-child { text-align: right; padding-right: 0; }
 
 /* ══════════════════════════════════════════════════════════════
+   PAIRED TEXT + ARTIFACT
+   A paragraph and the artifact that belongs to it sit side by side
+   from 900px up, and stack back into reading order below that.
+   Paragraphs with no artifact keep the narrow measure they had.
+   ══════════════════════════════════════════════════════════════ */
+.paired { display: grid; gap: 24px; align-items: start; }
+.paired-text > p:last-child { margin-bottom: 0; }
+.paired-art > * { margin-top: 0; }
+.paired-art > * + * { margin-top: 22px; }
+
+@media (min-width: 900px) {
+  .paired { grid-template-columns: minmax(0, 55fr) minmax(0, 45fr); gap: 44px; }
+  /* A one-line lead-in next to a full table leaves most of a 55% column
+     empty. These pairs give the artifact the room instead. */
+  .paired-lead { grid-template-columns: minmax(0, 35fr) minmax(0, 65fr); }
+
+  /* Widen only the containers that actually hold a pair. */
+  .decisions { max-width: 1180px; }
+  .decision-body { max-width: 732px; }
+  .decision-body.has-pair { max-width: none; }
+  .case-body-wide { max-width: 1180px; }
+  /* Two pairs in a row: without this the second artifact butts straight
+     into the bottom of the first one and they read as a single block. */
+  .case-body-wide > .paired + .paired { margin-top: 52px; }
+
+  /* The artifact column is roughly 470px, so the things built for a
+     780px column need to be told how to behave in half that. */
+  .paired-art .chart-figure { padding: 20px 18px 18px; }
+  .paired-art .chart-plot .bars-v,
+  .paired-art .chart-plot .bars-labels { min-width: 340px; }
+  .paired-art .bars-v { height: 200px; }
+  .paired-art .gdd-quote { padding: 26px 22px 22px 32px; }
+  .paired-art .artifact-table th { padding: 12px 16px; }
+  .paired-art .artifact-table td { padding: 12px 16px; }
+  .paired-art .artifact-table.table-tight { min-width: 430px; }
+  .paired-art .artifact-table.table-tight th,
+  .paired-art .artifact-table.table-tight td { padding-left: 11px; padding-right: 11px; font-size: 12px; }
+  .paired-art .diagram-body { padding: 20px 16px 16px; }
+  .paired-art .diagram-pair { gap: 12px; }
+  .paired-art .diagram-panel { padding: 14px 12px 12px; }
+  /* Four slots across a half-width column would be unreadable; 2x2 keeps
+     the two builds comparable side by side, which is the point. */
+  .paired-art .sliver-slots { grid-template-columns: repeat(2, 1fr); }
+  .paired-art .radial-stage { height: 176px; }
+  .paired-art .artifact-roster.roster-flush { gap: 5px; }
+  .paired-art .roster-flush .roster-item { font-size: 9px; padding: 5px 7px; }
+}
+
+/* Caption under an artifact, in a normal sentence. Only where it earns it. */
+.artifact-caption {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(232,228,216,.5);
+}
+
+/* ══════════════════════════════════════════════════════════════
    SYSTEM DIAGRAMS · built in HTML/CSS, framed like the artifacts
    Reuses .artifact-doc for the frame and header stamp.
    ══════════════════════════════════════════════════════════════ */
@@ -995,11 +1053,13 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
 .line-chart { display: block; width: 100%; height: auto; overflow: visible; }
 .lc-grid { stroke: #171b23; stroke-width: 1; }
 .lc-axis { stroke: #2a2f3a; stroke-width: 1; }
-.lc-line { fill: none; stroke: #C8102E; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
-.lc-dot { fill: #0A0C10; stroke: #C8102E; stroke-width: 1.5; }
+.lc-line { fill: none; stroke: #C8102E; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.lc-dot { fill: #0A0C10; stroke: #C8102E; stroke-width: 2; }
+/* Sized in viewBox units: the chart scales down to roughly 0.6 in the
+   paired column, so 15 here lands near 9px on screen. */
 .lc-tick {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: .06em;
   fill: rgba(232,228,216,.42);
 }

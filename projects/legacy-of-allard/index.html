@@ -53,7 +53,7 @@
         <button type="button" class="toggle-btn" data-set-lang="en">EN</button>
         <button type="button" class="toggle-btn" data-set-lang="pt">PT</button>
       </div>
-      <a class="back-btn" href="/?view=recruiter#rec-projects"><span aria-hidden="true">←</span> <span class="i18n-en">Back</span><span class="i18n-pt">Voltar</span></a>
+      <a class="back-btn" href="/?view=recruiter#rec-projects"><span class="i18n-en">Back</span><span class="i18n-pt">Voltar</span></a>
     </div>
   </header>
 
@@ -79,12 +79,12 @@
             </div>
             <div class="case-meta-cell case-meta-wide">
               <div class="case-meta-key"><span class="i18n-en">Stack</span><span class="i18n-pt">Stack</span></div>
-              <div class="case-meta-val"><span class="i18n-en">Unity · Photon PUN2 (migrating to Photon Fusion) · Destructible2D · FMOD</span><span class="i18n-pt">Unity · Photon PUN2 (migrando para Photon Fusion) · Destructible2D · FMOD</span></div>
+              <div class="case-meta-val"><span class="i18n-en">Unity, Photon PUN2 (migrating to Photon Fusion), Destructible2D, FMOD</span><span class="i18n-pt">Unity, Photon PUN2 (migrando para Photon Fusion), Destructible2D, FMOD</span></div>
             </div>
           </div>
 
           <div class="chips">
-            <span class="chip chip-accent">● <span class="i18n-en">Live alpha · WebGL</span><span class="i18n-pt">Alpha ao vivo · WebGL</span></span>
+            <span class="chip chip-accent">● <span class="i18n-en">Live alpha, WebGL</span><span class="i18n-pt">Alpha ao vivo, WebGL</span></span>
             <span class="chip"><span class="i18n-en">Steam page live</span><span class="i18n-pt">Página ativa na Steam</span></span>
           </div>
 
@@ -92,7 +92,7 @@
             <a class="play-btn" href="https://game.playallard.com" target="_blank" rel="noreferrer">
               <span class="play-icon" aria-hidden="true">▶</span><span class="i18n-en">Play the alpha</span><span class="i18n-pt">Jogar o alpha</span>
             </a>
-            <a class="ghost-btn" href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer"><span class="i18n-en">Steam page</span><span class="i18n-pt">Página na Steam</span> <span aria-hidden="true">→</span></a>
+            <a class="ghost-btn" href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer"><span class="i18n-en">Steam page</span><span class="i18n-pt">Página na Steam</span></a>
           </div>
         </div>
 
@@ -127,16 +127,16 @@
         <!-- 01 · Sliver -->
         <div class="decision">
           <div class="decision-idx">01 / 05</div>
-          <div class="decision-body">
+          <div class="decision-body has-pair">
+            <div class="paired">
+              <div class="paired-text">
             <p class="i18n-en">Most RPGs tie your abilities strictly to your class. I designed a build system called Sliver instead. A Sliver has four ability slots, and each slot can come from a different class. A Hunter with a fully "pure" Sliver plays four Hunter abilities, but the same Hunter can equip a Sliver that mixes in Mage and Priest skills instead. It turns class choice into a starting point rather than a ceiling, and it's the reason the character's real build lives in the Sliver, not just in which class icon they picked at creation. It was originally scoped as a later addition in the design document, and seeing it land in the live build ahead of that plan was one of the better surprises of the project.</p>
             <p class="i18n-pt">A maioria dos RPGs prende as habilidades rigidamente à classe. Eu desenhei um sistema de build chamado Sliver em vez disso. Um Sliver tem quatro slots de habilidade, e cada slot pode vir de uma classe diferente. Um Hunter com um Sliver totalmente "puro" joga quatro habilidades de Hunter, mas o mesmo Hunter pode equipar um Sliver que misture habilidades de Mage e Priest. Isso transforma a escolha de classe num ponto de partida, não num teto, e é por isso que o build real do personagem mora no Sliver, não só no ícone de classe escolhido na criação. Originalmente estava planejado como uma adição futura no documento de design, e ver isso chegar na build ao vivo antes do previsto foi uma das melhores surpresas do projeto.</p>
+              </div>
+              <div class="paired-art">
 
             <!-- DIAGRAM 01 · Sliver, pure vs mixed -->
             <figure class="artifact-doc diagram">
-              <div class="artifact-doc-head">
-                <span class="stamp">// <span class="i18n-en">SLIVER · ABILITY SLOTS</span><span class="i18n-pt">SLIVER · SLOTS DE HABILIDADE</span></span>
-                <span>FIG. 01</span>
-              </div>
               <div class="diagram-body">
                 <div class="diagram-pair">
                   <div class="diagram-panel">
@@ -157,7 +157,7 @@
                       <div class="slot cls-hunter"><span class="slot-key">E</span><span class="slot-cls">Hunter</span></div>
                       <div class="slot cls-priest"><span class="slot-key">R</span><span class="slot-cls">Priest</span></div>
                     </div>
-                    <div class="diagram-note">2 × Hunter · 1 × Mage · 1 × Priest</div>
+                    <div class="diagram-note">2 × Hunter, 1 × Mage, 1 × Priest</div>
                   </div>
                 </div>
                 <div class="diagram-legend">
@@ -167,22 +167,25 @@
                 </div>
               </div>
             </figure>
+            <div class="artifact-caption"><span class="i18n-en">The same four slots, filled from one class or from three.</span><span class="i18n-pt">Os mesmos quatro slots, preenchidos por uma classe só ou por três.</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- 02 · Critical -->
         <div class="decision">
           <div class="decision-idx">02 / 05</div>
-          <div class="decision-body">
+          <div class="decision-body has-pair">
+            <div class="paired">
+              <div class="paired-text">
             <p class="i18n-en">I wanted the Critical stat to matter beyond a bigger number on a damage tooltip, so I designed it to also expand how much terrain a hit destroys, not just how much area the damage covers. That means a character built around Critical doesn't just hit harder, they reshape the battlefield more aggressively every time they land a hit. It's a quiet decision, it's never spelled out to the player, but it means the two classes with the highest Critical are, by design, the ones that carve up the map fastest. Every ability also carries its own terrain destruction radius as an authored stat, separate from Critical's multiplier on top of it, and there's a clear rule running through the data: every support, buff and control ability destroys zero terrain, by design. The battlefield only gets reshaped by the abilities meant to hit hard.</p>
             <p class="i18n-pt">Eu queria que o atributo Critical importasse além de um número maior no tooltip de dano, então desenhei ele pra também expandir quanto terreno um golpe destrói, não só quanto de área o dano cobre. Isso significa que um personagem construído em torno de Critical não só bate mais forte, ele remodela o campo de batalha de forma mais agressiva a cada golpe certeiro. É uma decisão discreta, nunca é explicada ao jogador, mas significa que as duas classes com Critical mais alto são, por design, as que mais desfiguram o mapa. Toda habilidade também carrega seu próprio raio de destruição de terreno como um stat autoral, separado do multiplicador que o Critical aplica por cima, e existe uma regra clara percorrendo os dados: toda habilidade de suporte, buff e controle destrói zero de terreno, por design. O campo de batalha só é remodelado pelas habilidades feitas pra bater forte.</p>
+              </div>
+              <div class="paired-art">
 
             <!-- DIAGRAM 02 · Critical, damage area vs terrain destroyed -->
             <figure class="artifact-doc diagram">
-              <div class="artifact-doc-head">
-                <span class="stamp">// <span class="i18n-en">CRITICAL · HIT FOOTPRINT</span><span class="i18n-pt">CRITICAL · PEGADA DO GOLPE</span></span>
-                <span>FIG. 02</span>
-              </div>
               <div class="diagram-body">
                 <div class="diagram-pair">
                   <div class="diagram-panel">
@@ -192,16 +195,16 @@
                       <span class="radial-ring ring-damage" style="width:64px;height:64px;"></span>
                       <span class="radial-ring ring-hit"></span>
                     </div>
-                    <div class="diagram-note"><span class="i18n-en">Small damage area, terrain barely widens past it</span><span class="i18n-pt">Área de dano pequena, terreno mal passa dela</span></div>
+                    <div class="diagram-note"><span class="i18n-en">Damage area and terrain destruction both start small</span><span class="i18n-pt">Área de dano e destruição de terreno começam pequenas, as duas</span></div>
                   </div>
                   <div class="diagram-panel">
                     <div class="diagram-label"><span class="i18n-en">High Critical</span><span class="i18n-pt">Critical Alto</span></div>
                     <div class="radial-stage" aria-hidden="true">
-                      <span class="radial-ring ring-terrain" style="width:170px;height:170px;"></span>
-                      <span class="radial-ring ring-damage" style="width:100px;height:100px;"></span>
+                      <span class="radial-ring ring-terrain" style="width:154px;height:154px;"></span>
+                      <span class="radial-ring ring-damage" style="width:102px;height:102px;"></span>
                       <span class="radial-ring ring-hit"></span>
                     </div>
-                    <div class="diagram-note"><span class="i18n-en">Both grow, terrain grows the harder of the two</span><span class="i18n-pt">Os dois crescem, o terreno cresce mais que o dano</span></div>
+                    <div class="diagram-note"><span class="i18n-en">The same multiplier expands both together</span><span class="i18n-pt">O mesmo multiplicador expande as duas juntas</span></div>
                   </div>
                 </div>
                 <div class="diagram-legend">
@@ -210,6 +213,9 @@
                 </div>
               </div>
             </figure>
+            <div class="artifact-caption"><span class="i18n-en">Both circles scale with the same Critical multiplier, so neither one outgrows the other.</span><span class="i18n-pt">Os dois círculos escalam com o mesmo multiplicador de Critical, então nenhum cresce mais que o outro.</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -225,14 +231,18 @@
         <!-- 04 · Mana curve -->
         <div class="decision">
           <div class="decision-idx">04 / 05</div>
-          <div class="decision-body">
+          <div class="decision-body has-pair">
+            <div class="paired">
+              <div class="paired-text">
             <p class="i18n-en">Mana in Legacy of Allard doesn't start full. It starts at 1 and grows by 1 every round, capped at 10, so an 8-cost ultimate simply isn't available until round 8. That rule is what gives the whole ability curve its shape, cheap options open the game, and the biggest plays are something both players are racing toward, not something available from turn one.</p>
             <p class="i18n-pt">A mana em Legacy of Allard não começa cheia. Ela começa em 1 e cresce 1 por rodada, com teto em 10, então uma ultimate de custo 8 simplesmente não está disponível até a rodada 8. Essa regra é o que dá forma à curva inteira de habilidades, opções baratas abrem o jogo, e as jogadas mais impactantes são algo que os dois jogadores estão correndo para alcançar, não algo disponível desde o primeiro turno.</p>
+              </div>
+              <div class="paired-art">
 
             <!-- LINE CHART · mana pool by round -->
             <figure class="chart-figure">
               <div class="chart-title"><span class="i18n-en">Mana Pool by Round</span><span class="i18n-pt">Pool de Mana por Rodada</span></div>
-              <div class="chart-sub"><span class="i18n-en">Starts at 1 · +1 per round · capped at 10</span><span class="i18n-pt">Começa em 1 · +1 por rodada · teto em 10</span></div>
+              <div class="chart-sub"><span class="i18n-en">Starts at 1, +1 per round, capped at 10</span><span class="i18n-pt">Começa em 1, +1 por rodada, teto em 10</span></div>
               <svg class="line-chart" viewBox="0 0 720 288" role="img" preserveAspectRatio="xMidYMid meet">
                 <title>Mana pool by round</title>
                 <desc>Available mana climbs from 1 in round 1 to 10 in round 10, then stays flat at 10 through rounds 11 and 12.</desc>
@@ -321,22 +331,24 @@
                 </table>
               </details>
             </figure>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- 05 · Ability design axes -->
         <div class="decision">
           <div class="decision-idx">05 / 05</div>
-          <div class="decision-body">
+          <div class="decision-body has-pair">
+            <div class="paired">
+              <div class="paired-text">
             <p class="i18n-en">Every ability I design has to earn its place instead of just filling out a class kit, so I keep a running list of what the roster has already done: simple elemental projectiles, stationary orbs, mine-style traps, arrow rains, line cuts, generic leaps, area shields, area heals, faith DOTs, blade buffs, shadow or fire storms, blinks and smoke. Anything that repeats one of those patterns doesn't count as new, even if the numbers are different. Instead I design around a smaller set of angles that actually feel different to play against: delayed damage, bonds between units, denial of line of sight, damage that has to be "paid back," manipulation of information, persistent structures. Elemental Inversion, one of the abilities on that list, maps incoming elemental damage types to a different one, fire becomes frost, for example, which is a rule about how damage behaves, not just a bigger number.</p>
             <p class="i18n-pt">Toda habilidade que eu desenho precisa justificar sua existência em vez de só preencher o kit de uma classe, então mantenho uma lista viva do que o elenco já fez: projéteis elementais simples, orbes estacionários, armadilhas tipo mina, chuvas de flechas, cortes em linha, saltos genéricos, escudos de área, cura em área, DOTs de fé, buffs de lâmina, tempestades de sombra ou fogo, blink e fumaça. Qualquer coisa que repita um desses padrões não conta como novidade, mesmo que os números sejam diferentes. Em vez disso, desenho em torno de um conjunto menor de eixos que realmente parecem diferentes de enfrentar: dano adiado, vínculos entre unidades, negação de linha de visão, dano que precisa ser "pago de volta", manipulação de informação, estruturas persistentes. Inversão Elemental, uma das habilidades dessa lista, mapeia o tipo de dano elemental recebido para outro, fogo vira gelo, por exemplo, que é uma regra sobre como o dano se comporta, não só um número maior.</p>
+              </div>
+              <div class="paired-art">
 
             <!-- Patterns already spent vs. angles still worth designing into -->
             <figure class="artifact-doc diagram">
-              <div class="artifact-doc-head">
-                <span class="stamp">// <span class="i18n-en">ABILITY DESIGN · SPENT PATTERNS VS. OPEN ANGLES</span><span class="i18n-pt">DESIGN DE HABILIDADE · PADRÕES GASTOS VS. EIXOS ABERTOS</span></span>
-                <span>FIG. 03</span>
-              </div>
               <div class="diagram-body">
                 <div class="diagram-pair">
                   <div class="diagram-panel">
@@ -372,6 +384,8 @@
                 </div>
               </div>
             </figure>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -385,9 +399,13 @@
         <h2 class="section-title"><span class="i18n-en">Process and artifacts</span><span class="i18n-pt">Processo e artefatos</span></h2>
         <span class="section-line"></span>
       </div>
-      <div class="case-body">
+      <div class="case-body case-body-wide">
+        <div class="paired">
+          <div class="paired-text">
         <p class="i18n-en">An early build of the game let debuffs stack up across five named "elements," Fire, Frost, Venom, Shadow and Arcane, and it's tempting to describe that as a full elemental interaction system. It isn't, and I want this page to say what's actually there instead of what sounds more impressive. Fire always burns, Frost always freezes, Venom always poisons, but Shadow branches into three different effects depending on the specific ability, and Arcane abilities currently apply no debuff at all. The closest thing to a real cross-element interaction is a single Hunter ability that fires three arrows in sequence, one Fire, one Poison, one Frost, stacking all three debuffs from one cast. It's simultaneous application, not a reaction between schools, but it's real. What the game actually has, and what I think is more interesting, is a parity system between caster and target: specific effects like Cursed and Inverted Effects accumulate as "flips," and the number of active flips determines whether damage and healing behave normally or invert. It's a stranger, more systemic kind of interaction than a simple elemental wheel, and it's the real cross-mechanic in the game.</p>
         <p class="i18n-pt">Uma build inicial do jogo deixava debuffs se acumularem em cinco "elementos" nomeados, Fire, Frost, Venom, Shadow e Arcane, e é tentador descrever isso como um sistema completo de interação elemental. Não é, e prefiro que esta página diga o que realmente existe em vez do que soa mais impressionante. Fire sempre queima, Frost sempre congela, Venom sempre envenena, mas Shadow se ramifica em três efeitos diferentes dependendo da habilidade específica, e habilidades de Arcane hoje não aplicam debuff nenhum. A coisa mais próxima de uma interação real entre elementos é uma única habilidade do Hunter que dispara três flechas em sequência, uma de Fogo, uma de Veneno, uma de Gelo, acumulando os três debuffs num só uso. É aplicação simultânea, não reação entre escolas, mas é real. O que o jogo realmente tem, e o que acho mais interessante, é um sistema de paridade entre conjurador e alvo: efeitos específicos como Cursed e Inverted Effects se acumulam como "flips", e o número de flips ativos determina se dano e cura se comportam normalmente ou se invertem. É um tipo de interação mais estranho e mais sistêmico do que uma roda elemental simples, e é o verdadeiro mecanismo cruzado do jogo.</p>
+          </div>
+          <div class="paired-art">
 
         <figure class="gdd-quote">
           <blockquote>
@@ -398,10 +416,6 @@
         </figure>
 
         <div class="artifact-doc">
-          <div class="artifact-doc-head">
-            <span class="stamp">// <span class="i18n-en">ELEMENTS · DEBUFF APPLIED</span><span class="i18n-pt">ELEMENTOS · DEBUFF APLICADO</span></span>
-            <span>FIG. 04</span>
-          </div>
           <table class="artifact-table">
             <thead>
               <tr>
@@ -418,15 +432,17 @@
             </tbody>
           </table>
         </div>
+          </div>
+        </div>
 
+        <div class="paired">
+          <div class="paired-text">
         <p class="i18n-en" style="margin-top:36px;">A tooltip audit we ran on the ability roster found six systemic problems: eight abilities dealt damage without ever showing the number, sixty-one of sixty-seven abilities had no Portuguese translation, and some descriptions flatly contradicted what the ability actually did, one skill described as 'blinding' when it applies Vulnerable instead. We fixed what the audit found, Portuguese coverage went from 23 entries to 151, but auditing first meant we fixed the right things instead of guessing.</p>
         <p class="i18n-pt" style="margin-top:36px;">Uma auditoria de tooltips que rodamos no elenco de habilidades encontrou seis problemas sistêmicos: oito habilidades causavam dano sem nunca mostrar o número, sessenta e uma das sessenta e sete habilidades não tinham tradução pro português, e algumas descrições contradiziam abertamente o que a habilidade realmente fazia, uma skill descrita como 'cegante' quando na verdade aplica Vulnerable. Corrigimos o que a auditoria encontrou, a cobertura em português foi de 23 pra 151 entradas, mas auditar primeiro significou corrigir as coisas certas em vez de adivinhar.</p>
+          </div>
+          <div class="paired-art">
 
         <div class="artifact-doc">
-          <div class="artifact-doc-head">
-            <span class="stamp">// <span class="i18n-en">GDD · ABILITY PARAMETERS</span><span class="i18n-pt">GDD · PARÂMETROS DE HABILIDADE</span></span>
-            <span>FIG. 05</span>
-          </div>
           <div class="artifact-doc-scroll">
             <table class="artifact-table table-tight">
               <thead>
@@ -447,9 +463,12 @@
             </table>
           </div>
         </div>
+        <div class="artifact-caption"><span class="i18n-en">Four abilities as they are tuned today.</span><span class="i18n-pt">Quatro habilidades como estão balanceadas hoje.</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="case-body" style="max-width:900px;">
+      <div class="case-body" style="max-width:1180px;">
         <div class="case-sub" style="margin-top:52px;"><span class="i18n-en">In game</span><span class="i18n-pt">No jogo</span></div>
         <div class="gallery" data-gallery="/assets/projects/legacy-of-allard/"></div>
       </div>
@@ -505,8 +524,8 @@
 
     <!-- ── PAGE NAV ── -->
     <nav class="case-nav" aria-label="Case study navigation">
-      <a class="case-nav-link" href="/?view=recruiter#rec-projects"><span class="case-nav-key"><span class="i18n-en">Index</span><span class="i18n-pt">Índice</span></span><span aria-hidden="true">←</span> <span class="i18n-en">All selected work</span><span class="i18n-pt">Todos os trabalhos</span></a>
-      <a class="case-nav-link" href="/projects/head-volley-clash/"><span class="case-nav-key"><span class="i18n-en">Next</span><span class="i18n-pt">Próximo</span></span>Head Volley Clash <span aria-hidden="true">→</span></a>
+      <a class="case-nav-link" href="/?view=recruiter#rec-projects"><span class="case-nav-key"><span class="i18n-en">Index</span><span class="i18n-pt">Índice</span></span><span class="i18n-en">All selected work</span><span class="i18n-pt">Todos os trabalhos</span></a>
+      <a class="case-nav-link" href="/projects/head-volley-clash/"><span class="case-nav-key"><span class="i18n-en">Next</span><span class="i18n-pt">Próximo</span></span>Head Volley Clash</a>
     </nav>
 
   </main>
