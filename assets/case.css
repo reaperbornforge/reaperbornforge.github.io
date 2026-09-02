@@ -1110,3 +1110,41 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
   .header-controls { gap: 6px; }
   .toggle-btn { padding: 6px 9px; letter-spacing: .1em; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   TWO-SERIES LINE CHART · a before/after comparison
+   The accent series is the one that shipped; the muted dashed
+   series is the curve it replaced. Same geometry as .lc-line.
+   ══════════════════════════════════════════════════════════════ */
+.lc-line-alt {
+  fill: none;
+  stroke: rgba(232,228,216,.42);
+  stroke-width: 2.5;
+  stroke-dasharray: 9 7;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.lc-dot-alt { fill: #0A0C10; stroke: rgba(232,228,216,.42); stroke-width: 2; }
+
+/* Legend under a chart, same shape as .diagram-legend */
+.chart-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed #2a2f3a;
+}
+.sw-line { border: 1px solid #C8102E; background: rgba(200,16,46,.38); }
+.sw-line-alt { border: 1px dashed rgba(232,228,216,.45); background: rgba(232,228,216,.06); }
+
+/* A horizontal bar that reads as the remainder, not as a result */
+.bar-h-fill.fill-muted { background: rgba(232,228,216,.16); }
+.bar-h-row:hover .bar-h-fill.fill-muted { background: rgba(232,228,216,.24); box-shadow: none; }
+
+/* Three-column data tables under a chart keep the last column right-aligned
+   by the existing rule; the middle one needs to follow it. */
+.chart-data td:nth-last-child(2), .chart-data th:nth-last-child(2) { text-align: right; }
+
+/* A long decision can carry more than one paired row */
+.decision-body .paired + .paired { margin-top: 34px; }
