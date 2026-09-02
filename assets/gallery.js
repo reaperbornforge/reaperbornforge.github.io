@@ -13,14 +13,15 @@
    1. <folder>/images.json  (optional manifest, wins if present)
         ["01.png", "02.png"]                       - simple form
         [{"src": "01.png", "caption": {"en": "...", "pt": "..."}}]
-   2. Sequential probe: 01, 02, 03 ... trying .png .jpg .jpeg .webp
+   2. Sequential probe: 01, 02, 03 ... trying .webp .png .jpg .jpeg
       for each index, stopping at the first index with no match.
 
-   So naming files 01.png, 02.png, ... just works, from one image up.
+   So naming files 01.webp, 02.webp, ... just works, from one image up.
+   Gallery images are stored as WebP, capped at 1280px wide.
    Caps at 24 so a gap in numbering can never spin forever.
    ────────────────────────────────────────────────────────────── */
 (function () {
-  var EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'];
+  var EXTENSIONS = ['webp', 'png', 'jpg', 'jpeg'];
   var MAX_IMAGES = 24;
 
   var COPY = {
