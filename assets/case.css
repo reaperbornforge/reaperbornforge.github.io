@@ -464,6 +464,7 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
   letter-spacing: .24em;
   color: rgba(200,16,46,.85);
   padding-top: 5px;
+  white-space: nowrap;
 }
 .decision-body p {
   font-size: 17px;
@@ -853,7 +854,183 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
 }
 .chart-data td:last-child, .chart-data th:last-child { text-align: right; padding-right: 0; }
 
+/* ══════════════════════════════════════════════════════════════
+   SYSTEM DIAGRAMS · built in HTML/CSS, framed like the artifacts
+   Reuses .artifact-doc for the frame and header stamp.
+   ══════════════════════════════════════════════════════════════ */
+.diagram-body { padding: 26px 22px 22px; }
+.diagram-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.diagram-panel {
+  border: 1px solid #1f2530;
+  background: rgba(15,18,25,.5);
+  padding: 18px 16px 16px;
+}
+.diagram-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #E8E4D8;
+  margin-bottom: 16px;
+}
+.diagram-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  color: rgba(232,228,216,.42);
+  margin-top: 14px;
+}
+.diagram-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #2a2f3a;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(232,228,216,.55);
+}
+.legend-swatch { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* Class colours. Kept off the #C8102E accent so a class never reads
+   as site chrome, and never as another class. */
+.cls-hunter { --cls: #6FA96A; }
+.cls-mage   { --cls: #8A6BC4; }
+.cls-priest { --cls: #D8C48A; }
+.cls-warrior{ --cls: #C86A4A; }
+
+.legend-swatch { border: 1px solid var(--cls); background: color-mix(in srgb, var(--cls) 18%, transparent); }
+
+/* Sliver: four ability slots, each one sourced from any class */
+.sliver-slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.slot {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--cls);
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--cls) 20%, transparent),
+      color-mix(in srgb, var(--cls) 6%, transparent));
+}
+.slot-key {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: #E8E4D8;
+  line-height: 1;
+}
+.slot-cls {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--cls);
+  line-height: 1;
+}
+
+/* Critical: damage area vs terrain destroyed, concentric */
+.radial-stage {
+  position: relative;
+  height: 196px;
+}
+.radial-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.ring-terrain {
+  border: 1px dashed rgba(232,228,216,.45);
+  background: rgba(232,228,216,.05);
+}
+.ring-damage {
+  border: 1px solid rgba(200,16,46,.8);
+  background: rgba(200,16,46,.18);
+}
+.ring-hit {
+  width: 5px;
+  height: 5px;
+  background: #E8E4D8;
+  border-radius: 50%;
+}
+.sw-damage { border: 1px solid rgba(200,16,46,.8); background: rgba(200,16,46,.18); }
+.sw-terrain { border: 1px dashed rgba(232,228,216,.45); background: rgba(232,228,216,.05); }
+
+/* Roster chips sitting inside a diagram panel: the panel already pads */
+.artifact-roster.roster-flush { padding: 0; gap: 7px; }
+.roster-flush .roster-item { font-size: 10px; padding: 6px 9px; letter-spacing: .08em; }
+.roster-item.roster-spent {
+  border-style: dashed;
+  border-color: rgba(42,47,58,.9);
+  background: transparent;
+  color: rgba(232,228,216,.42);
+}
+.roster-item.roster-open {
+  border-color: rgba(200,16,46,.45);
+  background: rgba(200,16,46,.07);
+  color: #E8E4D8;
+}
+
+/* ── LINE CHART · single series, drawn in SVG ── */
+.line-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.lc-grid { stroke: #171b23; stroke-width: 1; }
+.lc-axis { stroke: #2a2f3a; stroke-width: 1; }
+.lc-line { fill: none; stroke: #C8102E; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.lc-dot { fill: #0A0C10; stroke: #C8102E; stroke-width: 1.5; }
+.lc-tick {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .06em;
+  fill: rgba(232,228,216,.42);
+}
+.lc-tick-y { text-anchor: end; }
+.lc-tick-x { text-anchor: middle; }
+
+/* Charts and diagrams sitting inside a decision block */
+.decision-body .chart-figure { margin-top: 26px; }
+
+/* Five-column artifact tables need to breathe less */
+.artifact-doc-scroll { overflow-x: auto; }
+.artifact-table.table-tight { min-width: 560px; }
+.artifact-table.table-tight th,
+.artifact-table.table-tight td { padding-left: 16px; padding-right: 16px; font-size: 13px; }
+.artifact-table .cls-cell {
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--cls, rgba(232,228,216,.78));
+}
+.artifact-table .num { color: #E8E4D8; letter-spacing: .06em; }
+
 /* ── RESPONSIVE additions ── */
+@media (max-width: 640px) {
+  .diagram-pair { grid-template-columns: 1fr; }
+  .diagram-body { padding: 20px 16px 18px; }
+  .radial-stage { height: 176px; }
+  .slot-cls { font-size: 7px; letter-spacing: .1em; }
+  .slot-key { font-size: 15px; }
+}
+
 @media (max-width: 768px) {
   .decision { grid-template-columns: 1fr; gap: 10px; padding: 26px 0; }
   .decision-idx { padding-top: 0; }

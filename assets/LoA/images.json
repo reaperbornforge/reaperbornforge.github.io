@@ -1,0 +1,20 @@
+[
+  { "src": "ifyEuf.png",
+    "caption": { "en": "Destructible terrain, mid-match. The dust line is ground that was there a few casts ago.",
+                 "pt": "Terreno destrutível, no meio da partida. A linha de poeira é chão que estava ali alguns usos atrás." } },
+  { "src": "cZHG5_.png",
+    "caption": { "en": "An ability in flight across the gap between two carved-out ridges.",
+                 "pt": "Uma habilidade em voo cruzando o vão entre duas cristas escavadas." } },
+  { "src": "lb_ug7.png",
+    "caption": { "en": "Impact, with the four-slot Sliver bar and its mana costs along the bottom.",
+                 "pt": "Impacto, com a barra de quatro slots do Sliver e seus custos de mana embaixo." } },
+  { "src": "An+mVU.png",
+    "caption": { "en": "Night map. Mana available this round is the number on the drop, bottom right of the bar.",
+                 "pt": "Mapa noturno. A mana disponível na rodada é o número na gota, à direita da barra." } },
+  { "src": "ZIXakX.png",
+    "caption": { "en": "Character select. Each of the four slots shows its ability and mana cost, Q, W, E, R.",
+                 "pt": "Seleção de personagem. Cada um dos quatro slots mostra sua habilidade e custo de mana, Q, W, E, R." } },
+  { "src": "atxgkG.png",
+    "caption": { "en": "Team screen: Priest, Hunter and Warrior with their stats and their four equipped abilities.",
+                 "pt": "Tela de time: Priest, Hunter e Warrior com seus atributos e as quatro habilidades equipadas." } }
+]
