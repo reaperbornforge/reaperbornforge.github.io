@@ -1,12 +1,14 @@
 # Legacy of Allard screenshots
 
-The gallery on /projects/legacy-of-allard/ reads this folder automatically,
-then falls back to /assets/LoA/ for the Steam screenshots already in the repo.
+The gallery on /projects/legacy-of-allard/ reads this folder automatically.
 
-Name files 01, 02, 03 ... (.png .jpg .jpeg .webp). They are picked up in
-order, with no file to edit. Discovery stops at the first missing number,
-so keep the numbering contiguous. Images dropped here appear BEFORE the
-/assets/LoA/ ones.
+The six Steam screenshots here keep their original filenames and are pinned,
+in order and with bilingual captions, by images.json.
+
+To add more, name files 01, 02, 03 ... (.png .jpg .jpeg .webp). They are
+picked up in order, with no file to edit. Discovery stops at the first
+missing number, so keep the numbering contiguous. Numbered files appear
+AFTER the images.json entries.
 
 Best candidates for this page:
   - destructible terrain mid-match, ideally before/after the same map
