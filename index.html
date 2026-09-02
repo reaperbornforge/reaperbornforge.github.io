@@ -538,6 +538,269 @@
     }
     .project-foot-arrow { color: #C8102E; }
 
+    /* ══════════════════════════════════════════════════════════
+       POSTER GRID · Studio §02
+       Five titles as posters, not dense cards. The three live ones
+       are <a> straight to itch.io; the two upcoming ones are <div>
+       with the same box model, so wiring a link later reflows nothing.
+       ══════════════════════════════════════════════════════════ */
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1560px;
+    }
+    .poster {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #1a1d24;
+      background: rgba(15,18,25,.5);
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      position: relative;
+      /* opacity is listed so .reveal still fades this in: the later rule wins
+         the whole transition property, and dropping it would make posters snap. */
+      transition: border-color .3s, background .3s, box-shadow .3s,
+                  transform .3s, opacity .9s cubic-bezier(.2,.7,.2,1);
+    }
+    a.poster:hover {
+      border-color: #C8102E;
+      background: rgba(200,16,46,.05);
+      box-shadow: 0 0 34px rgba(200,16,46,.14) inset;
+      transform: translateY(-3px);
+    }
+    a.poster:focus-visible { outline: 1px solid #C8102E; outline-offset: 3px; }
+    .poster.poster-soon {
+      border-style: dashed;
+      border-color: #232833;
+      background: rgba(15,18,25,.3);
+    }
+
+    .poster-art {
+      position: relative;
+      aspect-ratio: 630 / 500;
+      overflow: hidden;
+      background: #0b0d12;
+      border-bottom: 1px solid #1a1d24;
+    }
+    .poster-art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+    a.poster:hover .poster-art img { transform: scale(1.05); }
+    /* Scrim so a bright cover never fights the badge sitting on it */
+    .poster-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,12,16,.45) 0%, transparent 34%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Placeholder frame, shown until real art is dropped into /assets/posters/ */
+    .poster-art.is-empty {
+      display: grid;
+      place-items: center;
+      background-color: #0b0d12;
+      background-image: repeating-linear-gradient(135deg,
+        rgba(232,228,216,.028) 0 2px, transparent 2px 10px);
+    }
+    .poster-empty-mark {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      letter-spacing: .22em;
+      color: rgba(232,228,216,.15);
+    }
+    .poster-empty-txt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.28);
+      margin-top: 10px;
+    }
+
+    .poster-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 6px 11px;
+      background: rgba(10,12,16,.82);
+      border: 1px solid rgba(200,16,46,.5);
+      color: #E8E4D8;
+    }
+    .poster-badge.poster-soon {
+      border-color: #2a2f3a;
+      color: rgba(232,228,216,.6);
+    }
+
+    .poster-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px 24px 20px;
+    }
+    .poster-title {
+      font-family: 'Cinzel', serif;
+      font-size: 27px;
+      font-weight: 500;
+      color: #E8E4D8;
+      letter-spacing: .01em;
+      margin-bottom: 6px;
+    }
+    .poster-kind {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 16px;
+    }
+    .poster-soon .poster-kind { color: rgba(232,228,216,.4); }
+    .poster-logline {
+      font-size: 15px;
+      line-height: 1.62;
+      font-weight: 300;
+      color: rgba(232,228,216,.72);
+      flex: 1;
+    }
+    .poster-cta {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px dashed #2a2f3a;
+    }
+    .poster-cta.poster-soon { color: rgba(232,228,216,.35); }
+    .poster-cta-icon { font-size: 11px; letter-spacing: 0; }
+
+    /* A poster can also be a <button> (opens a modal instead of navigating).
+       Same box as the <a> and <div> shapes, so the grid never reflows. */
+    button.poster {
+      font: inherit;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    button.poster:hover {
+      border-color: #C8102E;
+      background: rgba(200,16,46,.05);
+      box-shadow: 0 0 34px rgba(200,16,46,.14) inset;
+      transform: translateY(-3px);
+    }
+    button.poster:hover .poster-art img { transform: scale(1.05); }
+    button.poster:focus-visible { outline: 1px solid #C8102E; outline-offset: 3px; }
+
+    /* ══════════════════════════════════════════════════════════
+       MODAL · excerpt panel for a title with no page to link to
+       ══════════════════════════════════════════════════════════ */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+    }
+    .modal[hidden] { display: none; }
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(6,8,11,.82);
+      backdrop-filter: blur(3px);
+    }
+    .modal-panel {
+      position: relative;
+      width: min(720px, 100%);
+      max-height: 100%;
+      overflow-y: auto;
+      border: 1px solid #2a2f3a;
+      background: #0d1016;
+      padding: 34px 38px 28px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.6);
+    }
+    .modal-panel:focus { outline: none; }
+    .modal-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 26px;
+      border-bottom: 1px solid #1a1d24;
+    }
+    .modal-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #C8102E;
+      margin-bottom: 8px;
+    }
+    .modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: #E8E4D8;
+      letter-spacing: .01em;
+    }
+    .modal-close {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      font-size: 22px;
+      line-height: 1;
+      background: transparent;
+      border: 1px solid #2a2f3a;
+      color: rgba(232,228,216,.55);
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+    .modal-close:hover { color: #E8E4D8; border-color: rgba(200,16,46,.5); }
+    .modal-close:focus-visible { outline: 1px solid #C8102E; outline-offset: 2px; }
+    .modal-body p {
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 300;
+      color: rgba(232,228,216,.78);
+      margin-bottom: 18px;
+    }
+    .modal-body p:last-child { margin-bottom: 0; }
+    .modal-foot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px dashed #2a2f3a;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(232,228,216,.5);
+    }
+    body.modal-open { overflow: hidden; }
+
     /* ── SKILLS ── */
     .skills-box {
       display: grid;
@@ -1087,6 +1350,10 @@
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1180px) {
+      .poster-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 1024px) {
       .hero-title { font-size: 75px; }
       .hero-title-sub { font-size: 67px; }
@@ -1106,6 +1373,8 @@
       .about-box { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       .project-card.wide { grid-column: span 1; }
+      .poster-grid { grid-template-columns: 1fr; }
+      .poster-title { font-size: 24px; }
       .skills-box { grid-template-columns: 1fr; gap: 24px; }
       .service-row {
         grid-template-columns: 48px 1fr;
@@ -1213,23 +1482,22 @@
                 <span class="hero-title-sub">Forge</span><span style="color:#8B0E1F;">.</span>
               </h1>
               <p class="hero-tag i18n-en">
-                Independent game studio and design dossier, forging systems that play themselves into your habits, from mobile arcade to tactical multiplayer RPGs.
+                A one-person game studio in Brazil, forging small worlds you can actually play: a volleyball arcade, a tactical RPG that eats the ground it stands on, a village rebuilt across five eras.
               </p>
               <p class="hero-tag i18n-pt">
-                Estúdio de jogos independente e dossiê de design, forjando sistemas que se instalam nos seus hábitos, do arcade mobile ao RPG tático multiplayer.
+                Um estúdio de jogos de uma pessoa só no Brasil, forjando mundos pequenos que dá pra jogar de verdade: um arcade de vôlei, um RPG tático que devora o próprio chão, uma vila reconstruída ao longo de cinco eras.
               </p>
               <p class="hero-recruit i18n-en">
-                Game Designer and Unity Developer, open to junior and mid positions at game studios in Brazil and remote.
+                Five titles in the forge, three of them playable right now. Open to collaborators, playtesters, and anyone who wants to talk systems.
               </p>
               <p class="hero-recruit i18n-pt">
-                Game Designer e Unity Developer, aberto a vagas júnior e pleno em estúdios de jogos no Brasil e remoto.
+                Cinco títulos na forja, três deles jogáveis agora. Aberto a colaboradores, playtesters, e quem quiser conversar sobre sistemas.
               </p>
               <div class="hero-chips">
                 <span class="chip chip-accent">● <span class="i18n-en">Open for collab</span><span class="i18n-pt">Aberto a colaborações</span></span>
-                <span class="chip">Unity · C#</span>
-                <span class="chip"><span class="i18n-en">Systems Design</span><span class="i18n-pt">Design de Sistemas</span></span>
-                <span class="chip"><span class="i18n-en">F2P Economy</span><span class="i18n-pt">Economia F2P</span></span>
-                <span class="chip">LiveOps</span>
+                <span class="chip"><span class="i18n-en">3 playable now</span><span class="i18n-pt">3 jogáveis agora</span></span>
+                <span class="chip"><span class="i18n-en">2 in the forge</span><span class="i18n-pt">2 na forja</span></span>
+                <span class="chip">itch.io · Google Play · Steam</span>
               </div>
             </div>
           </div>
@@ -1279,8 +1547,8 @@
         <div class="reveal" style="transition-delay:150ms">
           <div class="stat-box">
             <div class="stat-cell">
-              <div class="stat-key"><span class="i18n-en">Active titles</span><span class="i18n-pt">Títulos ativos</span></div>
-              <div class="stat-value">03</div>
+              <div class="stat-key"><span class="i18n-en">Titles in the forge</span><span class="i18n-pt">Títulos na forja</span></div>
+              <div class="stat-value">05</div>
             </div>
             <div class="stat-cell">
               <div class="stat-key"><span class="i18n-en">Years forging</span><span class="i18n-pt">Anos forjando</span></div>
@@ -1307,100 +1575,126 @@
         <h2 class="section-title"><span class="i18n-en">Artifacts in the forge</span><span class="i18n-pt">Artefatos na forja</span></h2>
         <span class="section-line"></span>
       </div>
-      <div class="artifact-grid">
+      <div class="poster-grid">
 
-        <!-- I · Legacy of Allard -->
-        <div class="project-card artifact-card reveal">
-          <div class="project-glow"></div>
-          <div class="card-cover"><img src="assets/Legacy_of_Allard_itch_cover_630x500.png" alt="Legacy of Allard cover art" loading="lazy" width="630" height="500"></div>
-          <div class="project-card-head">
-            <span class="project-glyph">I</span>
-            <span class="project-status">
-              <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
-              <span class="i18n-en">In active development</span><span class="i18n-pt">Em desenvolvimento ativo</span>
-            </span>
+        <!-- Head Volley Clash -->
+        <a class="poster reveal" href="https://zdarkreaper.itch.io/head-volley-clash" target="_blank" rel="noreferrer">
+          <div class="poster-art">
+            <span class="poster-badge"><span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span><span class="i18n-en">Playable now</span><span class="i18n-pt">Jogável agora</span></span>
+            <img src="assets/posters/head-volley-clash.webp" alt="Head Volley Clash poster" loading="lazy" width="630" height="500">
           </div>
-          <h3 class="project-title">Legacy of Allard</h3>
-          <div class="project-kind"><span class="i18n-en">Tactical Multiplayer RPG · 2022 to present</span><span class="i18n-pt">RPG Tático Multiplayer · 2022 até hoje</span></div>
-          <p class="project-blurb description i18n-en">A tactical RPG built around a class-crossing build system and destructible terrain as a tactical resource. Live WebGL alpha in the browser and an active Steam page.</p>
-          <p class="project-blurb description i18n-pt">Um RPG tático construído em torno de um sistema de build que cruza classes e terreno destrutível como recurso tático. Alpha em WebGL ao vivo no navegador e página ativa na Steam.</p>
-          <div class="stack-row">
-            <span class="stack-pill">Unity</span>
-            <span class="stack-pill">Photon</span>
-            <span class="stack-pill">Destructible2D</span>
-            <span class="stack-pill">WebGL</span>
+          <div class="poster-body">
+            <h3 class="poster-title">Head Volley Clash</h3>
+            <div class="poster-kind"><span class="i18n-en">Arcade Volleyball · Mobile</span><span class="i18n-pt">Vôlei Arcade · Mobile</span></div>
+            <p class="poster-logline i18n-en">Two heads, one ball, and no time to think. Fast volleyball rallies built for short sessions, with characters to unlock and a shop to raid.</p>
+            <p class="poster-logline i18n-pt">Duas cabeças, uma bola, e nenhum tempo pra pensar. Trocas rápidas de vôlei feitas pra sessões curtas, com personagens pra desbloquear e uma loja pra saquear.</p>
+            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Play on itch.io</span><span class="i18n-pt">Jogar no itch.io</span></div>
           </div>
-          <div class="project-foot" style="flex-direction:column;gap:10px;align-items:flex-start;">
-            <a href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer" style="color:#C8102E;text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-              <span><span class="i18n-en">Steam page</span><span class="i18n-pt">Página na Steam</span></span><span>→</span>
-            </a>
-            <a href="https://game.playallard.com" target="_blank" rel="noreferrer" style="color:rgba(232,228,216,.55);text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-              <span><span class="i18n-en">Play alpha</span><span class="i18n-pt">Jogar o alpha</span></span><span>→</span>
-            </a>
+        </a>
+
+        <!-- Legacy of Allard -->
+        <a class="poster reveal" style="transition-delay:70ms" href="https://zdarkreaper.itch.io/legacy-of-allard" target="_blank" rel="noreferrer">
+          <div class="poster-art">
+            <span class="poster-badge"><span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span><span class="i18n-en">Playable now</span><span class="i18n-pt">Jogável agora</span></span>
+            <img src="assets/posters/legacy-of-allard.webp" alt="Legacy of Allard poster" loading="lazy" width="630" height="500">
+          </div>
+          <div class="poster-body">
+            <h3 class="poster-title">Legacy of Allard</h3>
+            <div class="poster-kind"><span class="i18n-en">Tactical RPG · Multiplayer</span><span class="i18n-pt">RPG Tático · Multiplayer</span></div>
+            <p class="poster-logline i18n-en">A turn-based tactical RPG where the ground itself is ammunition. Borrow abilities across classes, blow holes in the map, and end your turn when you decide to.</p>
+            <p class="poster-logline i18n-pt">Um RPG tático por turnos onde o próprio chão é munição. Pegue habilidades emprestadas de outras classes, abra buracos no mapa, e encerre o turno quando você decidir.</p>
+            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Play on itch.io</span><span class="i18n-pt">Jogar no itch.io</span></div>
+          </div>
+        </a>
+
+        <!-- Tiny Ruins Tycoon -->
+        <a class="poster reveal" style="transition-delay:140ms" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer">
+          <div class="poster-art">
+            <span class="poster-badge"><span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span><span class="i18n-en">Playable now</span><span class="i18n-pt">Jogável agora</span></span>
+            <img src="assets/posters/tiny-ruins-tycoon.webp" alt="Tiny Ruins Tycoon poster" loading="lazy" width="630" height="500">
+          </div>
+          <div class="poster-body">
+            <h3 class="poster-title">Tiny Ruins Tycoon</h3>
+            <div class="poster-kind"><span class="i18n-en">Cozy Idle · Browser</span><span class="i18n-pt">Idle Cozy · Navegador</span></div>
+            <p class="poster-logline i18n-en">Wake up in the ruins and rebuild a village across five eras. Cozy idle progress, tiny helpers with real appetites, and numbers that keep climbing while you are away.</p>
+            <p class="poster-logline i18n-pt">Acorde nas ruínas e reconstrua uma vila ao longo de cinco eras. Progresso idle e cozy, ajudantes pequenos com fome de verdade, e números que continuam subindo enquanto você está fora.</p>
+            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Play on itch.io</span><span class="i18n-pt">Jogar no itch.io</span></div>
+          </div>
+        </a>
+
+        <!-- Escape Adventure · the itch.io page answered 404 to an anonymous request
+             when this was wired up, which is also what a draft (unpublished) page
+             returns. Publishing it makes this link work with no edit here. If the
+             slug turns out to be different, it is the href below and nothing else.
+             Once there is a playable build, swap the badge and CTA for the
+             "Playable now" / "Play on itch.io" pairs used by the three cards above. -->
+        <a class="poster reveal" style="transition-delay:210ms" href="https://zdarkreaper.itch.io/escape-adventure" target="_blank" rel="noreferrer">
+          <div class="poster-art">
+            <span class="poster-badge poster-soon"><span class="led" style="background:rgba(232,228,216,.45);box-shadow:0 0 6px rgba(232,228,216,.2);"></span><span class="i18n-en">In development</span><span class="i18n-pt">Em desenvolvimento</span></span>
+            <img src="assets/posters/escape-adventure.webp" alt="Escape Adventure poster" loading="lazy" width="630" height="500">
+          </div>
+          <div class="poster-body">
+            <h3 class="poster-title">Escape Adventure</h3>
+            <div class="poster-kind"><span class="i18n-en">2D Action-Platformer</span><span class="i18n-pt">Action-Platformer 2D</span></div>
+            <p class="poster-logline i18n-en">No powers of his own, just stamina, a stolen watch, and a city that's already falling apart.</p>
+            <p class="poster-logline i18n-pt">Nenhum poder próprio, só stamina, um relógio roubado, e uma cidade que já está desabando.</p>
+            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">View on itch.io</span><span class="i18n-pt">Ver no itch.io</span></div>
+          </div>
+        </a>
+
+        <!-- Sharp Memories · a story being written, no build and no itch.io page.
+             Not a link: a <button> that opens the excerpt modal below. When it does get
+             an itch.io page, swap this <button type="button" data-modal="..."> for an
+             <a href="..." target="_blank" rel="noreferrer">, drop the poster-soon class
+             on the badge, and use the CTA pair from the cards above. The box model is
+             identical across all three shapes, so nothing in the grid reflows. -->
+        <button type="button" class="poster poster-soon reveal" style="transition-delay:280ms" data-modal="sharp-memories-modal">
+          <div class="poster-art">
+            <span class="poster-badge poster-soon"><span class="led" style="background:rgba(232,228,216,.45);box-shadow:0 0 6px rgba(232,228,216,.2);"></span><span class="i18n-en">Story in progress</span><span class="i18n-pt">História em andamento</span></span>
+            <img src="assets/posters/sharp-memories.webp" alt="Sharp Memories poster" loading="lazy" width="630" height="500">
+          </div>
+          <div class="poster-body">
+            <h3 class="poster-title">Sharp Memories</h3>
+            <div class="poster-kind"><span class="i18n-en">Gothic Mystery · Narrative</span><span class="i18n-pt">Mistério Gótico · Narrativa</span></div>
+            <p class="poster-logline i18n-en">London, 1777 and decades later. Two secret societies, a mystery that unfolds through the city itself, and a story I'm writing the way I'd design a game: every reveal earned, nothing given away early.</p>
+            <p class="poster-logline i18n-pt">Londres, 1777 e décadas depois. Duas sociedades secretas, um mistério que se revela através da própria cidade, e uma história escrita do jeito que eu desenharia um jogo: cada revelação conquistada, nada entregue cedo demais.</p>
+            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">◇</span><span class="i18n-en">Read an excerpt</span><span class="i18n-pt">Ler um trecho</span></div>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- Sharp Memories excerpt · opened by the poster above. The logline stays on the
+           card and is deliberately not repeated here: this is the opening of the text. -->
+      <div class="modal" id="sharp-memories-modal" hidden>
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="sharp-memories-modal-title" tabindex="-1">
+          <div class="modal-head">
+            <div>
+              <div class="modal-eyebrow"><span class="i18n-en">From the opening</span><span class="i18n-pt">Da abertura</span></div>
+              <h3 class="modal-title" id="sharp-memories-modal-title">Sharp Memories</h3>
+            </div>
+            <button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>
+          </div>
+
+          <div class="modal-body">
+            <div class="i18n-en">
+              <p>London appeared before any character did. Not as a postcard. As an organism.</p>
+              <p>There were two places London knew without admitting it. One, at the center, too old to be merely wealthy, held its power in silence behind a bronze plate the light rarely let anyone read. The other, to the north, where the forest was reclaiming what the city had lost, rose out of the mist like dark teeth against the sky.</p>
+              <p>London knew these places. Or knew enough to forget.</p>
+            </div>
+            <div class="i18n-pt">
+              <p>Londres aparecia antes de qualquer personagem. Não como cartão postal. Como organismo.</p>
+              <p>Havia dois lugares que Londres conhecia sem admitir. Um, no centro, antigo demais para ser apenas rica, guardava poder em silêncio atrás de uma placa de bronze que a luz raramente deixava ler. O outro, ao norte, onde a floresta recuperava o espaço que a cidade perdia, surgia entre a névoa como dentes escuros contra o céu.</p>
+              <p>Londres conhecia esses lugares. Ou conhecia o suficiente para esquecer.</p>
+            </div>
+          </div>
+
+          <div class="modal-foot">
+            <span class="led" style="background:rgba(232,228,216,.45);box-shadow:0 0 6px rgba(232,228,216,.2);"></span>
+            <span class="i18n-en">In Development, more to come</span><span class="i18n-pt">Em desenvolvimento, mais em breve</span>
           </div>
         </div>
-
-        <!-- II · Head Volley Clash -->
-        <div class="project-card artifact-card reveal" style="transition-delay:70ms">
-          <div class="project-glow"></div>
-          <div class="card-cover"><img src="assets/Head_Volley_Clash_itch_cover_630x500.png" alt="Head Volley Clash cover art" loading="lazy" width="630" height="500"></div>
-          <div class="project-card-head">
-            <span class="project-glyph">II</span>
-            <span class="project-status">
-              <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
-              <span class="i18n-en">In development</span><span class="i18n-pt">Em desenvolvimento</span>
-            </span>
-          </div>
-          <h3 class="project-title">Head Volley Clash</h3>
-          <div class="project-kind"><span class="i18n-en">Arcade Mobile · F2P · 2024 to present</span><span class="i18n-pt">Arcade Mobile · F2P · 2024 até hoje</span></div>
-          <p class="project-blurb description i18n-en">Mobile arcade F2P with seasonal passes, skin shop and a fully implemented economy. Designed for short, replayable sessions and long-tail retention. ~330 daily installs at launch. Organic reach across Brazil, Russia, India, and Mexico with zero paid marketing. ~40 monthly active users with no updates since release.</p>
-          <p class="project-blurb description i18n-pt">Arcade mobile F2P com passes de temporada, loja de skins e economia totalmente implementada. Desenhado para sessões curtas e rejogáveis e retenção de cauda longa. ~330 instalações diárias no lançamento. Alcance orgânico no Brasil, Rússia, Índia e México, sem verba de marketing. ~40 usuários ativos mensais sem nenhuma atualização desde o lançamento.</p>
-          <div class="stack-row">
-            <span class="stack-pill">Unity</span>
-            <span class="stack-pill">Firebase</span>
-            <span class="stack-pill"><span class="i18n-en">Economy</span><span class="i18n-pt">Economia</span></span>
-            <span class="stack-pill">LiveOps</span>
-          </div>
-          <div class="project-foot" style="flex-direction:column;gap:10px;align-items:flex-start;">
-            <a href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer" style="color:#C8102E;text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-              <span>Google Play</span><span>→</span>
-            </a>
-            <a href="https://zdarkreaper.itch.io/head-volley-clash" target="_blank" rel="noreferrer" style="color:rgba(232,228,216,.55);text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-              <span>Itch.io</span><span>→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- III · Tiny Ruins Tycoon -->
-        <div class="project-card artifact-card reveal" style="transition-delay:140ms">
-          <div class="project-glow"></div>
-          <div class="card-cover"><img src="assets/Tiny_Ruins_Tycoon_itch_cover_630x500.png" alt="Tiny Ruins Tycoon cover art" loading="lazy" width="630" height="500"></div>
-          <div class="project-card-head">
-            <span class="project-glyph">III</span>
-            <span class="project-status">
-              <span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span>
-              <span class="i18n-en">Playable MVP</span><span class="i18n-pt">MVP jogável</span>
-            </span>
-          </div>
-          <h3 class="project-title">Tiny Ruins Tycoon</h3>
-          <div class="project-kind"><span class="i18n-en">Cozy Idle Economy · 2026</span><span class="i18n-pt">Idle Cozy de Economia · 2026</span></div>
-          <p class="project-blurb description i18n-en">A cozy idle economy game about rebuilding a village across five eras, one resource and one system at a time. A playable MVP covering the first three eras, built and rebalanced solo.</p>
-          <p class="project-blurb description i18n-pt">Um jogo idle cozy de economia sobre reconstruir uma vila ao longo de cinco eras, um recurso e um sistema de cada vez. Um MVP jogável cobrindo as três primeiras eras, construído e rebalanceado sozinho.</p>
-          <div class="stack-row">
-            <span class="stack-pill">Unity 6</span>
-            <span class="stack-pill">C#</span>
-            <span class="stack-pill">ScriptableObjects</span>
-          </div>
-          <div class="project-foot" style="flex-direction:column;gap:10px;align-items:flex-start;">
-            <a href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" style="color:#C8102E;text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-              <span><span class="i18n-en">Play the prototype</span><span class="i18n-pt">Jogar o protótipo</span></span><span>→</span>
-            </a>
-            <a href="/projects/tiny-ruins-tycoon/" style="color:rgba(232,228,216,.55);text-decoration:none;display:flex;justify-content:space-between;width:100%;">
-              <span><span class="i18n-en">Case study</span><span class="i18n-pt">Estudo de caso</span></span><span>→</span>
-            </a>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -1746,6 +2040,69 @@
         if (dotsR) dotsR.style.display = 'none';
         if (btnS) btnS.classList.add('active');
       }
+    })();
+
+    // ─── Excerpt modal (Studio §02) ───
+    // Any [data-modal="id"] opens #id. Closes on the backdrop, the X, and Esc.
+    // Focus moves into the panel on open and back to the trigger on close, and
+    // Tab is kept inside the panel while it is up.
+    (function () {
+      var openModal = null;
+      var lastTrigger = null;
+
+      function focusables(root) {
+        return Array.prototype.filter.call(
+          root.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+          function (el) { return el.offsetParent !== null; }
+        );
+      }
+
+      function open(modal, trigger) {
+        lastTrigger = trigger || null;
+        openModal = modal;
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+        var panel = modal.querySelector('.modal-panel');
+        if (panel) panel.focus();
+      }
+
+      function close() {
+        if (!openModal) return;
+        openModal.hidden = true;
+        openModal = null;
+        document.body.classList.remove('modal-open');
+        if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
+      }
+
+      document.addEventListener('click', function (event) {
+        var trigger = event.target.closest && event.target.closest('[data-modal]');
+        if (trigger) {
+          var modal = document.getElementById(trigger.getAttribute('data-modal'));
+          if (modal) { event.preventDefault(); open(modal, trigger); }
+          return;
+        }
+        if (event.target.closest && event.target.closest('[data-modal-close]')) close();
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (!openModal) return;
+        if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+        if (event.key !== 'Tab') return;
+
+        var panel = openModal.querySelector('.modal-panel');
+        var items = focusables(panel);
+        if (!items.length) { event.preventDefault(); panel.focus(); return; }
+
+        var first = items[0];
+        var last = items[items.length - 1];
+        if (event.shiftKey && (document.activeElement === first || document.activeElement === panel)) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
     })();
 
     // ─── Copy-to-clipboard email buttons ───
