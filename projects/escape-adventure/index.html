@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Adventure · Case Study · Reaperborn Forge</title>
+  <meta name="description" content="Escape Adventure: a narrative 2D action-platformer about a boy, a watch and a city collapsing across time. Case study by Otávio Antonio, Game Designer and Unity Developer.">
+  <meta property="og:title" content="Escape Adventure · Case Study">
+  <meta property="og:description" content="A narrative 2D action-platformer with a story across five historical eras. The four-stage prologue is playable in the browser, designed and built solo in Unity.">
+  <meta property="og:image" content="/assets/Escape_Adventure_itch_cover_630x500.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="stylesheet" href="/assets/case.css">
+  <script src="/assets/i18n.js"></script>
+</head>
+<body>
+
+  <!-- ── STATUS BAR ── -->
+  <header class="status-bar">
+    <a class="status-brand" href="/?view=recruiter" aria-label="Reaperborn Forge home">
+      <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="sg" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#C8102E" stop-opacity=".35"/>
+            <stop offset="60%" stop-color="#C8102E" stop-opacity=".05"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#sg)"/>
+        <circle cx="32" cy="32" r="28.5" stroke="#C8102E" stroke-opacity=".55" stroke-width=".8"/>
+        <circle cx="32" cy="32" r="24" stroke="#E8E4D8" stroke-opacity=".35" stroke-width=".6" stroke-dasharray="1 3"/>
+        <text x="32" y="38" text-anchor="middle" font-size="20" letter-spacing="2" fill="#E8E4D8" font-family="Cinzel,serif" font-weight="700">RF</text>
+        <g stroke="#C8102E" stroke-opacity=".7" stroke-width="1">
+          <line x1="32" y1="4" x2="32" y2="9"/>
+          <line x1="32" y1="55" x2="32" y2="60"/>
+          <line x1="4" y1="32" x2="9" y2="32"/>
+          <line x1="55" y1="32" x2="60" y2="32"/>
+        </g>
+      </svg>
+      <span class="status-brand-text">RF · DOSSIER</span>
+    </a>
+    <nav class="status-crumbs" aria-label="Breadcrumb">
+      <a href="/?view=recruiter">Recruiter</a>
+      <span aria-hidden="true">/</span>
+      <a href="/?view=recruiter#rec-projects"><span class="i18n-en">Selected Work</span><span class="i18n-pt">Trabalhos</span></a>
+      <span aria-hidden="true">/</span>
+      <span class="current">Escape Adventure</span>
+    </nav>
+    <div class="header-controls">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="toggle-btn" data-set-lang="en">EN</button>
+        <button type="button" class="toggle-btn" data-set-lang="pt">PT</button>
+      </div>
+      <a class="back-btn" href="/?view=recruiter#rec-projects"><span class="i18n-en">Back</span><span class="i18n-pt">Voltar</span></a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="case-hero">
+      <div class="case-hero-grid">
+        <div>
+          <div class="case-eyebrow">// <span class="i18n-en">CASE STUDY · PROJECT · IV</span><span class="i18n-pt">ESTUDO DE CASO · PROJETO · IV</span></div>
+          <h1 class="case-title">Escape Adventure</h1>
+          <p class="case-logline i18n-en">A narrative 2D action-platformer about Oliver, a boy with stamina and a watch, moving through a city that collapses across different points in time. The four-stage prologue is playable in the browser, designed and built solo.</p>
+          <p class="case-logline i18n-pt">Um action-platformer 2D narrativo sobre Oliver, um garoto com stamina e um relógio, atravessando uma cidade que desaba em diferentes pontos do tempo. O prólogo de quatro fases é jogável no navegador, projetado e construído sozinho.</p>
+
+          <div class="case-meta case-meta-hvc">
+            <div class="case-meta-cell">
+              <div class="case-meta-key"><span class="i18n-en">Role</span><span class="i18n-pt">Papel</span></div>
+              <div class="case-meta-val"><span class="i18n-en">Solo Game Designer &amp; Unity Developer</span><span class="i18n-pt">Game Designer &amp; Unity Developer solo</span></div>
+            </div>
+            <div class="case-meta-cell">
+              <div class="case-meta-key"><span class="i18n-en">Period</span><span class="i18n-pt">Período</span></div>
+              <div class="case-meta-val"><span class="i18n-en">2025, present</span><span class="i18n-pt">2025, presente</span></div>
+            </div>
+            <div class="case-meta-cell case-meta-wide">
+              <div class="case-meta-key"><span class="i18n-en">Stack</span><span class="i18n-pt">Stack</span></div>
+              <div class="case-meta-val">Unity, C#, WebGL</div>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip chip-accent">● <span class="i18n-en">Playable prologue</span><span class="i18n-pt">Prólogo jogável</span></span>
+            <span class="chip"><span class="i18n-en">Four stages</span><span class="i18n-pt">Quatro fases</span></span>
+            <span class="chip"><span class="i18n-en">itch.io · Browser</span><span class="i18n-pt">itch.io · Navegador</span></span>
+          </div>
+
+          <div class="case-actions">
+            <a class="play-btn" href="https://zdarkreaper.itch.io/escape-adventure" target="_blank" rel="noreferrer">
+              <span class="play-icon" aria-hidden="true">▶</span><span class="i18n-en">Play the prologue</span><span class="i18n-pt">Jogar o prólogo</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="case-cover">
+          <img src="/assets/Escape_Adventure_itch_cover_630x500.png" alt="Escape Adventure key art" width="630" height="500">
+        </div>
+      </div>
+    </section>
+
+    <!-- ── §01 CONTEXT AND STAKES ── -->
+    <section class="case-section" id="context">
+      <div class="section-head">
+        <span class="section-num">§01</span>
+        <h2 class="section-title"><span class="i18n-en">Context and stakes</span><span class="i18n-pt">Contexto e risco</span></h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="case-body">
+        <p class="i18n-en case-lead">Escape Adventure is a 2D action-platformer about Oliver, a protagonist with no powers of his own. He has stamina and a watch he didn't choose to wear, and he moves through a city that is collapsing across different points in time. The full design covers a prologue, four acts and five historical eras, each era built around a corrupted figure who guards a piece of the watch's power. That amount of content usually belongs to a small team, and I am building it alone. So the main design problem from the first day was scope: keeping every act distinct and worth reaching on a production schedule one person can hold.</p>
+        <p class="i18n-pt case-lead">Escape Adventure é um action-platformer 2D sobre Oliver, um protagonista sem poder próprio. Ele tem stamina e um relógio que não escolheu usar, e atravessa uma cidade que desaba em diferentes pontos do tempo. O design completo cobre um prólogo, quatro atos e cinco eras históricas, cada era construída em torno de uma figura corrompida que guarda um pedaço do poder do relógio. Esse volume de conteúdo costuma ser de um time pequeno, e eu estou construindo sozinho. Por isso o problema central de design desde o primeiro dia foi escopo: manter cada ato distinto e merecido dentro de um cronograma que uma pessoa consegue sustentar.</p>
+      </div>
+    </section>
+
+    <!-- ── §02 DESIGN DECISIONS ── -->
+    <section class="case-section" id="decisions">
+      <div class="section-head">
+        <span class="section-num">§02</span>
+        <h2 class="section-title"><span class="i18n-en">Design decisions</span><span class="i18n-pt">Decisões de design</span></h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="decisions">
+        <div class="decision">
+          <div class="decision-idx">01 / 04</div>
+          <div class="decision-body has-pair">
+            <div class="paired">
+              <div class="paired-text">
+            <p class="i18n-en">Combat runs on two separate resources. Punches, jumps and dashes spend stamina. Shots spend charges stored in the watch, which have their own meter. A player under pressure who has just attacked still has the stamina to jump or dash out of danger, so pulling back is always an option.</p>
+            <p class="i18n-pt">O combate roda em dois recursos separados. Socos, pulos e dashes gastam stamina. Tiros gastam cargas guardadas no relógio, que têm o próprio medidor. Um jogador sob pressão que acabou de atacar ainda tem stamina pra pular ou dar dash pra fora do perigo, então recuar é sempre uma opção.</p>
+              </div>
+              <div class="paired-art">
+            <div class="artifact-doc">
+              <table class="artifact-table">
+                <thead>
+                  <tr><th><span class="i18n-en">Action</span><span class="i18n-pt">Ação</span></th><th><span class="i18n-en">Resource</span><span class="i18n-pt">Recurso</span></th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="event"><span class="i18n-en">Punch (J)</span><span class="i18n-pt">Soco (J)</span></td><td>Stamina</td></tr>
+                  <tr><td class="event"><span class="i18n-en">Jump (Space)</span><span class="i18n-pt">Pulo (Espaço)</span></td><td>Stamina</td></tr>
+                  <tr><td class="event">Dash (Shift)</td><td>Stamina</td></tr>
+                  <tr><td class="event"><span class="i18n-en">Shot (K)</span><span class="i18n-pt">Tiro (K)</span></td><td><span class="i18n-en">Watch charges</span><span class="i18n-pt">Cargas do relógio</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="artifact-caption"><span class="i18n-en">Each action and the resource it spends in the prologue build.</span><span class="i18n-pt">Cada ação e o recurso que ela gasta na build do prólogo.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-idx">02 / 04</div>
+          <div class="decision-body">
+            <p class="i18n-en">In the full design, boss fights are also the skill unlock system. Each of the five corrupted bosses leaves one ability in the watch, so the player's power grows at the same points where the story moves forward. The five skill slots are already on the HUD in the prologue. The skills themselves arrive later in the story.</p>
+            <p class="i18n-pt">No design completo, as lutas de chefe também são o sistema de desbloqueio de habilidades. Cada um dos cinco chefes corrompidos deixa uma habilidade no relógio, e o poder do jogador cresce nos mesmos pontos em que a história avança. Os cinco slots de habilidade já estão no HUD do prólogo. As habilidades chegam mais adiante na história.</p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-idx">03 / 04</div>
+          <div class="decision-body">
+            <p class="i18n-en">A countdown clock runs in every stage. It keeps pressure on for the whole stage and leaves enough time to fight and explore. The difficulty picked at the start of a new game sets how much time the player gets, along with how much damage they take and how tough the enemies are. There are three difficulty levels.</p>
+            <p class="i18n-pt">Um relógio regressivo corre em toda fase. Ele mantém a pressão durante a fase inteira e deixa tempo suficiente pra lutar e explorar. A dificuldade escolhida no início de um novo jogo define quanto tempo o jogador tem, junto com quanto dano ele toma e quão resistentes são os inimigos. São três níveis de dificuldade.</p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-idx">04 / 04</div>
+          <div class="decision-body">
+            <p class="i18n-en">Enemies drop fragments, and the player spends them at vending machines placed inside the stage. The upgrades are for mobility: a double jump first, then an upgraded dash. Buying happens in the middle of the run, so the economy is part of the moment-to-moment loop.</p>
+            <p class="i18n-pt">Inimigos deixam fragmentos, e o jogador gasta esses fragmentos em máquinas colocadas dentro da fase. Os upgrades são de mobilidade: primeiro um pulo duplo, depois um dash aprimorado. A compra acontece no meio da corrida, e assim a economia faz parte do loop momento a momento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── §03 PROCESS AND ARTIFACTS ── -->
+    <section class="case-section" id="process">
+      <div class="section-head">
+        <span class="section-num">§03</span>
+        <h2 class="section-title"><span class="i18n-en">Process and artifacts</span><span class="i18n-pt">Processo e artefatos</span></h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="case-body case-body-wide">
+        <div class="paired paired-lead">
+          <div class="paired-text">
+        <p class="i18n-en">A full GDD covers level design, combat systems, the HUD and the five-era narrative structure. It is the reference for a Unity codebase written from scratch: player movement, combat, enemy AI, inventory and an event-driven HUD.</p>
+        <p class="i18n-pt">Um GDD completo cobre level design, sistemas de combate, o HUD e a estrutura narrativa das cinco eras. Ele é a referência pra uma base de código Unity escrita do zero: movimento do jogador, combate, IA de inimigos, inventário e um HUD orientado a eventos.</p>
+        <p class="i18n-en">Two mechanics changed from the GDD after playtesting. In both cases the original version played worse than it read on paper.</p>
+        <p class="i18n-pt">Dois mecanismos mudaram em relação ao GDD depois de playtest. Nos dois casos a versão original funcionava pior na prática do que no papel.</p>
+        <p class="i18n-en">Current art is AI-assisted placeholder. A hand-drawn 2D artist is being brought on for the final look.</p>
+        <p class="i18n-pt">A arte atual é placeholder feita com apoio de IA. Um artista 2D de arte desenhada à mão está sendo recrutado pro visual final.</p>
+          </div>
+          <div class="paired-art">
+
+        <div class="artifact-doc">
+          <table class="artifact-table">
+            <thead>
+              <tr>
+                <th><span class="i18n-en">Mechanic</span><span class="i18n-pt">Mecânica</span></th>
+                <th><span class="i18n-en">GDD spec</span><span class="i18n-pt">Especificação do GDD</span></th>
+                <th><span class="i18n-en">After playtest</span><span class="i18n-pt">Depois do playtest</span></th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr><td class="tier"><span class="i18n-en">Melee</span><span class="i18n-pt">Corpo a corpo</span></td><td><span class="i18n-en">Fixed three-hit combo</span><span class="i18n-pt">Combo fixo de três golpes</span></td><td><span class="i18n-en">Free attack limited by stamina</span><span class="i18n-pt">Ataque livre limitado por stamina</span></td></tr>
+            <tr><td class="tier"><span class="i18n-en">Ranged</span><span class="i18n-pt">À distância</span></td><td><span class="i18n-en">Costs stamina</span><span class="i18n-pt">Custa stamina</span></td><td><span class="i18n-en">Own charge system in the watch</span><span class="i18n-pt">Sistema de carga próprio no relógio</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="artifact-caption"><span class="i18n-en">The two mechanics that shipped differently from the GDD.</span><span class="i18n-pt">Os dois mecanismos que foram ao ar diferentes do GDD.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-body" style="max-width:1180px;">
+        <div class="case-sub" style="margin-top:52px;"><span class="i18n-en">In game</span><span class="i18n-pt">No jogo</span></div>
+        <div class="gallery" data-gallery="/assets/projects/escape-adventure/"></div>
+      </div>
+    </section>
+
+    <!-- ── §04 RESULT ── -->
+    <section class="case-section" id="result">
+      <div class="section-head">
+        <span class="section-num">§04</span>
+        <h2 class="section-title"><span class="i18n-en">Result</span><span class="i18n-pt">Resultado</span></h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="case-body case-body-wide">
+        <div class="paired">
+          <div class="paired-text">
+        <p class="i18n-en case-lead">The prologue is playable in the browser on itch.io, in four stages: home and street, the city, an escape on top of a runaway train, and the metro. Every stage has full combat, a countdown clock and mobility upgrades. Stages 1 and 2 each have an android boss, and in the Stage 2 boss fight the player can climb into a defense tower built into the arena. Stage 3 is waves of enemies on the train roof. Stage 4 ends with a puzzle and the meeting with Tanisha. The game has three difficulty levels and runs in English and Portuguese. I built, debugged and tuned it alone. The rest of the story, four acts across five eras, is in production.</p>
+        <p class="i18n-pt case-lead">O prólogo é jogável no navegador, no itch.io, em quatro fases: casa e rua, a cidade, a fuga no teto de um trem desgovernado, e o metrô. Toda fase tem combate completo, relógio regressivo e upgrades de mobilidade. As Fases 1 e 2 têm um chefe androide cada, e na luta de chefe da Fase 2 o jogador pode subir numa torre de defesa embutida na arena. A Fase 3 são ondas de inimigos no teto do trem. A Fase 4 termina num puzzle e no encontro com a Tanisha. O jogo tem três níveis de dificuldade e roda em inglês e português. Construí, debuguei e ajustei sozinho. O resto da história, quatro atos ao longo de cinco eras, está em produção.</p>
+          </div>
+          <div class="paired-art">
+
+        <div class="artifact-doc">
+          <table class="artifact-table">
+            <thead>
+              <tr>
+                <th><span class="i18n-en">Stage</span><span class="i18n-pt">Fase</span></th>
+                <th><span class="i18n-en">Setting</span><span class="i18n-pt">Cenário</span></th>
+                <th><span class="i18n-en">Main encounter</span><span class="i18n-pt">Encontro principal</span></th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr><td class="tier">1</td><td><span class="i18n-en">Home and street</span><span class="i18n-pt">Casa e rua</span></td><td><span class="i18n-en">Android boss</span><span class="i18n-pt">Chefe androide</span></td></tr>
+            <tr><td class="tier">2</td><td><span class="i18n-en">The city</span><span class="i18n-pt">A cidade</span></td><td><span class="i18n-en">Android boss, with the defense tower</span><span class="i18n-pt">Chefe androide, com a torre de defesa</span></td></tr>
+            <tr><td class="tier">3</td><td><span class="i18n-en">Runaway train roof</span><span class="i18n-pt">Teto do trem desgovernado</span></td><td><span class="i18n-en">Enemy waves</span><span class="i18n-pt">Ondas de inimigos</span></td></tr>
+            <tr><td class="tier">4</td><td><span class="i18n-en">The metro</span><span class="i18n-pt">O metrô</span></td><td><span class="i18n-en">Puzzle and the meeting with Tanisha</span><span class="i18n-pt">Puzzle e o encontro com a Tanisha</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="artifact-caption"><span class="i18n-en">The four prologue stages as they play today.</span><span class="i18n-pt">As quatro fases do prólogo como estão hoje.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── §05 WHAT I WOULD DO DIFFERENTLY ── -->
+    <section class="case-section" id="different">
+      <div class="section-head">
+        <span class="section-num">§05</span>
+        <h2 class="section-title"><span class="i18n-en">What I would do differently</span><span class="i18n-pt">O que eu faria diferente</span></h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="case-body">
+        <p class="i18n-en">I sized the original scope, a prologue plus four acts across five eras, by the story I wanted to tell. Next time I would start from what one developer can ship in a reasonable production window and size the story to fit it.</p>
+        <p class="i18n-pt">Dimensionei o escopo original, um prólogo mais quatro atos ao longo de cinco eras, pela história que eu queria contar. Numa próxima vez eu começaria pelo que um dev solo consegue lançar numa janela de produção razoável e dimensionaria a história pra caber nisso.</p>
+        <p class="i18n-en">Today I have an ordered plan for cuts if time runs short: optional content goes first, then the number of stages per era, and whole eras only as a last resort. I wrote that plan after production had started. Next time I would write it at the start.</p>
+        <p class="i18n-pt">Hoje tenho um plano ordenado de cortes caso o tempo aperte: primeiro o conteúdo opcional, depois a quantidade de fases por era, e eras inteiras só como último recurso. Escrevi esse plano com a produção já em andamento. Numa próxima vez eu escreveria no início.</p>
+      </div>
+    </section>
+
+    <!-- ── PAGE NAV ── -->
+    <nav class="case-nav" aria-label="Case study navigation">
+      <a class="case-nav-link" href="/projects/tiny-ruins-tycoon/"><span class="case-nav-key"><span class="i18n-en">Previous</span><span class="i18n-pt">Anterior</span></span>Tiny Ruins Tycoon</a>
+      <a class="case-nav-link" href="/?view=recruiter#rec-projects"><span class="case-nav-key"><span class="i18n-en">Index</span><span class="i18n-pt">Índice</span></span><span class="i18n-en">All selected work</span><span class="i18n-pt">Todos os trabalhos</span></a>
+    </nav>
+
+  </main>
+
+  <footer>
+    <span>&copy; Reaperborn Forge · MMXXVI</span>
+    <span>// <span class="i18n-en">Forged in Unity · Tempered by iteration</span><span class="i18n-pt">Forjado em Unity · Temperado por iteração</span></span>
+    <span>EOF</span>
+  </footer>
+
+  <script src="/assets/gallery.js"></script>
+</body>
+</html>

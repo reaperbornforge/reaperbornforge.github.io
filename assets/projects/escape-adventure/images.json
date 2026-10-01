@@ -1,0 +1,14 @@
+[
+  { "src": "01_home.webp",
+    "caption": { "en": "Stage 1 starts at home. The HUD shows health, stamina and the fragment counter.",
+                 "pt": "A Fase 1 começa em casa. O HUD mostra vida, stamina e o contador de fragmentos." } },
+  { "src": "02_street.webp",
+    "caption": { "en": "Out on the street, with the countdown clock in the top right and a spike trap ahead.",
+                 "pt": "Na rua, com o relógio regressivo no canto superior direito e uma armadilha de espinhos à frente." } },
+  { "src": "03_city_combat.webp",
+    "caption": { "en": "A shot from the watch at an android, with a drone behind Oliver. The watch charges sit in the bottom right, one already spent, and the five skill slots, Z to B, sit in the bottom left.",
+                 "pt": "Um tiro do relógio num androide, com um drone atrás do Oliver. As cargas do relógio ficam no canto inferior direito, uma já gasta, e os cinco slots de habilidade, de Z a B, ficam no canto inferior esquerdo." } },
+  { "src": "04_train_roof.webp",
+    "caption": { "en": "Stage 3, the escape on top of the runaway train, with androids coming from behind.",
+                 "pt": "Fase 3, a fuga no teto do trem desgovernado, com androides vindo por trás." } }
+]
