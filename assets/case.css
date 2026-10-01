@@ -1148,3 +1148,8 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
 
 /* A long decision can carry more than one paired row */
 .decision-body .paired + .paired { margin-top: 34px; }
+
+/* Two values on one track: the muted fill is the limit, the accent
+   fill is the measured value that has to fit inside it. */
+.bar-h-track.track-pair { position: relative; }
+.track-pair .bar-h-fill { position: absolute; left: 0; top: 0; }
