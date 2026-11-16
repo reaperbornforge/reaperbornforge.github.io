@@ -1,0 +1,45 @@
+/* Shared accessibility and editorial polish. */
+:root { color-scheme: dark; }
+:focus-visible { outline: 2px solid #ffb199; outline-offset: 5px; }
+.skip-link { position: fixed; top: -100px; left: 16px; z-index: 10000; padding: 12px 18px; background: #e8e4d8; color: #0a0c10; }
+.skip-link:focus { top: 12px; }
+[id] { scroll-margin-top: 100px; }
+.evidence-note { margin: 32px auto; padding: 22px 26px; max-width: 1180px; border-left: 3px solid #c8102e; background: #13171f; color: #c6c9d0; font-size: 15px; line-height: 1.75; }
+.evidence-note p + p { margin-top: 10px; }
+.evidence-note a, .case-jump a { color: #e8e4d8; text-underline-offset: 4px; }
+.case-jump { display: flex; flex-wrap: wrap; gap: 12px 24px; max-width: 1180px; margin: 24px auto 36px; padding: 0 26px; font-size: 14px; }
+.update-note { color: #ffb199; font-size: 13px; margin-top: 16px; }
+.rec-name { font-size: clamp(40px, 7vw, 80px); overflow-wrap: anywhere; }
+.rec-card-text { font-size: 15px; line-height: 1.75; }
+.toggle-btn.active { color: #fff; }
+.rec-hire-btn, .term-cta, .link-box-val { overflow-wrap: anywhere; }
+.paired > *, .decision > *, .case-hero-grid > * { min-width: 0; }
+.chart-plot, .artifact-doc-scroll { max-width: 100%; overflow-x: auto; }
+.artifact-doc { max-width: 100%; overflow-x: auto; }
+@media (max-width: 899px) {
+  .paired { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .status-dots, .status-crumbs { display: none !important; }
+  .status-bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .header-controls { grid-column: 2; }
+}
+@media (max-width: 640px) {
+  .status-bar { padding: 12px 16px; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+  .header-controls { grid-column: 1; flex-wrap: wrap; justify-content: flex-start; }
+  .toggle-btn { padding: 8px; letter-spacing: .06em; }
+  .evidence-note { margin: 20px 16px; }
+  .rec-hire-btn { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  #cursor-canvas, #ember-canvas { display: none; }
+}
+@media print {
+  .status-bar, #cursor-canvas, #ember-canvas, .skip-link, .case-jump { display: none !important; }
+  body { background: white; color: black; }
+  .reveal { opacity: 1; transform: none; }
+  a { color: inherit; }
+}

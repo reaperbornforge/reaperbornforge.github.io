@@ -14,8 +14,11 @@
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="stylesheet" href="/assets/case.css">
   <script src="/assets/i18n.js"></script>
+  <link rel="stylesheet" href="/assets/portfolio.css">
+  <script src="/assets/navigation.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content"><span class="i18n-en">Skip to content</span><span class="i18n-pt">Ir para o conteúdo</span></a>
 
   <!-- ── STATUS BAR ── -->
   <header class="status-bar">
@@ -57,7 +60,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ── HERO ── -->
     <section class="case-hero">
@@ -101,6 +104,13 @@
         </div>
       </div>
     </section>
+
+    <aside class="evidence-note" aria-label="Project status">
+      <p class="i18n-en">The public itch.io page offers a four-stage browser prologue. Design values and editor-check counts below describe the documented development snapshot, not a fresh audit of the current Unity project. Development continues beyond the public prologue.</p>
+      <p class="i18n-pt">A página pública no itch.io oferece um prólogo de quatro fases no navegador. Os valores de design e as contagens de verificações abaixo descrevem o registro de desenvolvimento documentado, não uma nova auditoria do projeto Unity atual. O desenvolvimento continua além do prólogo público.</p>
+      <p><a href="https://zdarkreaper.itch.io/escape-adventure" target="_blank" rel="noreferrer">itch.io ↗</a> · <time datetime="2026-11-16">2026-11-16</time></p>
+    </aside>
+    <nav class="case-jump" aria-label="escape-adventure sections"><a href="#context"><span class="i18n-en">Context</span><span class="i18n-pt">Contexto</span></a><a href="#decisions"><span class="i18n-en">Design decisions</span><span class="i18n-pt">Decisões</span></a><a href="#process"><span class="i18n-en">Process</span><span class="i18n-pt">Processo</span></a><a href="#result"><span class="i18n-en">Results</span><span class="i18n-pt">Resultados</span></a><a href="#different"><span class="i18n-en">Lessons</span><span class="i18n-pt">Aprendizados</span></a></nav>
 
     <!-- ── §01 CONTEXT AND STAKES ── -->
     <section class="case-section" id="context">
@@ -322,8 +332,8 @@
         <span class="section-line"></span>
       </div>
       <div class="case-body">
-        <p class="i18n-en case-lead">The design lives in a GDD and in a running log of 139 numbered, dated design updates, each one recording what changed and why. A balance sheet is rebuilt from the scenes themselves by an editor script that opens every level and lists each enemy, machine and fragment source, so the numbers on paper come from the build. When the document and the build disagree, I write down which one won and the reason.</p>
-        <p class="i18n-pt case-lead">O design mora num GDD e num registro contínuo de 139 atualizações numeradas e datadas, cada uma dizendo o que mudou e por quê. A planilha de balanceamento é refeita a partir das próprias cenas por um script de editor que abre cada fase e lista cada inimigo, máquina e fonte de fragmento, então os números no papel saem da build. Quando o documento e a build discordam, registro qual venceu e o motivo.</p>
+        <p class="i18n-en case-lead">The design lives in a GDD and in a running log of numbered, dated design updates, each one recording what changed and why. A balance sheet is rebuilt from the scenes themselves by an editor script that opens every level and lists each enemy, machine and fragment source, so the numbers on paper come from the build. When the document and the build disagree, I write down which one won and the reason.</p>
+        <p class="i18n-pt case-lead">O design mora num GDD e num registro contínuo de atualizações numeradas e datadas, cada uma dizendo o que mudou e por quê. A planilha de balanceamento é refeita a partir das próprias cenas por um script de editor que abre cada fase e lista cada inimigo, máquina e fonte de fragmento, então os números no papel saem da build. Quando o documento e a build discordam, registro qual venceu e o motivo.</p>
       </div>
 
       <div class="case-body case-body-wide" style="margin-top:32px;">
@@ -371,8 +381,8 @@
           <div class="paired-text">
         <p class="i18n-en">Levels are blocked out by editor scripts and checked by a simulator of Oliver's real jump, because the reach in the constants table only describes a jump that lands at the same height. Almost no jump in a level does that. When I blocked out the shaft in stage 4 against the flat number, half of the gaps were impossible while the table said they were fine. The same simulator later caught a beam I had sized as safe, which would have let the player jump over a whole lever puzzle.</p>
         <p class="i18n-pt">As fases são blocadas por scripts de editor e conferidas por um simulador do pulo real do Oliver, porque o alcance da tabela de constantes descreve só um pulo que aterrissa na mesma altura. Quase nenhum pulo de fase faz isso. Quando bloquei o poço da Fase 4 contra o número plano, metade dos vãos era impossível enquanto a tabela dizia que estavam folgados. O mesmo simulador pegou depois uma viga que eu tinha dimensionado como segura e que deixaria o jogador pular por cima de um puzzle de alavancas inteiro.</p>
-        <p class="i18n-en">183 automated editor tests run over the scenes and systems. One lesson shaped how I write them: an audit that reads the design table instead of the scene will pass while the level is broken. One of mine reported zero errors while an elevator meant to go up had been generated sideways and seven blinking platforms blinked in sync. Since then each check reads the scene back, and I only trust a new check after I have seen it fail on purpose.</p>
-        <p class="i18n-pt">183 testes automáticos de editor rodam sobre as cenas e os sistemas. Uma lição moldou como escrevo esses testes: uma auditoria que lê a tabela do design em vez da cena passa enquanto a fase está quebrada. Uma das minhas acusou zero erros enquanto um elevador que devia subir tinha sido gerado na horizontal e sete plataformas piscantes piscavam em sincronia. Desde então cada verificação lê a cena de volta, e eu só confio numa verificação nova depois de vê-la falhar de propósito.</p>
+        <p class="i18n-en">The documented snapshot reported 183 automated editor checks for scenes and systems; this count has not been rerun in this portfolio update. One lesson shaped how I write them: an audit that reads the design table instead of the scene will pass while the level is broken. One of mine reported zero errors while an elevator meant to go up had been generated sideways and seven blinking platforms blinked in sync. Since then each check reads the scene back, and I only trust a new check after I have seen it fail on purpose.</p>
+        <p class="i18n-pt">O registro documentado relatava 183 verificações automáticas de editor para cenas e sistemas; essa contagem não foi executada novamente nesta atualização do portfólio. Uma lição moldou como escrevo esses testes: uma auditoria que lê a tabela do design em vez da cena passa enquanto a fase está quebrada. Uma das minhas acusou zero erros enquanto um elevador que devia subir tinha sido gerado na horizontal e sete plataformas piscantes piscavam em sincronia. Desde então cada verificação lê a cena de volta, e eu só confio numa verificação nova depois de vê-la falhar de propósito.</p>
           </div>
           <div class="paired-art">
         <div class="artifact-doc">

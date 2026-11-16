@@ -26,8 +26,8 @@
 
   var COPY = {
     empty: {
-      en: 'No screenshots yet. Drop images into this project folder and they appear here automatically.',
-      pt: 'Nenhuma captura ainda. Coloque imagens na pasta do projeto e elas aparecem aqui automaticamente.'
+      en: 'Screenshots will be added as development progresses.',
+      pt: 'Novas capturas serão adicionadas durante o desenvolvimento.'
     },
     prev: { en: 'Previous image', pt: 'Imagem anterior' },
     next: { en: 'Next image', pt: 'Proxima imagem' },
@@ -171,24 +171,12 @@
     show(0);
   }
 
-  /* One folder: manifest entries first, then any conventionally named files
-     (01, 02, ...) the manifest did not already list. Both routes work at once,
-     so adding 05.png needs no manifest edit and a manifest can still pin order
-     and captions for files with arbitrary names. */
+  /* A manifest is authoritative. Probe numbered images only when no manifest
+     exists, avoiding requests for nonexistent images on published pages. */
   function discoverFolder(dir) {
-    return Promise.all([discoverByManifest(dir), discoverByProbe(dir)])
-      .then(function (results) {
-        var manifest = results[0] || [];
-        var probed = results[1] || [];
-        var seen = {};
-        var out = [];
-        manifest.concat(probed).forEach(function (item) {
-          if (seen[item.src]) return;
-          seen[item.src] = true;
-          out.push(item);
-        });
-        return out;
-      });
+    return discoverByManifest(dir).then(function (manifest) {
+      return manifest || discoverByProbe(dir);
+    });
   }
 
   function init(root) {

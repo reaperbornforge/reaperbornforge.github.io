@@ -68,6 +68,12 @@
       next = normalize(next) || 'en';
       write(next);
       apply(next);
+      // Keep explicit language URLs consistent when a visitor changes language.
+      try {
+        var url = new URL(window.location.href);
+        url.searchParams.set('lang', next);
+        window.history.replaceState(null, '', url);
+      } catch (err) { /* file previews or restricted history */ }
     }
   };
 

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reaperborn Forge · Portfolio</title>
-  <meta name="description" content="Reaperborn Forge. Independent game studio. Game Design, Unity Development, F2P Systems.">
+  <title>Otávio Antonio · Game Designer · Reaperborn Forge</title>
+  <meta name="description" content="Otávio Antonio — Game Designer and Unity Developer. Gameplay, progression and F2P systems, with playable projects and technical case studies.">
   <meta property="og:title" content="Reaperborn Forge">
-  <meta property="og:description" content="Independent game studio forging systems that play themselves into your habits.">
+  <meta property="og:description" content="Game design, playable projects and technical case studies by Otávio Antonio.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -1394,8 +1394,11 @@
       .rec-hire-actions { flex-direction: column; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/portfolio.css">
+  <script src="/assets/navigation.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content"><span class="i18n-en">Skip to content</span><span class="i18n-pt">Ir para o conteúdo</span></a>
 
   <canvas id="cursor-canvas"></canvas>
 
@@ -1451,14 +1454,15 @@
         <button type="button" class="toggle-btn" data-set-lang="pt">PT</button>
       </div>
       <div class="view-toggle">
-        <a class="toggle-btn" id="btn-studio" href="/"><span class="i18n-en">Studio</span><span class="i18n-pt">Estúdio</span></a>
-        <a class="toggle-btn" id="btn-recruiter" href="/?view=recruiter"><span class="i18n-en">Recruiter</span><span class="i18n-pt">Recrutador</span></a>
+        <a class="toggle-btn" id="btn-studio" href="/?view=studio"><span class="i18n-en">Studio</span><span class="i18n-pt">Estúdio</span></a>
+        <a class="toggle-btn" id="btn-recruiter" href="/?view=recruiter" aria-label="Recruiter portfolio"><span class="i18n-en">Recruiter</span><span class="i18n-pt">Recrutador</span></a>
       </div>
     </div>
   </header>
 
   <!-- ── STUDIO VIEW ── -->
-  <div id="studio-view">
+  <main id="main-content">
+  <div id="studio-view" style="display:none">
 
     <!-- ── HERO ── -->
     <div class="hero">
@@ -1488,10 +1492,10 @@
                 Um estúdio de jogos no Brasil construído majoritariamente sozinho, com um título cofundado ao lado de um sócio: um arcade de vôlei, um RPG tático onde cada golpe remodela o chão embaixo de você, uma vila reconstruída ao longo de cinco eras.
               </p>
               <p class="hero-recruit i18n-en">
-                Five titles in the forge, four of them playable right now. Open to collaborators, playtesters, and anyone who wants to talk systems.
+                Five projects: a published Android game, three playable prototypes and a narrative project. Open to collaborators, playtesters, and anyone who wants to talk systems.
               </p>
               <p class="hero-recruit i18n-pt">
-                Cinco títulos na forja, quatro deles jogáveis agora. Aberto a colaboradores, playtesters, e quem quiser conversar sobre sistemas.
+                Cinco projetos: um jogo Android publicado, três protótipos jogáveis e um projeto narrativo. Aberto a colaboradores, playtesters, e quem quiser conversar sobre sistemas.
               </p>
               <div class="hero-chips">
                 <span class="chip chip-accent">● <span class="i18n-en">Open for collab</span><span class="i18n-pt">Aberto a colaborações</span></span>
@@ -1510,17 +1514,12 @@
                 <span>v.1.0</span>
               </div>
               <div class="d-row"><span class="d-key"><span class="i18n-en">Operator</span><span class="i18n-pt">Operador</span></span><span class="d-val">Otávio Antonio</span></div>
-              <div class="d-row"><span class="d-key"><span class="i18n-en">Forge</span><span class="i18n-pt">Forja</span></span><span class="d-val">Reaperborn · Est. 2023</span></div>
+              <div class="d-row"><span class="d-key"><span class="i18n-en">Forge</span><span class="i18n-pt">Forja</span></span><span class="d-val">Reaperborn Forge</span></div>
               <div class="d-row"><span class="d-key"><span class="i18n-en">Class</span><span class="i18n-pt">Classe</span></span><span class="d-val">Game Designer / Unity Dev</span></div>
               <div class="d-row"><span class="d-key"><span class="i18n-en">Region</span><span class="i18n-pt">Região</span></span><span class="d-val"><span class="i18n-en">Brasil · Remote</span><span class="i18n-pt">Brasil · Remoto</span></span></div>
-              <div class="d-row"><span class="d-key"><span class="i18n-en">Discipline</span><span class="i18n-pt">Disciplina</span></span><span class="d-val"><span class="i18n-en">Systems · F2P · LiveOps</span><span class="i18n-pt">Sistemas · F2P · LiveOps</span></span></div>
+              <div class="d-row"><span class="d-key"><span class="i18n-en">Discipline</span><span class="i18n-pt">Disciplina</span></span><span class="d-val"><span class="i18n-en">Systems · F2P · Prototyping</span><span class="i18n-pt">Sistemas · F2P · Prototipagem</span></span></div>
               <div class="d-row"><span class="d-key">Engine</span><span class="d-val">Unity · C#</span></div>
-              <div style="margin-top:6px;">
-                <div class="d-key"><span class="i18n-en">Active projects</span><span class="i18n-pt">Projetos ativos</span></div>
-                <div class="d-bar"><div class="d-bar-fill" style="width:72%"></div></div>
-                <div class="d-key" style="margin-top:14px;"><span class="i18n-en">Forge load</span><span class="i18n-pt">Carga da forja</span></div>
-                <div class="d-bar"><div class="d-bar-fill" style="width:86%"></div></div>
-              </div>
+              <p class="d-key" style="margin-top:16px;"><span class="i18n-en">Independent work · Collaborative design</span><span class="i18n-pt">Trabalho independente · Design colaborativo</span></p>
             </div>
           </div>
         </div>
@@ -1551,8 +1550,8 @@
               <div class="stat-value">05</div>
             </div>
             <div class="stat-cell">
-              <div class="stat-key"><span class="i18n-en">Years forging</span><span class="i18n-pt">Anos forjando</span></div>
-              <div class="stat-value">04+</div>
+              <div class="stat-key"><span class="i18n-en">Designing since</span><span class="i18n-pt">Projetando desde</span></div>
+              <div class="stat-value">2022</div>
             </div>
             <div class="stat-cell">
               <div class="stat-key">Engine</div>
@@ -1578,7 +1577,7 @@
       <div class="poster-grid">
 
         <!-- Head Volley Clash -->
-        <a class="poster reveal" href="https://zdarkreaper.itch.io/head-volley-clash" target="_blank" rel="noreferrer">
+        <a class="poster reveal" href="/projects/head-volley-clash/">
           <div class="poster-art">
             <span class="poster-badge"><span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span><span class="i18n-en">Playable now</span><span class="i18n-pt">Jogável agora</span></span>
             <img src="assets/posters/head-volley-clash.webp" alt="Head Volley Clash poster" loading="lazy" width="630" height="500">
@@ -1588,12 +1587,12 @@
             <div class="poster-kind"><span class="i18n-en">Arcade Volleyball · Mobile</span><span class="i18n-pt">Vôlei Arcade · Mobile</span></div>
             <p class="poster-logline i18n-en">Two heads, one ball, and no time to think. Fast volleyball rallies built for short sessions, with characters to unlock and a shop full of skins worth chasing.</p>
             <p class="poster-logline i18n-pt">Duas cabeças, uma bola, e nenhum tempo pra pensar. Trocas rápidas de vôlei feitas pra sessões curtas, com personagens pra desbloquear e uma loja cheia de skins que valem a pena ir atrás.</p>
-            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Play on itch.io</span><span class="i18n-pt">Jogar no itch.io</span></div>
+            <p class="update-note"><span class="i18n-en">Recent visual rework</span><span class="i18n-pt">Rework visual recente</span></p><div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Explore project</span><span class="i18n-pt">Explorar projeto</span></div>
           </div>
         </a>
 
         <!-- Legacy of Allard -->
-        <a class="poster reveal" style="transition-delay:70ms" href="https://zdarkreaper.itch.io/legacy-of-allard" target="_blank" rel="noreferrer">
+        <a class="poster reveal" style="transition-delay:70ms" href="/projects/legacy-of-allard/">
           <div class="poster-art">
             <span class="poster-badge"><span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span><span class="i18n-en">Playable now</span><span class="i18n-pt">Jogável agora</span></span>
             <img src="assets/posters/legacy-of-allard.webp" alt="Legacy of Allard poster" loading="lazy" width="630" height="500">
@@ -1603,12 +1602,12 @@
             <div class="poster-kind"><span class="i18n-en">Tactical RPG · Multiplayer</span><span class="i18n-pt">RPG Tático · Multiplayer</span></div>
             <p class="poster-logline i18n-en">A turn-based tactical RPG where every hit reshapes the battlefield beneath you. Borrow abilities across classes, tear the map apart as you fight, and end your turn when you decide to.</p>
             <p class="poster-logline i18n-pt">Um RPG tático por turnos onde cada golpe remodela o campo de batalha embaixo de você. Pegue habilidades emprestadas de outras classes, rasgue o mapa enquanto luta, e encerre o turno quando você decidir.</p>
-            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Play on itch.io</span><span class="i18n-pt">Jogar no itch.io</span></div>
+            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Explore project</span><span class="i18n-pt">Explorar projeto</span></div>
           </div>
         </a>
 
         <!-- Tiny Ruins Tycoon -->
-        <a class="poster reveal" style="transition-delay:140ms" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer">
+        <a class="poster reveal" style="transition-delay:140ms" href="/projects/tiny-ruins-tycoon/">
           <div class="poster-art">
             <span class="poster-badge"><span class="led" style="background:#C8102E;box-shadow:0 0 8px #C8102E;"></span><span class="i18n-en">Playable now</span><span class="i18n-pt">Jogável agora</span></span>
             <img src="assets/posters/tiny-ruins-tycoon.webp" alt="Tiny Ruins Tycoon poster" loading="lazy" width="630" height="500">
@@ -1618,19 +1617,14 @@
             <div class="poster-kind"><span class="i18n-en">Cozy Idle · Browser</span><span class="i18n-pt">Idle Cozy · Navegador</span></div>
             <p class="poster-logline i18n-en">Wake up in the ruins and rebuild a village across five eras, growing alongside a Guardian who's learning this world right along with you, and tiny helpers who need you as much as you need them.</p>
             <p class="poster-logline i18n-pt">Acorde nas ruínas e reconstrua uma vila ao longo de cinco eras, crescendo ao lado de um Guardian que está aprendendo esse mundo junto com você, e ajudantes pequenos que precisam de você tanto quanto você precisa deles.</p>
-            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Play on itch.io</span><span class="i18n-pt">Jogar no itch.io</span></div>
+            <p class="update-note"><span class="i18n-en">Recent visual rework</span><span class="i18n-pt">Rework visual recente</span></p><div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Explore project</span><span class="i18n-pt">Explorar projeto</span></div>
           </div>
         </a>
 
-        <!-- Escape Adventure · the itch.io page answered 404 to an anonymous request
-             when this was wired up, which is also what a draft (unpublished) page
-             returns. Publishing it makes this link work with no edit here. If the
-             slug turns out to be different, it is the href below and nothing else.
-             Once there is a playable build, swap the badge and CTA for the
-             "Playable now" / "Play on itch.io" pairs used by the three cards above. -->
-        <a class="poster reveal" style="transition-delay:210ms" href="https://zdarkreaper.itch.io/escape-adventure" target="_blank" rel="noreferrer">
+        <!-- Escape Adventure -->
+        <a class="poster reveal" style="transition-delay:210ms" href="/projects/escape-adventure/">
           <div class="poster-art">
-            <span class="poster-badge poster-soon"><span class="led" style="background:rgba(232,228,216,.45);box-shadow:0 0 6px rgba(232,228,216,.2);"></span><span class="i18n-en">In development</span><span class="i18n-pt">Em desenvolvimento</span></span>
+            <span class="poster-badge poster-soon"><span class="led" style="background:rgba(232,228,216,.45);box-shadow:0 0 6px rgba(232,228,216,.2);"></span><span class="i18n-en">Playable prologue</span><span class="i18n-pt">Prólogo jogável</span></span>
             <img src="assets/posters/escape-adventure.webp" alt="Escape Adventure poster" loading="lazy" width="630" height="500">
           </div>
           <div class="poster-body">
@@ -1638,7 +1632,7 @@
             <div class="poster-kind"><span class="i18n-en">2D Action-Platformer</span><span class="i18n-pt">Action-Platformer 2D</span></div>
             <p class="poster-logline i18n-en">No powers of his own, just stamina, a watch that was never his to begin with, and a city that's already falling apart.</p>
             <p class="poster-logline i18n-pt">Nenhum poder próprio, só stamina, um relógio que nunca foi dele, e uma cidade que já está desabando.</p>
-            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">View on itch.io</span><span class="i18n-pt">Ver no itch.io</span></div>
+            <div class="poster-cta"><span class="poster-cta-icon" aria-hidden="true">▶</span><span class="i18n-en">Explore project</span><span class="i18n-pt">Explorar projeto</span></div>
           </div>
         </a>
 
@@ -1709,26 +1703,26 @@
       <div class="skills-box">
         <div class="skill-col reveal">
           <h3 class="skill-col-head">Design</h3>
-          <div class="skill-row"><span>Game Design</span><span class="skill-level"><span class="i18n-en">EXPERT</span><span class="i18n-pt">ESPECIALISTA</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">Systems Design</span><span class="i18n-pt">Design de Sistemas</span></span><span class="skill-level"><span class="i18n-en">EXPERT</span><span class="i18n-pt">ESPECIALISTA</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">Progression Design</span><span class="i18n-pt">Design de Progressão</span></span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">F2P Economy Design</span><span class="i18n-pt">Design de Economia F2P</span></span><span class="skill-level"><span class="i18n-en">EXPERT</span><span class="i18n-pt">ESPECIALISTA</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">Gameplay Design</span><span class="i18n-pt">Design de Gameplay</span></span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">UI/UX for Games</span><span class="i18n-pt">UI/UX para Jogos</span></span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
+          <div class="skill-row"><span>Game Design</span></div>
+          <div class="skill-row"><span><span class="i18n-en">Systems Design</span><span class="i18n-pt">Design de Sistemas</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">Progression Design</span><span class="i18n-pt">Design de Progressão</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">F2P Economy Design</span><span class="i18n-pt">Design de Economia F2P</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">Gameplay Design</span><span class="i18n-pt">Design de Gameplay</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">UI/UX for Games</span><span class="i18n-pt">UI/UX para Jogos</span></span></div>
         </div>
         <div class="skill-col reveal" style="transition-delay:100ms">
           <h3 class="skill-col-head"><span class="i18n-en">Engineering</span><span class="i18n-pt">Engenharia</span></h3>
-          <div class="skill-row"><span>Unity</span><span class="skill-level"><span class="i18n-en">EXPERT</span><span class="i18n-pt">ESPECIALISTA</span></span></div>
-          <div class="skill-row"><span>C#</span><span class="skill-level"><span class="i18n-en">EXPERT</span><span class="i18n-pt">ESPECIALISTA</span></span></div>
-          <div class="skill-row"><span>Git</span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
-          <div class="skill-row"><span>Firebase / Firestore</span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
+          <div class="skill-row"><span>Unity</span></div>
+          <div class="skill-row"><span>C#</span></div>
+          <div class="skill-row"><span>Git</span></div>
+          <div class="skill-row"><span>Firebase / Firestore</span></div>
         </div>
         <div class="skill-col reveal" style="transition-delay:200ms">
           <h3 class="skill-col-head"><span class="i18n-en">Production</span><span class="i18n-pt">Produção</span></h3>
-          <div class="skill-row"><span><span class="i18n-en">Prototyping</span><span class="i18n-pt">Prototipagem</span></span><span class="skill-level"><span class="i18n-en">EXPERT</span><span class="i18n-pt">ESPECIALISTA</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">QA Basics</span><span class="i18n-pt">Fundamentos de QA</span></span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">LiveOps Mindset</span><span class="i18n-pt">Mentalidade LiveOps</span></span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
-          <div class="skill-row"><span><span class="i18n-en">Data-Driven Tuning</span><span class="i18n-pt">Tuning Orientado a Dados</span></span><span class="skill-level"><span class="i18n-en">ADVANCED</span><span class="i18n-pt">AVANÇADO</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">Prototyping</span><span class="i18n-pt">Prototipagem</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">QA Basics</span><span class="i18n-pt">Fundamentos de QA</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">LiveOps Mindset</span><span class="i18n-pt">Mentalidade LiveOps</span></span></div>
+          <div class="skill-row"><span><span class="i18n-en">Data-Driven Tuning</span><span class="i18n-pt">Tuning Orientado a Dados</span></span></div>
         </div>
       </div>
     </section>
@@ -1840,14 +1834,14 @@
   </div><!-- /#studio-view -->
 
   <!-- ── RECRUITER VIEW ── -->
-  <div id="recruiter-view" style="display:none">
+  <div id="recruiter-view">
 
     <!-- Hero -->
     <div class="rec-hero">
       <div class="rec-eyebrow">// <span class="i18n-en">CANDIDATE</span><span class="i18n-pt">CANDIDATO</span> · OTÁVIO ANTONIO</div>
-      <h1 class="rec-name">Game Designer</h1>
-      <p class="rec-role i18n-en">Product-focused designer building and testing gameplay loops, progression systems and F2P economies.</p>
-      <p class="rec-role i18n-pt">Designer com foco em produto, construindo e testando loops de gameplay, sistemas de progressão e economias F2P.</p>
+      <h1 class="rec-name">Otávio Antonio</h1>
+      <p class="rec-role i18n-en">Game Designer · Gameplay, systems, progression and F2P economy design.</p>
+      <p class="rec-role i18n-pt">Game Designer · Gameplay, sistemas, progressão e design de economia F2P.</p>
       <p class="rec-tech"><span class="i18n-en">Unity / C# development</span><span class="i18n-pt">Desenvolvimento Unity / C#</span></p>
       <p class="rec-seeking"><span class="i18n-en">Seeking junior / mid positions at game studios in Brazil and remote</span><span class="i18n-pt">Buscando vagas júnior / pleno em estúdios de jogos no Brasil e remoto</span></p>
       <div class="rec-chips">
@@ -1857,8 +1851,14 @@
         <span class="chip"><span class="i18n-en">F2P Economy</span><span class="i18n-pt">Economia F2P</span></span>
         <span class="chip">LiveOps</span>
       </div>
-      <p class="rec-summary i18n-en">4 years designing and shipping games, solo on some and co-founded on others, from a mobile arcade F2P with 330 daily installs at launch to a tactical multiplayer RPG now on Steam.</p>
-      <p class="rec-summary i18n-pt">4 anos projetando e lançando jogos, sozinho em alguns e cofundado em outros, de um arcade mobile F2P com 330 instalações diárias no lançamento a um RPG tático multiplayer hoje na Steam.</p>
+      <p class="rec-summary i18n-en">Designing games since 2022, from a published Android arcade game to playable prototypes in Unity. My work covers gameplay, progression, economy design and iteration through playtesting. Legacy of Allard is a collaborative project with a Steam page; it has not been released on Steam.</p>
+      <p class="rec-summary i18n-pt">Projetando jogos desde 2022, de um arcade publicado para Android a protótipos jogáveis em Unity. Meu trabalho inclui gameplay, progressão, design de economia e iteração por playtest. Legacy of Allard é um projeto colaborativo com página na Steam; ainda não foi lançado na plataforma.</p>
+      <div class="rec-hire-actions" style="margin-top:28px;">
+        <a class="rec-hire-btn primary" href="#rec-projects"><span class="i18n-en">Selected work</span><span class="i18n-pt">Projetos selecionados</span> →</a>
+        <a class="rec-hire-btn secondary i18n-en" href="/assets/Resume%20-%20Otavio%20Rosindo.pdf">Resume PDF →</a>
+        <a class="rec-hire-btn secondary i18n-pt" href="/assets/Curriculo%20-%20Otavio%20Rosindo.pdf">Currículo PDF →</a>
+        <a class="rec-hire-btn secondary" href="mailto:otaviorosindo@gmail.com"><span class="i18n-en">Contact</span><span class="i18n-pt">Contato</span> →</a>
+      </div>
     </div>
 
     <!-- Projects -->
@@ -1884,8 +1884,8 @@
           </div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
-            <p class="rec-card-text i18n-en">A live, playable WebGL alpha in the browser with no install friction, an active Steam page, and five classes with their own kit built and playable today. Built in Unity on Photon PUN2, now migrating to Photon Fusion, with Destructible2D driving the terrain. Targeting a full release by December.</p>
-            <p class="rec-card-text i18n-pt">Um alpha em WebGL ao vivo e jogável no navegador, sem fricção de instalação, uma página ativa na Steam, e cinco classes com kit próprio construídas e jogáveis hoje. Feito em Unity sobre Photon PUN2, hoje migrando para Photon Fusion, com Destructible2D cuidando do terreno. Meta de lançamento completo até dezembro.</p>
+            <p class="rec-card-text i18n-en">Designed class kits, parameterized abilities and cross-class build choices in a collaborative Unity RPG. A WebGL alpha and Steam page showcase the project. Programming, backend and the Photon Fusion migration belong to my co-founder. Steam release date: to be announced.</p>
+            <p class="rec-card-text i18n-pt">Design de kits de classes, habilidades parametrizadas e escolhas de build entre classes em um RPG colaborativo em Unity. Um alpha WebGL e a página na Steam apresentam o projeto. Programação, backend e migração para Photon Fusion são responsabilidades do meu sócio. Lançamento na Steam: a anunciar.</p>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://game.playallard.com" target="_blank" rel="noreferrer" aria-label="Play the Legacy of Allard alpha">
@@ -1908,7 +1908,7 @@
           <div class="rec-card-num"><span class="i18n-en">PROJECT</span><span class="i18n-pt">PROJETO</span> · II</div>
           <h3 class="rec-card-title">Head Volley Clash</h3>
           <div class="rec-card-role"><span class="i18n-en">Role · Solo Game Designer and Unity Developer</span><span class="i18n-pt">Papel · Game Designer e Unity Developer solo</span></div>
-          <div class="rec-card-kind"><span class="i18n-en">Arcade Mobile · F2P · 2024 to present</span><span class="i18n-pt">Arcade Mobile · F2P · 2024 até hoje</span></div>
+          <div class="rec-card-kind"><span class="i18n-en">Arcade Mobile · F2P · Jan 2025 to present</span><span class="i18n-pt">Arcade Mobile · F2P · Jan 2025 até hoje</span></div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Problem</span><span class="i18n-pt">Problema</span></div>
             <p class="rec-card-text i18n-en">Shipping a full free-to-play title solo means owning every layer at once: the core arcade loop, a balanced virtual economy, seasonal passes and a skin shop, then getting it stable enough to survive real players. With no team to split design, engineering or LiveOps, the challenge was taking it from zero to live on Google Play without any piece falling over.</p>
@@ -1916,8 +1916,8 @@
           </div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
-            <p class="rec-card-text i18n-en">Launched to ~330 daily installs with zero paid marketing, Brazil accounting for only about 13.5% of total installs and the rest spread internationally, evidence the loop and store presence could acquire players on their own. It still holds ~40 monthly active users despite no updates since release, which points to genuine retention rather than a launch-day spike.</p>
-            <p class="rec-card-text i18n-pt">Lançou com ~330 instalações diárias sem verba de marketing, com o Brasil respondendo por apenas cerca de 13,5% do total de instalações e o resto distribuído internacionalmente, evidência de que o loop e a presença na loja conseguiam adquirir jogadores sozinhos. Ainda mantém ~40 usuários ativos mensais apesar de nenhuma atualização desde o lançamento, o que aponta retenção real e não um pico de dia de lançamento.</p>
+            <p class="rec-card-text i18n-en">Published on Google Play with ads and in-app purchases. Designed and implemented the arcade loop, progression, passes and cosmetic shop. A recent rework focused mainly on visuals. The public listing confirms a shipped Android product; historical acquisition figures are discussed separately in the case study.</p>
+            <p class="rec-card-text i18n-pt">Publicado na Google Play com anúncios e compras no aplicativo. Design e implementação do loop arcade, progressão, passes e loja de cosméticos. Um rework recente teve foco majoritariamente visual. A página pública comprova um produto Android publicado; os números históricos de aquisição são tratados separadamente no estudo de caso.</p>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer" aria-label="Play Head Volley Clash on Google Play">
@@ -1937,16 +1937,16 @@
           <div class="rec-card-num"><span class="i18n-en">PROJECT</span><span class="i18n-pt">PROJETO</span> · III</div>
           <h3 class="rec-card-title">Tiny Ruins Tycoon</h3>
           <div class="rec-card-role"><span class="i18n-en">Role · Solo Game Designer &amp; Unity Developer</span><span class="i18n-pt">Papel · Game Designer &amp; Unity Developer solo</span></div>
-          <div class="rec-card-kind"><span class="i18n-en">Cozy Idle Economy · Unity 6 · C# · ScriptableObjects · 2026</span><span class="i18n-pt">Idle Cozy de Economia · Unity 6 · C# · ScriptableObjects · 2026</span></div>
+          <div class="rec-card-kind"><span class="i18n-en">Cozy Idle Economy · Unity 6 · C# · ScriptableObjects</span><span class="i18n-pt">Idle Cozy de Economia · Unity 6 · C# · ScriptableObjects</span></div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Problem</span><span class="i18n-pt">Problema</span></div>
-            <p class="rec-card-text i18n-en">A cozy idle economy game about rebuilding a village across five eras, one resource and one system at a time. The open question was whether several resources, production curves and scarcity mechanics could hold together as a player scales, rather than one economy tuned in isolation. Paused when time ran out, picked back up later the same year.</p>
-            <p class="rec-card-text i18n-pt">Um jogo idle cozy de economia sobre reconstruir uma vila ao longo de cinco eras, um recurso e um sistema de cada vez. A pergunta em aberto era se vários recursos, curvas de produção e mecânicas de escassez se sustentariam juntos conforme o jogador escala, e não uma economia só ajustada isoladamente. Pausado quando o tempo acabou, retomado ainda no mesmo ano.</p>
+            <p class="rec-card-text i18n-en">A cozy idle economy game about rebuilding a village across five eras, one resource and one system at a time. The open question was whether several resources, production curves and scarcity mechanics could hold together as a player scales, rather than one economy tuned in isolation. Development has included a pause and a later return to balance iteration.</p>
+            <p class="rec-card-text i18n-pt">Um jogo idle cozy de economia sobre reconstruir uma vila ao longo de cinco eras, um recurso e um sistema de cada vez. A pergunta em aberto era se vários recursos, curvas de produção e mecânicas de escassez se sustentariam juntos conforme o jogador escala, e não uma economia só ajustada isoladamente. O desenvolvimento passou por uma pausa e uma retomada da iteração de balanceamento.</p>
           </div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
-            <p class="rec-card-text i18n-en">A playable MVP with three of five eras working start to finish, built and rebalanced solo in Unity 6 on ScriptableObject-driven data. An inverted cost curve caught and corrected across all four core producers, and a 40x speed exploit closed before anyone could use it. Corrected through simulation and math, not yet confirmed by playtesting.</p>
-            <p class="rec-card-text i18n-pt">Um MVP jogável com três das cinco eras funcionando do início ao fim, construído e rebalanceado sozinho em Unity 6 sobre dados em ScriptableObjects. Uma curva de custo invertida detectada e corrigida nos quatro produtores centrais, e um exploit de velocidade de 40 vezes fechado antes de alguém usar. Corrigido por simulação e matemática, ainda não confirmado por playtest.</p>
+            <p class="rec-card-text i18n-en">A playable prototype with three of five planned eras. Designed resource flows, production curves and progression using ScriptableObject-driven data in Unity 6. Balance corrections were evaluated through simulation, with player validation still pending. A recent rework focused mainly on visuals.</p>
+            <p class="rec-card-text i18n-pt">Um protótipo jogável com três das cinco eras planejadas. Design de fluxos de recursos, curvas de produção e progressão com dados em ScriptableObjects no Unity 6. Correções de balanceamento avaliadas por simulação, ainda pendentes de validação com jogadores. Um rework recente teve foco majoritariamente visual.</p>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" aria-label="Play the Tiny Ruins Tycoon prototype on itch.io">
@@ -1974,8 +1974,8 @@
           </div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
-            <p class="rec-card-text i18n-en">A browser prologue of four stages, about 21 minutes in my own first full run. Every stage runs on a countdown calibrated from measured playtests, with three difficulty levels that move five separate levers. Combat uses two resources, stamina for punches, jumps and dashes and watch charges for shots, and 183 automated checks guard the levels and systems.</p>
-            <p class="rec-card-text i18n-pt">Um prólogo de quatro fases no navegador, com cerca de 21 minutos na minha primeira jogada completa. Toda fase tem um relógio regressivo calibrado por playtest medido, com três dificuldades que mexem em cinco alavancas separadas. O combate usa dois recursos, stamina para soco, pulo e dash e cargas do relógio para o tiro, e 183 verificações automáticas protegem as fases e os sistemas.</p>
+            <p class="rec-card-text i18n-en">A browser prologue of four stages, about 21 minutes in my own first full run. Every stage runs on a countdown calibrated from measured playtests, with three difficulty levels that move five separate levers. Combat uses two resources, stamina for punches, jumps and dashes and watch charges for shots, and editor checks support level and system validation.</p>
+            <p class="rec-card-text i18n-pt">Um prólogo de quatro fases no navegador, com cerca de 21 minutos na minha primeira jogada completa. Toda fase tem um relógio regressivo calibrado por playtest medido, com três dificuldades que mexem em cinco alavancas separadas. O combate usa dois recursos, stamina para soco, pulo e dash e cargas do relógio para o tiro, e verificações de editor apoiam a validação das fases e dos sistemas.</p>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://zdarkreaper.itch.io/escape-adventure" target="_blank" rel="noreferrer" aria-label="Play the Escape Adventure prologue on itch.io">
@@ -2035,11 +2035,13 @@
         <a href="assets/Resume%20-%20Otavio%20Rosindo.pdf" target="_blank" class="rec-hire-btn secondary i18n-en">Download Resume →</a>
         <a href="assets/Curriculo%20-%20Otavio%20Rosindo.pdf" target="_blank" class="rec-hire-btn secondary i18n-pt">Baixar Currículo →</a>
       </div>
+      <p style="margin-top:20px;"><a class="rec-card-link i18n-en" href="/assets/resumes/en.html">Read resume online →</a><a class="rec-card-link i18n-pt" href="/assets/resumes/pt.html">Ler currículo online →</a></p>
     </div>
 
   </div><!-- /#recruiter-view -->
 
   <!-- ── FOOTER ── -->
+  </main>
   <footer>
     <span>© Reaperborn Forge · MMXXVI</span>
     <span>// <span class="i18n-en">Forged in Unity · Tempered by iteration</span><span class="i18n-pt">Forjado em Unity · Temperado por iteração</span></span>
@@ -2050,7 +2052,7 @@
     // ─── View selection via URL param ───
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var view = params.get('view');
+      var view = params.get('view') || 'recruiter';
       var studio = document.getElementById('studio-view');
       var recruiter = document.getElementById('recruiter-view');
       var dotsS = document.querySelector('.status-dots-studio');
@@ -2059,7 +2061,8 @@
       var btnS = document.getElementById('btn-studio');
       var btnR = document.getElementById('btn-recruiter');
 
-      if (view === 'recruiter') {
+      if (view !== 'studio') {
+        document.title = 'Otávio Antonio · Game Designer · Reaperborn Forge';
         studio.style.display = 'none';
         recruiter.style.display = 'block';
         if (dotsS) dotsS.style.display = 'none';
@@ -2187,8 +2190,9 @@
     // ─── Ember particles (hero section) ───
     (function () {
       const cv = document.getElementById('ember-canvas');
-      if (!cv) return;
+      if (!cv || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const ctx = cv.getContext('2d');
+      if (!ctx) return;
       const COLOR = '#C8102E', TINT = '#FFB199', DENSITY = 36;
       let w, h, dpr, raf;
       const ps = [];
@@ -2244,8 +2248,9 @@
     // ─── Ember cursor (fixed canvas, full viewport) ───
     (function () {
       const cv = document.getElementById('cursor-canvas');
-      if (!cv) return;
+      if (!cv || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const ctx = cv.getContext('2d');
+      if (!ctx) return;
       const COLOR = '#C8102E';
       let dpr, w, h, raf;
       const sparks = [];
@@ -2299,6 +2304,7 @@
     // ─── Scroll reveal ───
     (function () {
       const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('visible')); return; }
       const io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {

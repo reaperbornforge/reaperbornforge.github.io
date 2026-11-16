@@ -1,25 +1,54 @@
-# CODING AGENTS: READ THIS FIRST
+# Reaperborn Forge
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Portfólio estático bilíngue de Otávio Antonio, com identidade visual dark fantasy, modos Recruiter/Studio, quatro estudos de caso e currículos em português e inglês.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Revisão
 
-## What you should do — IMPORTANT
+- Recruiter: `/?view=recruiter&lang=pt` (modo padrão).
+- Studio: `/?view=studio&lang=pt`.
+- Inglês: substituir `lang=pt` por `lang=en`.
+- Currículos editáveis: `assets/resumes/content.json`.
+- PDFs públicos: `assets/Curriculo - Otavio Rosindo.pdf` e `assets/Resume - Otavio Rosindo.pdf`.
+- Fontes e decisões editoriais: [PORTFOLIO_REVIEW.md](PORTFOLIO_REVIEW.md).
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+O site não exige instalação ou build no servidor. Os utilitários abaixo servem apenas para manutenção e verificação.
 
-**Read `project/Reaperborn Forge.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Preparar e testar
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+Requer Node.js 24 e Microsoft Edge instalado para o teste de navegador no Windows. Outro executável Chromium pode ser indicado em `RF_BROWSER`.
 
-## About the design files
+```powershell
+npm.cmd ci --prefix tools
+node tools/build-resumes.mjs
+node tools/validate.mjs
+node tools/package-site.mjs
+node tools/browser-check.mjs
+```
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+O último comando serve o pacote `dist/` temporariamente, testa desktop/tablet/celular e grava `artifacts/browser-report.json` e capturas em `artifacts/screenshots/`. O servidor e o navegador de teste são encerrados automaticamente.
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+Para revisar manualmente:
 
-## Bundle contents
+```powershell
+node tools/preview.mjs dist
+```
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Reaperborn Forge` project files (HTML prototypes, assets, components)
+Abrir `http://127.0.0.1:4173/?view=recruiter&lang=pt`. Encerrar com Ctrl+C.
+
+## Publicação
+
+O repositório existente usa GitHub Pages. A raiz contém o site pronto para esse fluxo. O diretório `dist/` contém apenas arquivos públicos e também pode ser enviado a qualquer hospedagem estática, preservando os caminhos. A configuração de hospedagem não foi alterada.
+
+Para criar um ZIP independente:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File tools/archive.ps1
+```
+
+O script exige testes de navegador aprovados para o mesmo manifesto e verifica todos os arquivos do ZIP por SHA-256. O manifesto `artifacts/publication-manifest.json` registra tamanho e hash de cada arquivo preparado. `dist/`, `artifacts/`, cache npm e dependências locais ficam fora do Git.
+
+## Atualizar galerias
+
+Editar `images.json` na pasta de imagens de cada jogo e adicionar os arquivos correspondentes. O manifesto define a ordem e as legendas EN/PT; se não existir, a galeria procura arquivos numerados. As imagens de HVC/TRT incluídas nesta revisão são registros anteriores aos reworks visuais recentes, identificados como tal.
+
+`project/` e `chats/` preservam o protótipo e o histórico originais; não entram no pacote de publicação.

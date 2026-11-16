@@ -1,0 +1,18 @@
+{
+  "name": "reaperborn-portfolio-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "resumes": "node build-resumes.mjs",
+    "check": "node validate.mjs",
+    "browser": "node browser-check.mjs",
+    "preview": "node preview.mjs",
+    "package": "node package-site.mjs"
+  },
+  "dependencies": {
+    "linkedom": "0.18.15",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "6.5.438",
+    "playwright-core": "1.56.1"
+  }
+}

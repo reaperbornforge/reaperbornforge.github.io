@@ -1,0 +1,125 @@
+{
+  "name": "Otávio Antônio Rosman Rosindo",
+  "email": "otaviorosindo@gmail.com",
+  "portfolio": "https://reaperbornforge.github.io/?view=recruiter",
+  "linkedin": "https://www.linkedin.com/in/otavioantonio/",
+  "updated": "2026-11-16",
+  "en": {
+    "title": "Game Designer | Unity Developer",
+    "location": "Brazil | Remote / International",
+    "summary": "Game Designer and Unity Developer focused on gameplay loops, progression and F2P economy design. Takes features from design documentation to Unity prototypes, playtesting and balance iteration. Published Head Volley Clash on Google Play and develops playable browser projects independently and with collaborators.",
+    "skillsTitle": "SKILLS",
+    "skills": [
+      "Design: systems, gameplay, progression, F2P economy, monetization, level design, balancing and GDD.",
+      "Technical: Unity, C#, ScriptableObjects, greybox prototyping, Firebase (Firestore, Auth), Git and WebGL builds.",
+      "Production & QA: playtesting, bug reproduction, regression checks, balance validation, Figma, Trello and AI-assisted workflows.",
+      "Languages: Portuguese (native), English (full professional proficiency)."
+    ],
+    "projectsTitle": "SELECTED GAME DEVELOPMENT EXPERIENCE",
+    "projects": [
+      {
+        "name": "Head Volley Clash",
+        "role": "Solo Game Designer & Unity Developer | Published Android game | Jan 2025–present",
+        "url": "https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash",
+        "bullets": [
+          "Designed and published an arcade F2P game: core gameplay, AI opponents, progression, cosmetic shop and passes.",
+          "Implemented account persistence with Firebase Firestore, Unity IAP and ads. Designed currencies and reward rules around progression and monetization goals.",
+          "Completed a recent rework focused mainly on visuals. The public Google Play listing confirms publication, ads and in-app purchases."
+        ]
+      },
+      {
+        "name": "Legacy of Allard",
+        "role": "Game Designer / Co-founder | Collaborative project, since 2022",
+        "url": "https://store.steampowered.com/app/2378100/Legacy_of_Allard/",
+        "bullets": [
+          "Designed class kits, parameterized abilities and cross-class builds for a tactical multiplayer RPG with destructible terrain.",
+          "Worked with a programming/backend co-founder; networking and the Photon Fusion migration are his responsibility. Steam lists Fernit Studios; release date is to be announced."
+        ]
+      },
+      {
+        "name": "Tiny Ruins Tycoon",
+        "role": "Solo Game Designer & Unity Developer | Playable prototype",
+        "url": "https://zdarkreaper.itch.io/tiny-ruins-tycoon",
+        "bullets": [
+          "Designed resource flows, production curves and era progression using ScriptableObjects in Unity 6; three of five planned eras are playable.",
+          "Evaluated cost-curve and stacked speed-bonus corrections through simulation; player validation remains pending. Completed a recent rework focused mainly on visuals."
+        ]
+      },
+      {
+        "name": "Escape Adventure",
+        "role": "Solo Game Designer & Unity Developer | Playable browser prologue | 2026–present",
+        "url": "https://zdarkreaper.itch.io/escape-adventure",
+        "bullets": [
+          "Designed a four-stage 2D action-platformer prologue with three difficulty settings, mobility upgrades and English/Portuguese support.",
+          "Separated melee stamina from ranged charges; iterated level layouts and countdowns through playtesting, using editor checks and AI-assisted programming."
+        ]
+      }
+    ],
+    "educationTitle": "EDUCATION & CERTIFICATIONS",
+    "education": [
+      "Digital Games, FIAP | Completed 2020.",
+      "Professional certificates: Mobile Development & 3D Modelling; Web Programming & UI Design; Engines, Digital Marketing & Entrepreneurship; Scripting & Animation for Digital Games."
+    ],
+    "additionalTitle": "ADDITIONAL EXPERIENCE",
+    "additional": "Public library services, insurance brokerage and logistics monitoring since 2023, alongside independent game development."
+  },
+  "pt": {
+    "title": "Game Designer | Unity Developer",
+    "location": "Brasil | Remoto / Internacional",
+    "summary": "Game Designer e Unity Developer com foco em loops de gameplay, progressão e design de economia F2P. Desenvolve features da documentação ao protótipo em Unity, playtest e iteração de balanceamento. Publicou Head Volley Clash na Google Play e desenvolve projetos jogáveis no navegador, de forma independente e em colaboração.",
+    "skillsTitle": "COMPETÊNCIAS",
+    "skills": [
+      "Design: sistemas, gameplay, progressão, economia F2P, monetização, level design, balanceamento e GDD.",
+      "Técnico: Unity, C#, ScriptableObjects, prototipagem em greybox, Firebase (Firestore, Auth), Git e builds WebGL.",
+      "Produção e QA: playtest, reprodução de bugs, verificações de regressão, validação de balanceamento, Figma, Trello e fluxos assistidos por IA.",
+      "Idiomas: português (nativo), inglês (proficiência profissional completa)."
+    ],
+    "projectsTitle": "EXPERIÊNCIA SELECIONADA EM DESENVOLVIMENTO DE JOGOS",
+    "projects": [
+      {
+        "name": "Head Volley Clash",
+        "role": "Game Designer e Unity Developer solo | Jogo Android publicado | Jan 2025–presente",
+        "url": "https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash",
+        "bullets": [
+          "Design e publicação de um arcade F2P: gameplay central, oponentes de IA, progressão, loja de cosméticos e passes.",
+          "Implementação de persistência por conta com Firebase Firestore, Unity IAP e anúncios. Design de moedas e regras de recompensa com objetivos de progressão e monetização.",
+          "Rework recente com foco majoritariamente visual. A página pública na Google Play confirma publicação, anúncios e compras no aplicativo."
+        ]
+      },
+      {
+        "name": "Legacy of Allard",
+        "role": "Game Designer / Cofundador | Projeto colaborativo, desde 2022",
+        "url": "https://store.steampowered.com/app/2378100/Legacy_of_Allard/",
+        "bullets": [
+          "Design de kits de classes, habilidades parametrizadas e builds entre classes para um RPG tático multiplayer com terreno destrutível.",
+          "Colaboração com sócio de programação/backend, responsável pela rede e migração para Photon Fusion. A Steam lista Fernit Studios; o lançamento está a anunciar."
+        ]
+      },
+      {
+        "name": "Tiny Ruins Tycoon",
+        "role": "Game Designer e Unity Developer solo | Protótipo jogável",
+        "url": "https://zdarkreaper.itch.io/tiny-ruins-tycoon",
+        "bullets": [
+          "Design de fluxos de recursos, curvas de produção e progressão por eras com ScriptableObjects no Unity 6; três das cinco eras planejadas são jogáveis.",
+          "Correções de curvas de custo e bônus de velocidade combinados avaliadas por simulação; validação com jogadores pendente. Rework recente com foco majoritariamente visual."
+        ]
+      },
+      {
+        "name": "Escape Adventure",
+        "role": "Game Designer e Unity Developer solo | Prólogo jogável no navegador | 2026–presente",
+        "url": "https://zdarkreaper.itch.io/escape-adventure",
+        "bullets": [
+          "Design de prólogo de action-platformer 2D com quatro fases, três dificuldades, upgrades de mobilidade e suporte a inglês e português.",
+          "Separação da stamina corpo a corpo e das cargas de tiro; iteração de fases e relógios por playtest, com verificações de editor e programação assistida por IA."
+        ]
+      }
+    ],
+    "educationTitle": "FORMAÇÃO E CERTIFICAÇÕES",
+    "education": [
+      "Jogos Digitais, FIAP | Concluído em 2020.",
+      "Certificados profissionais: Desenvolvimento Mobile e Modelagem 3D; Programação Web e Design de Interface; Engines, Marketing Digital e Empreendedorismo; Scripting e Animação para Jogos Digitais."
+    ],
+    "additionalTitle": "EXPERIÊNCIA COMPLEMENTAR",
+    "additional": "Atuação em biblioteca pública, corretora de seguros e monitoramento logístico desde 2023, em paralelo ao desenvolvimento independente de jogos."
+  }
+}

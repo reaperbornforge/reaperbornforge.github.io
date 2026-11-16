@@ -14,8 +14,11 @@
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="stylesheet" href="/assets/case.css">
   <script src="/assets/i18n.js"></script>
+  <link rel="stylesheet" href="/assets/portfolio.css">
+  <script src="/assets/navigation.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content"><span class="i18n-en">Skip to content</span><span class="i18n-pt">Ir para o conteúdo</span></a>
 
   <!-- ── STATUS BAR ── -->
   <header class="status-bar">
@@ -57,7 +60,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ── HERO ── -->
     <section class="case-hero">
@@ -65,8 +68,8 @@
         <div>
           <div class="case-eyebrow">// <span class="i18n-en">CASE STUDY · PROJECT · I</span><span class="i18n-pt">ESTUDO DE CASO · PROJETO · I</span></div>
           <h1 class="case-title">Legacy of Allard</h1>
-          <p class="case-logline i18n-en">A tactical multiplayer RPG built around parameterized abilities, a build system that lets characters borrow skills across classes, and destructible terrain as a tactical resource. Live alpha in WebGL, active Steam page, targeting a full release by the end of the year.</p>
-          <p class="case-logline i18n-pt">Um RPG tático multiplayer construído em torno de habilidades parametrizadas, um sistema de build que permite personagens tomarem emprestadas habilidades de outras classes, e terreno destrutível como recurso tático. Alpha ao vivo em WebGL, página ativa na Steam, com lançamento completo previsto até o fim do ano.</p>
+          <p class="case-logline i18n-en">A tactical multiplayer RPG built around parameterized abilities, a build system that lets characters borrow skills across classes, and destructible terrain as a tactical resource. Live alpha in WebGL, active Steam page, with a Steam release date still to be announced.</p>
+          <p class="case-logline i18n-pt">Um RPG tático multiplayer construído em torno de habilidades parametrizadas, um sistema de build que permite personagens tomarem emprestadas habilidades de outras classes, e terreno destrutível como recurso tático. Alpha ao vivo em WebGL, página ativa na Steam, com data de lançamento na Steam a anunciar.</p>
 
           <div class="case-meta case-meta-hvc">
             <div class="case-meta-cell">
@@ -101,6 +104,13 @@
         </div>
       </div>
     </section>
+
+    <aside class="evidence-note" aria-label="Project status">
+      <p class="i18n-en">Game design in collaboration with a programming/backend partner. Steam lists Fernit Studios as developer and publisher. This portfolio describes my design contribution; the Steam listing is not a Reaperborn Forge release credit. Release date: to be announced.</p>
+      <p class="i18n-pt">Game design em colaboração com um sócio de programação/backend. A Steam lista Fernit Studios como desenvolvedora e publicadora. Este portfólio descreve minha contribuição em design; a página na Steam não é um crédito de lançamento da Reaperborn Forge. Data de lançamento: a anunciar.</p>
+      <p><a href="https://store.steampowered.com/app/2378100/Legacy_of_Allard/" target="_blank" rel="noreferrer">Steam ↗</a> · <time datetime="2026-11-16">2026-11-16</time></p>
+    </aside>
+    <nav class="case-jump" aria-label="legacy-of-allard sections"><a href="#context"><span class="i18n-en">Context</span><span class="i18n-pt">Contexto</span></a><a href="#decisions"><span class="i18n-en">Design decisions</span><span class="i18n-pt">Decisões</span></a><a href="#process"><span class="i18n-en">Process</span><span class="i18n-pt">Processo</span></a><a href="#result"><span class="i18n-en">Results</span><span class="i18n-pt">Resultados</span></a><a href="#different"><span class="i18n-en">Lessons</span><span class="i18n-pt">Aprendizados</span></a></nav>
 
     <!-- ── §01 CONTEXT AND STAKES ── -->
     <section class="case-section" id="context">
@@ -482,8 +492,8 @@
         <span class="section-line"></span>
       </div>
       <div class="case-body">
-        <p class="i18n-en case-lead">Legacy of Allard doesn't have install or retention numbers the way a shipped mobile title does, so the honest measure of progress here is different. There's a live, playable WebGL alpha, an active Steam page, and a full roster of five classes with their own kit built and playable today. The migration to Photon Fusion, owned by my co-founder, is real but not finished, new features kept shipping on the live branch while the migration work paused for a couple of months due to his availability after relocating abroad. We're targeting a full release by December.</p>
-        <p class="i18n-pt case-lead">Legacy of Allard não tem números de instalação ou retenção como um título mobile lançado tem, então a medida honesta de progresso aqui é diferente. Existe um alpha ao vivo e jogável em WebGL, uma página ativa na Steam, e um elenco completo de cinco classes com seu próprio kit construído e jogável hoje. A migração para o Photon Fusion, conduzida pelo meu sócio, é real mas não está terminada, novas funcionalidades continuaram sendo lançadas no branch principal enquanto o trabalho de migração ficou pausado por alguns meses devido à disponibilidade dele após se mudar para fora do país. A meta é lançamento completo até dezembro.</p>
+        <p class="i18n-en case-lead">Legacy of Allard doesn't have install or retention numbers the way a shipped mobile title does, so the honest measure of progress here is different. There's a live, playable WebGL alpha, an active Steam page, and a full roster of five classes with their own kit built and playable today. The migration to Photon Fusion, owned by my co-founder, is real but not finished, new features kept shipping on the live branch while the migration work paused for a couple of months due to his availability after relocating abroad. The Steam release date is to be announced.</p>
+        <p class="i18n-pt case-lead">Legacy of Allard não tem números de instalação ou retenção como um título mobile lançado tem, então a medida honesta de progresso aqui é diferente. Existe um alpha ao vivo e jogável em WebGL, uma página ativa na Steam, e um elenco completo de cinco classes com seu próprio kit construído e jogável hoje. A migração para o Photon Fusion, conduzida pelo meu sócio, é real mas não está terminada, novas funcionalidades continuaram sendo lançadas no branch principal enquanto o trabalho de migração ficou pausado por alguns meses devido à disponibilidade dele após se mudar para fora do país. A data de lançamento na Steam está a anunciar.</p>
       </div>
     </section>
 
