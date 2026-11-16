@@ -105,7 +105,7 @@ Mudanças: saem o link duplicado de Legacy of Allard no itch.io e o link genéri
 
 ## Pendências [CONFIRMAR]
 
-- Números do perfil atual: "~330 instalações por dia no pico" e "~40 MAU sem atualizações desde o lançamento". Não os usei. O jogo recebeu atualizações em 2026, então o segundo está desatualizado. Para citar o primeiro preciso do Play Console, com o período.
+- Números do Play Console (conta Reaperborn Forge, lido em 16/11/2026): últimos 28 dias com 13 aquisições de dispositivos, 9 dispositivos ativos por mês, avaliação média 5,00, sem receita; versão de produção de 08/11/2026 em 100% dos usuários; base de instalações em torno de 40 dispositivos. São números pequenos, então não os usei como resultado. O "~330 instalações por dia no pico" do perfil e o "~40 MAU" ficaram fora: o primeiro não conferi (exige relatório do período de lançamento) e o segundo está desatualizado. O "cerca de 35 mil instalações" do CV antigo de recepção não bate com o painel atual; não use sem o relatório.
 - Início de Legacy of Allard: mai/2022 no LinkedIn, mar/2022 no primeiro commit do repositório.
 - Cargo em Legacy of Allard: "Game Designer" ou "Cofundador".
 - Tipo de vínculo ("meio período") nas duas posições.
