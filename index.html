@@ -1103,6 +1103,19 @@
       color: rgba(232,228,216,.4);
       margin-bottom: 24px;
     }
+    .rec-card-status {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #E8E4D8;
+      border: 1px solid rgba(200,16,46,.6);
+      padding: 4px 10px;
+      margin: -12px 0 20px;
+    }
+    .rec-systems { margin: 0 0 16px 18px; padding: 0; font-size: 15px; line-height: 1.5; color: rgba(232,228,216,.75); }
+    .rec-systems li { margin-bottom: 4px; }
     .rec-card-role {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
@@ -1875,8 +1888,9 @@
           <div class="rec-card-cover"><img src="assets/Legacy_of_Allard_itch_cover_630x500.png" alt="Legacy of Allard cover art" loading="lazy" width="630" height="500"></div>
           <div class="rec-card-num"><span class="i18n-en">PROJECT</span><span class="i18n-pt">PROJETO</span> · I</div>
           <h3 class="rec-card-title">Legacy of Allard</h3>
-          <div class="rec-card-role"><span class="i18n-en">Role · Game Designer · Co-founded with a programming partner</span><span class="i18n-pt">Papel · Game Designer · Cofundado com um sócio de programação</span></div>
-          <div class="rec-card-kind"><span class="i18n-en">Tactical Multiplayer RPG · 2022 to present</span><span class="i18n-pt">RPG Tático Multiplayer · 2022 até hoje</span></div>
+          <div class="rec-card-role"><span class="i18n-en">Role · Game Designer (all game design), with support on programming and UI · No art or sound · Co-founded with a programming partner</span><span class="i18n-pt">Papel · Game Designer (todo o game design), com apoio em programação e UI · Sem arte nem som · Cofundado com um sócio de programação</span></div>
+          <div class="rec-card-kind"><span class="i18n-en">Tactical Multiplayer RPG · PC · 2022 to present</span><span class="i18n-pt">RPG Tático Multiplayer · PC · 2022 até hoje</span></div>
+          <div class="rec-card-status"><span class="i18n-en">Status · In development · Steam page up, release date TBA</span><span class="i18n-pt">Status · Em desenvolvimento · Página na Steam, lançamento a anunciar</span></div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Problem</span><span class="i18n-pt">Problema</span></div>
             <p class="rec-card-text i18n-en">A tactical RPG built around a class-crossing build system and destructible terrain as a tactical resource. It started as a team of about ten. As funding dried up the team shrank to two, and the open question became whether a ten-person-scoped game could keep moving forward on two people without the vision shrinking to match.</p>
@@ -1886,6 +1900,11 @@
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
             <p class="rec-card-text i18n-en">Designed class kits, parameterized abilities and cross-class build choices in a collaborative Unity RPG. A WebGL alpha and Steam page showcase the project. Programming, backend and the Photon Fusion migration belong to my co-founder. Steam release date: to be announced.</p>
             <p class="rec-card-text i18n-pt">Design de kits de classes, habilidades parametrizadas e escolhas de build entre classes em um RPG colaborativo em Unity. Um alpha WebGL e a página na Steam apresentam o projeto. Programação, backend e migração para Photon Fusion são responsabilidades do meu sócio. Lançamento na Steam: a anunciar.</p>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label"><span class="i18n-en">Design systems</span><span class="i18n-pt">Sistemas de design</span></div>
+            <ul class="rec-systems i18n-en"><li>Class kits with distinct tactical roles</li><li>Parameterized abilities (data-driven tuning)</li><li>Cross-class build choices</li><li>Destructible terrain as a tactical resource</li></ul>
+            <ul class="rec-systems i18n-pt"><li>Kits de classe com papéis táticos distintos</li><li>Habilidades parametrizadas (ajuste por dados)</li><li>Escolhas de build entre classes</li><li>Terreno destrutível como recurso tático</li></ul>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://game.playallard.com" target="_blank" rel="noreferrer" aria-label="Play the Legacy of Allard alpha">
@@ -1908,7 +1927,8 @@
           <div class="rec-card-num"><span class="i18n-en">PROJECT</span><span class="i18n-pt">PROJETO</span> · II</div>
           <h3 class="rec-card-title">Head Volley Clash</h3>
           <div class="rec-card-role"><span class="i18n-en">Role · Solo Game Designer and Unity Developer</span><span class="i18n-pt">Papel · Game Designer e Unity Developer solo</span></div>
-          <div class="rec-card-kind"><span class="i18n-en">Arcade Mobile · F2P · Jan 2025 to present</span><span class="i18n-pt">Arcade Mobile · F2P · Jan 2025 até hoje</span></div>
+          <div class="rec-card-kind"><span class="i18n-en">Arcade Mobile · Android · F2P · Jan 2025 to present</span><span class="i18n-pt">Arcade Mobile · Android · F2P · Jan 2025 até hoje</span></div>
+          <div class="rec-card-status"><span class="i18n-en">Status · Published on Google Play · Ongoing updates</span><span class="i18n-pt">Status · Publicado na Google Play · Em atualização contínua</span></div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Problem</span><span class="i18n-pt">Problema</span></div>
             <p class="rec-card-text i18n-en">Shipping a full free-to-play title solo means owning every layer at once: the core arcade loop, a balanced virtual economy, seasonal passes and a skin shop, then getting it stable enough to survive real players. With no team to split design, engineering or LiveOps, the challenge was taking it from zero to live on Google Play without any piece falling over.</p>
@@ -1918,6 +1938,11 @@
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
             <p class="rec-card-text i18n-en">Published on Google Play with ads and in-app purchases. Designed and implemented the arcade loop, progression, passes and cosmetic shop. A recent rework focused mainly on visuals. The public listing confirms a shipped Android product; historical acquisition figures are discussed separately in the case study.</p>
             <p class="rec-card-text i18n-pt">Publicado na Google Play com anúncios e compras no aplicativo. Design e implementação do loop arcade, progressão, passes e loja de cosméticos. Um rework recente teve foco majoritariamente visual. A página pública comprova um produto Android publicado; os números históricos de aquisição são tratados separadamente no estudo de caso.</p>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label"><span class="i18n-en">Design systems</span><span class="i18n-pt">Sistemas de design</span></div>
+            <ul class="rec-systems i18n-en"><li>Core arcade loop with AI opponents</li><li>Virtual currencies and reward rules</li><li>Progression and seasonal passes (Starter Pass included)</li><li>Cosmetic shop with skin tiers</li><li>Ads and in-app purchases tied to progression</li></ul>
+            <ul class="rec-systems i18n-pt"><li>Loop arcade central com oponentes de IA</li><li>Moedas virtuais e regras de recompensa</li><li>Progressão e passes de temporada (incluindo o Starter Pass)</li><li>Loja de cosméticos com níveis de skin</li><li>Anúncios e compras no aplicativo ligados à progressão</li></ul>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash" target="_blank" rel="noreferrer" aria-label="Play Head Volley Clash on Google Play">
@@ -1937,7 +1962,8 @@
           <div class="rec-card-num"><span class="i18n-en">PROJECT</span><span class="i18n-pt">PROJETO</span> · III</div>
           <h3 class="rec-card-title">Tiny Ruins Tycoon</h3>
           <div class="rec-card-role"><span class="i18n-en">Role · Solo Game Designer &amp; Unity Developer</span><span class="i18n-pt">Papel · Game Designer &amp; Unity Developer solo</span></div>
-          <div class="rec-card-kind"><span class="i18n-en">Cozy Idle Economy · Unity 6 · C# · ScriptableObjects</span><span class="i18n-pt">Idle Cozy de Economia · Unity 6 · C# · ScriptableObjects</span></div>
+          <div class="rec-card-kind"><span class="i18n-en">Cozy Idle Economy · Mobile/PC · Unity 6 · C# · ScriptableObjects</span><span class="i18n-pt">Idle Cozy de Economia · Mobile/PC · Unity 6 · C# · ScriptableObjects</span></div>
+          <div class="rec-card-status"><span class="i18n-en">Status · Playable prototype on itch.io · Active development</span><span class="i18n-pt">Status · Protótipo jogável no itch.io · Em desenvolvimento ativo</span></div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Problem</span><span class="i18n-pt">Problema</span></div>
             <p class="rec-card-text i18n-en">A cozy idle economy game about rebuilding a village across five eras, one resource and one system at a time. The open question was whether several resources, production curves and scarcity mechanics could hold together as a player scales, rather than one economy tuned in isolation. Development has included a pause and a later return to balance iteration.</p>
@@ -1947,6 +1973,11 @@
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
             <p class="rec-card-text i18n-en">A playable prototype with three of five planned eras. Designed resource flows, production curves and progression using ScriptableObject-driven data in Unity 6. Balance corrections were evaluated through simulation, with player validation still pending. A recent rework focused mainly on visuals.</p>
             <p class="rec-card-text i18n-pt">Um protótipo jogável com três das cinco eras planejadas. Design de fluxos de recursos, curvas de produção e progressão com dados em ScriptableObjects no Unity 6. Correções de balanceamento avaliadas por simulação, ainda pendentes de validação com jogadores. Um rework recente teve foco majoritariamente visual.</p>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label"><span class="i18n-en">Design systems</span><span class="i18n-pt">Sistemas de design</span></div>
+            <ul class="rec-systems i18n-en"><li>Multi-resource flows and production curves</li><li>Era progression and prestige (ascension)</li><li>Food priority: who eats first when supply runs short</li><li>Economy simulator used to calibrate cost curves</li></ul>
+            <ul class="rec-systems i18n-pt"><li>Fluxos de múltiplos recursos e curvas de produção</li><li>Progressão por eras e prestígio (ascensão)</li><li>Prioridade de comida: quem come primeiro quando falta</li><li>Simulador de economia para calibrar curvas de custo</li></ul>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://zdarkreaper.itch.io/tiny-ruins-tycoon" target="_blank" rel="noreferrer" aria-label="Play the Tiny Ruins Tycoon prototype on itch.io">
@@ -1967,6 +1998,7 @@
           <h3 class="rec-card-title">Escape Adventure</h3>
           <div class="rec-card-role"><span class="i18n-en">Role · Solo Game Designer &amp; Unity Developer</span><span class="i18n-pt">Papel · Game Designer &amp; Unity Developer solo</span></div>
           <div class="rec-card-kind"><span class="i18n-en">2D Action-Platformer · Time Travel Narrative · Idea 2016, built 2026, present</span><span class="i18n-pt">Action-Platformer 2D · Narrativa de Viagem no Tempo · Ideia de 2016, construído desde 2026</span></div>
+          <div class="rec-card-status"><span class="i18n-en">Status · Playable prologue on itch.io · Active development</span><span class="i18n-pt">Status · Prólogo jogável no itch.io · Em desenvolvimento ativo</span></div>
           <div class="rec-card-block">
             <div class="rec-card-label"><span class="i18n-en">Problem</span><span class="i18n-pt">Problema</span></div>
             <p class="rec-card-text i18n-en">A story planned for a prologue, four acts and five historical eras, built by one person. The risk was that the scope or the story would shrink to fit.</p>
@@ -1976,6 +2008,11 @@
             <div class="rec-card-label"><span class="i18n-en">Proof</span><span class="i18n-pt">Prova</span></div>
             <p class="rec-card-text i18n-en">A browser prologue of four stages, about 21 minutes in my own first full run. Every stage runs on a countdown calibrated from measured playtests, with three difficulty levels that move five separate levers. Combat uses two resources, stamina for punches, jumps and dashes and watch charges for shots, and editor checks support level and system validation.</p>
             <p class="rec-card-text i18n-pt">Um prólogo de quatro fases no navegador, com cerca de 21 minutos na minha primeira jogada completa. Toda fase tem um relógio regressivo calibrado por playtest medido, com três dificuldades que mexem em cinco alavancas separadas. O combate usa dois recursos, stamina para soco, pulo e dash e cargas do relógio para o tiro, e verificações de editor apoiam a validação das fases e dos sistemas.</p>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label"><span class="i18n-en">Design systems</span><span class="i18n-pt">Sistemas de design</span></div>
+            <ul class="rec-systems i18n-en"><li>Per-stage countdown calibrated by measured playtests</li><li>Three difficulty levels moving five separate levers</li><li>Two combat resources: stamina and watch charges</li><li>Mobility upgrades across the prologue</li></ul>
+            <ul class="rec-systems i18n-pt"><li>Relógio regressivo por fase calibrado por playtest medido</li><li>Três dificuldades que mexem em cinco alavancas</li><li>Dois recursos de combate: stamina e cargas do relógio</li><li>Upgrades de mobilidade ao longo do prólogo</li></ul>
           </div>
           <div class="rec-card-foot">
             <a class="rec-play-btn" href="https://zdarkreaper.itch.io/escape-adventure" target="_blank" rel="noreferrer" aria-label="Play the Escape Adventure prologue on itch.io">
