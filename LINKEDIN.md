@@ -35,17 +35,17 @@ Removido do Sobre atual: "medindo retenção e monetização" (não há dado de 
 ### Reaperborn Forge | Game Designer e Unity Developer independente | jan 2025 a presente (meio período, como no perfil)
 
 **pt-BR**
-- Head Volley Clash: arcade F2P para Android, publicado na Google Play e em atualização contínua. Game design e desenvolvimento solo.
+- Head Volley Clash: arcade F2P para Android, publicado na Google Play e em atualização contínua. Game design e desenvolvimento solo. Rework de outubro de 2026 em onboarding (login anônimo), economia de recompensas e energia, missões diárias e dificuldade da IA, publicado nas versões 1.3.x.
 - Economia de três moedas (Coins, Gems e Energia) com papéis distintos. Loja de cosméticos por raridade, Starter Pack e Volley Pass.
 - Persistência por conta com Firebase Firestore, Unity IAP e Unity Ads, com regra para evitar recompra.
-- Tiny Ruins Tycoon: idle de economia com cinco recursos, progressão por eras e prestígio. Protótipo jogável no itch.io, em desenvolvimento ativo.
+- Tiny Ruins Tycoon: idle de economia com cinco recursos, progressão por eras e prestígio. Protótipo jogável no itch.io. Rework de retenção em andamento no repositório (banco sem teto, custo por era, projetos, automação, expedições), calibrado com simulador de calendário.
 - Escape Adventure: action-platformer 2D com prólogo jogável no itch.io, três dificuldades e relógio calibrado por playtest. Em desenvolvimento ativo.
 
 **en**
-- Head Volley Clash: F2P arcade game for Android, published on Google Play and updated continuously. Solo game design and development.
+- Head Volley Clash: F2P arcade game for Android, published on Google Play and updated continuously. Solo game design and development. October 2026 rework of onboarding (anonymous sign-in), reward and energy economy, daily missions and AI difficulty, released in the 1.3.x versions.
 - Three-currency economy (Coins, Gems and Energy) with distinct roles. Cosmetic shop tiered by rarity, Starter Pack and Volley Pass.
 - Account persistence with Firebase Firestore, Unity IAP and Unity Ads, with repurchase protection.
-- Tiny Ruins Tycoon: idle economy game with five resources, era progression and prestige. Playable prototype on itch.io, in active development.
+- Tiny Ruins Tycoon: idle economy game with five resources, era progression and prestige. Playable prototype on itch.io. Retention rework under way in the repository (uncapped bank, per-era costs, projects, automation, expeditions), calibrated with a calendar simulator.
 - Escape Adventure: 2D action-platformer with a playable prologue on itch.io, three difficulty levels and a countdown calibrated through playtests. In active development.
 
 ### Legacy of Allard | Game Designer | mai 2022 a presente [CONFIRMAR data e cofundador]
@@ -55,14 +55,14 @@ Removido do Sobre atual: "medindo retenção e monetização" (não há dado de 
 - Cinco classes (Mage, Hunter, Warrior, Priest e Guardian), cada uma com quatro slots de habilidade e variações, para composições de equipe combinatórias.
 - Debuffs (Fire, Frost, Venom, Shadow e Arcane) como linguagem comum entre classes: um jogador aplica, outro desencadeia.
 - Terreno destrutível como recurso tático. Chefe com múltiplas fases.
-- GDD completo: combate, progressão de heróis e economia. Apoio em programação e UI junto ao sócio, responsável por programação, backend e rede.
+- GDD completo: combate, progressão de heróis e economia. Contribuição em programação e UI (hazards de ambiente como lava e nevasca, fase de tutorial, etapas da migração para Photon Fusion), com o sócio de programação liderando backend e rede. [CONFIRMAR o alcance]
 
 **en**
 - Game design for a turn-based multiplayer tactical RPG, with a playable WebGL prototype and a Steam page (release date to be announced).
 - Five classes (Mage, Hunter, Warrior, Priest and Guardian), each with four ability slots and variations, for combinatorial team compositions.
 - Debuffs (Fire, Frost, Venom, Shadow and Arcane) as a shared language between classes: one player applies, another triggers.
 - Destructible terrain as a tactical resource. Multi-phase boss.
-- Full GDD covering combat, hero progression and economy. Support on programming and UI alongside the co-founder, who owns programming, backend and networking.
+- Full GDD covering combat, hero progression and economy. Contributions on programming and UI (environmental hazards such as lava and blizzard, a tutorial level, steps of the Photon Fusion migration), with the programming co-founder leading backend and networking. [CONFIRM scope]
 
 ### Saem do perfil (você decide)
 
@@ -110,3 +110,10 @@ Mudanças: saem o link duplicado de Legacy of Allard no itch.io e o link genéri
 - Cargo em Legacy of Allard: "Game Designer" ou "Cofundador".
 - Tipo de vínculo ("meio período") nas duas posições.
 - Pronomes do perfil: não alterei.
+
+## Reworks verificados nos repositórios (16/11/2026)
+
+- Head Volley Clash: não é rework só visual. Onboarding com login anônimo, economia (Coins, Gems, Energia), missões diárias, baú diário com anúncio, IA fácil ajustada e missão difícil bloqueada para contas com menos de 7 dias. Versões 1.3.0 a 1.3.2.
+- Tiny Ruins Tycoon: rework de retenção e mapa único nas 5 eras no repositório. O build do itch.io (3 de 5 eras) é anterior e ainda descreve a fome dos Tinykin; no repositório a comida virou bônus.
+- Escape Adventure: o repositório já tem Ato I e Era 1 (Egito) além do prólogo. O itch.io mostra só o prólogo de quatro fases.
+- Legacy of Allard: nos últimos meses, commits da sua conta cobrem hazards de ambiente, tutorial, mapas e etapas da migração para Fusion. Isso contradiz a frase antiga de que a migração era só do sócio.
