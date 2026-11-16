@@ -49,6 +49,6 @@ O script exige testes de navegador aprovados para o mesmo manifesto e verifica t
 
 ## Atualizar galerias
 
-Editar `images.json` na pasta de imagens de cada jogo e adicionar os arquivos correspondentes. O manifesto define a ordem e as legendas EN/PT; se não existir, a galeria procura arquivos numerados. As imagens de HVC/TRT incluídas nesta revisão são registros anteriores aos reworks visuais recentes, identificados como tal.
+Editar `images.json` na pasta de imagens de cada jogo e adicionar os arquivos correspondentes. O manifesto define a ordem e as legendas EN/PT; se não existir, a galeria procura arquivos numerados. As sete capturas de HVC foram obtidas da página atual na Google Play, com fontes registradas em `assets/HeadVolleyClash/sources.json`. As imagens de TRT ainda são registros anteriores ao rework visual, identificados como tal.
 
 `project/` e `chats/` preservam o protótipo e o histórico originais; não entram no pacote de publicação.

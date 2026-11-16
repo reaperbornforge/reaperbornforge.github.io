@@ -1,0 +1,62 @@
+{
+  "listing": "https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash",
+  "retrievedAt": "2026-11-16T15:24:29.676Z",
+  "files": [
+    {
+      "file": "01.webp",
+      "source": "https://play-lh.googleusercontent.com/fV35si1gdQ7jcP4h1RWUzpUsmOQg952UPBLjukVnnza_jb_VY5Tg5HRUoKUgfdZKqAuYdIqr-hsDUKXA6wb8rg=w1280",
+      "width": 1280,
+      "height": 720,
+      "bytes": 181784,
+      "sha256": "4b4e6a4de752dfb27285a343f34f94b51590fc742c9f880c5a6c5a60074562ca"
+    },
+    {
+      "file": "02.webp",
+      "source": "https://play-lh.googleusercontent.com/k2pAyTKEuY1dy4_fwJhdvoGgy7p_7ccpZFaaVsYzYEZveYnnP_eSoNaRsCGR--MDhbjTT_Y78nPkkbDk1dzXUWc=w1280",
+      "width": 1280,
+      "height": 720,
+      "bytes": 162730,
+      "sha256": "8beb54d0cce949a1f7cf9d94fb2853afd0aa64a15073a54f0277180708c4e529"
+    },
+    {
+      "file": "03.webp",
+      "source": "https://play-lh.googleusercontent.com/oZ8MNahQRfz2IJ45dKfx5vJSdjfmv8rGjh1U_B1pRiuf-gSHCKEd324C8iWv1Kvq8OpOtgRc7H62DUpGiMAqfjU=w1280",
+      "width": 1280,
+      "height": 720,
+      "bytes": 179168,
+      "sha256": "b029cfad77031de5839a57db987c4ccb3114313d58029fff3d30923028a04122"
+    },
+    {
+      "file": "04.webp",
+      "source": "https://play-lh.googleusercontent.com/KWdhDq532VE_mYYnYZw788wtfhd5zBeTSQLCm1FxN0j-rivUALX4YXCefS6ipEji32F0BA_wcJ1H4yLHFCg9=w1280",
+      "width": 1280,
+      "height": 720,
+      "bytes": 82648,
+      "sha256": "fdb89f49750f3f1a062fc2c73a96a369d4944263aacaa34b1b27d3da9889742d"
+    },
+    {
+      "file": "05.webp",
+      "source": "https://play-lh.googleusercontent.com/06Ahuekkb-imW2P_YISHzc2C9-c4QxFsY2rZh5KfNgti1bpOreADoY_jM1t8MPj7DLlI26yFl4ddSqO_qGT4fQ=w1280",
+      "width": 1280,
+      "height": 720,
+      "bytes": 186740,
+      "sha256": "a3494deec66132760ab06d875bfbbf5a348274448e53d0156c4f1a088e0059b7"
+    },
+    {
+      "file": "06.webp",
+      "source": "https://play-lh.googleusercontent.com/IncUWPX9FLMr4sCJccFZb_jRQ2ltLoWyUJ_-ZTe28CWLl3gLKZZUmMpse19rbPZ5PeO_WG_6YNf9duRU83UT=w1280",
+      "width": 1280,
+      "height": 720,
+      "bytes": 185558,
+      "sha256": "2cdfdd560f818fdb0fda1005183fb6a2ce2a97ecc2277876f24216f27182f1ef"
+    },
+    {
+      "file": "07.webp",
+      "source": "https://play-lh.googleusercontent.com/RXPjOhHM3xMyaHJMj0xlkpiEn6JA2RxMsiW2Zcw1GYD6zPVPSatxjh58do1agkJqEJvwbI6U2pwHaRkvty2o=w1280",
+      "width": 1280,
+      "height": 720,
+      "bytes": 52190,
+      "sha256": "1ef5d6b67101191c3d1ea56805f4f9651ded89837035b34fdff6ee561ce34968"
+    }
+  ]
+}

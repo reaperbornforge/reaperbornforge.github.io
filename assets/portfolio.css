@@ -16,6 +16,8 @@
 .paired > *, .decision > *, .case-hero-grid > * { min-width: 0; }
 .chart-plot, .artifact-doc-scroll { max-width: 100%; overflow-x: auto; }
 .artifact-doc { max-width: 100%; overflow-x: auto; }
+.hvc-store-cover img { object-fit: contain !important; }
+.case-cover.hvc-store-cover { aspect-ratio: 16 / 9; align-self: start; }
 @media (max-width: 899px) {
   .paired { grid-template-columns: minmax(0, 1fr); }
 }

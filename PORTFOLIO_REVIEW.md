@@ -18,7 +18,7 @@ Atualização local do site existente em GitHub Pages. Versões Recruiter e Stud
 - Removidas inferências de retenção a partir de instalações ou MAU. Gráficos antigos de aquisição permanecem identificados como dados históricos relatados pelo autor, sem exportação original no repositório.
 - Removida promessa de lançamento em dezembro de Legacy of Allard. Programação/backend/rede atribuídos ao sócio, conforme o case existente.
 - Currículos não atribuem reações elementais ou programação de rede ao candidato.
-- Reworks de HVC/TRT registrados em ambos os modos e cases. Imagens existentes permanecem como registros anteriores, sem simular capturas novas.
+- Reworks de HVC/TRT registrados em ambos os modos e cases. HVC agora usa as sete capturas promocionais atuais da Google Play, inclusive nos destaques Recruiter/Studio e na capa do case. Imagens de TRT permanecem como registros anteriores.
 - Contagens de testes do Escape Adventure contextualizadas como registro anterior; não representam execução de testes Unity nesta revisão.
 - Barras decorativas de carga do estúdio removidas para não parecerem indicadores reais.
 - Studio encaminha aos mesmos cases; Recruiter passa a ser a entrada padrão, mantendo `?view=studio`.
@@ -45,7 +45,7 @@ Dependências locais instaladas em `tools/node_modules/`, com versões fixadas e
 ## Pendências factuais
 
 - Início de TRT divergia entre PDFs (2024) e site (2026); não confirmado. Essa data foi omitida nas novas versões.
-- Capturas novas de HVC/TRT ainda não foram fornecidas. Não apresentar imagens antigas como prova dos reworks.
+- Capturas de TRT ainda não foram fornecidas. As de HVC foram baixadas diretamente dos servidores da Google Play; os URLs, dimensões e hashes estão em `assets/HeadVolleyClash/sources.json`.
 - Relatórios originais do Play Console não estão no repositório. Os números históricos não foram promovidos a resultados atuais ou utilizados no resumo dos currículos.
 - Situação atual da migração de rede e de funcionalidades internas exige fonte do projeto; o portfólio preserva o relato anterior com atribuição.
 - Os links de builds foram consultados como páginas públicas, sem jogar ou testar os executáveis.
