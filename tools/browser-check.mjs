@@ -43,6 +43,18 @@ try {
         const initial=await img.getAttribute('src');
         const next=page.locator('.gallery-next').first();
         if(await next.count()) {await next.click();assert.notEqual(await img.getAttribute('src'),initial);}
+        if(route.includes('head-volley-clash')) {
+          const expected=JSON.parse(fs.readFileSync(path.join(root,'assets/HeadVolleyClash/images.json'),'utf8'));
+          assert.equal(await page.locator('.gallery-dot').count(),7);
+          for(const [index,item] of expected.entries()) {
+            await page.locator('.gallery-dot').nth(index).click();
+            await img.evaluate(image=>image.decode());
+            assert((await img.getAttribute('src')).endsWith(item.src));
+            if(index<2&&lang==='pt'&&(width===390||width===1440)) {
+              await page.locator('.gallery-stage').screenshot({path:path.join(output,'screenshots',`hvc-gallery-${index+1}-${width}.png`)});
+            }
+          }
+        }
       }
       if((width===1440||width===390)&&route.startsWith('/?view=')&&lang==='pt') {
         await page.screenshot({path:path.join(output,'screenshots',`${route.includes('studio')?'studio':'recruiter'}-${width}.png`),fullPage:true});

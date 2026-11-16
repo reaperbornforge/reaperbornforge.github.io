@@ -24,7 +24,8 @@ for(const [index,id] of ids.entries()) {
  const canvas=createCanvas(image.width,image.height);
  canvas.getContext('2d').drawImage(image,0,0);
  const data=await canvas.encode('webp',88);
- const file=String(index+1).padStart(2,'0')+'.webp';
+ const hash=crypto.createHash('sha256').update(data).digest('hex');
+ const file=`google-play-${String(index+1).padStart(2,'0')}-${hash.slice(0,12)}.webp`;
  fs.writeFileSync(path.join(target,file),data);
  files.push({file,source:url,width:image.width,height:image.height,bytes:data.length,sha256:crypto.createHash('sha256').update(data).digest('hex')});
  console.log(`${file}: ${image.width}x${image.height}, ${data.length} bytes`);

@@ -5,8 +5,8 @@ The gallery on /projects/head-volley-clash/ reads this folder automatically.
 The seven current promotional screenshots were downloaded from the official
 Google Play listing on 2026-11-16 and replace the previous four screenshots.
 `images.json` defines their order and EN/PT captions; `sources.json` records
-the official image URLs, dimensions and SHA-256 hashes. The first image also
-appears in the Recruiter/Studio highlights and case-study cover, uncropped.
+the official image URLs, dimensions and SHA-256 hashes. These screenshots
+are used in the gallery; Recruiter/Studio and the case retain the original cover art.
 With a manifest present, add new screenshots to it explicitly; numbered-file
 discovery below is a fallback for galleries without a manifest.
 

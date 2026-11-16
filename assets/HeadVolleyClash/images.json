@@ -1,9 +1,51 @@
 [
-  {"src":"01.webp","caption":{"en":"Current Google Play promotional screenshot: the reworked court, characters and scoreboard.","pt":"Captura promocional atual da Google Play: quadra, personagens e placar após o rework."}},
-  {"src":"02.webp","caption":{"en":"Google Play: two-player local play on one phone, with controls on both sides.","pt":"Google Play: partida local para duas pessoas no mesmo celular, com controles dos dois lados."}},
-  {"src":"03.webp","caption":{"en":"Google Play: power-ups during a match in the rainy arena.","pt":"Google Play: power-ups durante uma partida na arena com chuva."}},
-  {"src":"04.webp","caption":{"en":"Google Play: the cosmetic shop and its customization categories.","pt":"Google Play: loja de cosméticos e categorias de personalização."}},
-  {"src":"05.webp","caption":{"en":"Google Play: daytime and nighttime arena presentations.","pt":"Google Play: apresentação das arenas durante o dia e à noite."}},
-  {"src":"06.webp","caption":{"en":"Google Play: a match against an AI opponent with the updated visual presentation.","pt":"Google Play: partida contra um oponente de IA com a apresentação visual atualizada."}},
-  {"src":"07.webp","caption":{"en":"Google Play: daily missions, reward values and progress counters.","pt":"Google Play: missões diárias, valores de recompensa e contadores de progresso."}}
+  {
+    "src": "google-play-01-4b4e6a4de752.webp",
+    "caption": {
+      "en": "Current Google Play promotional screenshot: the reworked court, characters and scoreboard.",
+      "pt": "Captura promocional atual da Google Play: quadra, personagens e placar após o rework."
+    }
+  },
+  {
+    "src": "google-play-02-8beb54d0cce9.webp",
+    "caption": {
+      "en": "Google Play: two-player local play on one phone, with controls on both sides.",
+      "pt": "Google Play: partida local para duas pessoas no mesmo celular, com controles dos dois lados."
+    }
+  },
+  {
+    "src": "google-play-03-b029cfad7703.webp",
+    "caption": {
+      "en": "Google Play: power-ups during a match in the rainy arena.",
+      "pt": "Google Play: power-ups durante uma partida na arena com chuva."
+    }
+  },
+  {
+    "src": "google-play-04-fdb89f49750f.webp",
+    "caption": {
+      "en": "Google Play: the cosmetic shop and its customization categories.",
+      "pt": "Google Play: loja de cosméticos e categorias de personalização."
+    }
+  },
+  {
+    "src": "google-play-05-a3494deec661.webp",
+    "caption": {
+      "en": "Google Play: daytime and nighttime arena presentations.",
+      "pt": "Google Play: apresentação das arenas durante o dia e à noite."
+    }
+  },
+  {
+    "src": "google-play-06-2cdfdd560f81.webp",
+    "caption": {
+      "en": "Google Play: a match against an AI opponent with the updated visual presentation.",
+      "pt": "Google Play: partida contra um oponente de IA com a apresentação visual atualizada."
+    }
+  },
+  {
+    "src": "google-play-07-1ef5d6b67101.webp",
+    "caption": {
+      "en": "Google Play: daily missions, reward values and progress counters.",
+      "pt": "Google Play: missões diárias, valores de recompensa e contadores de progresso."
+    }
+  }
 ]

@@ -21,9 +21,10 @@ for(const [index,entry] of sources.files.entries()) {
 }
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const study=fs.readFileSync(path.join(root,'projects/head-volley-clash/index.html'),'utf8');
-assert.equal((home.match(/src="assets\/HeadVolleyClash\/01.webp"/g)||[]).length,2);
-assert(study.includes('src="/assets/HeadVolleyClash/01.webp"'));
-assert(!home.includes('src="assets/posters/head-volley-clash.webp"'));
-assert(!home.includes('src="assets/Head_Volley_Clash_itch_cover_630x500.png"'));
+assert(!home.includes('src="assets/HeadVolleyClash/'+sources.files[0].file+'"'));
+assert(study.includes('src="/assets/Head_Volley_Clash_itch_cover_630x500.png"'));
+for(const entry of sources.files) assert(entry.file.includes(entry.sha256.slice(0,12)));
+assert(home.includes('src="assets/posters/head-volley-clash.webp"'));
+assert(home.includes('src="assets/Head_Volley_Clash_itch_cover_630x500.png"'));
 assert(!study.includes('Screenshots and systems below document the earlier version'));
-console.log('PASS: 7 official Google Play images, hashes, dimensions, captions, Recruiter/Studio highlights and case cover.');
+console.log('PASS: 7 official Google Play gallery images; original Recruiter/Studio and case covers preserved.');

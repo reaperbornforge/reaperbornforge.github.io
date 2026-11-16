@@ -18,7 +18,7 @@ Atualização local do site existente em GitHub Pages. Versões Recruiter e Stud
 - Removidas inferências de retenção a partir de instalações ou MAU. Gráficos antigos de aquisição permanecem identificados como dados históricos relatados pelo autor, sem exportação original no repositório.
 - Removida promessa de lançamento em dezembro de Legacy of Allard. Programação/backend/rede atribuídos ao sócio, conforme o case existente.
 - Currículos não atribuem reações elementais ou programação de rede ao candidato.
-- Reworks de HVC/TRT registrados em ambos os modos e cases. HVC agora usa as sete capturas promocionais atuais da Google Play, inclusive nos destaques Recruiter/Studio e na capa do case. Imagens de TRT permanecem como registros anteriores.
+- Reworks de HVC/TRT registrados em ambos os modos e cases. A galeria de HVC usa as sete capturas promocionais atuais da Google Play. As capas originais do Recruiter, Studio e case foram restauradas conforme solicitado. Imagens de TRT permanecem como registros anteriores.
 - Contagens de testes do Escape Adventure contextualizadas como registro anterior; não representam execução de testes Unity nesta revisão.
 - Barras decorativas de carga do estúdio removidas para não parecerem indicadores reais.
 - Studio encaminha aos mesmos cases; Recruiter passa a ser a entrada padrão, mantendo `?view=studio`.

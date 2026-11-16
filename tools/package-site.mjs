@@ -14,6 +14,16 @@ function collect(relative) {
   }
 }
 collect('assets');collect('projects');
+// Remove only obsolete generated files listed in the previous manifest.
+const manifestPath=path.join(root,'artifacts/publication-manifest.json');
+if(fs.existsSync(manifestPath)) {
+  const previous=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+  for(const entry of previous.files) if(!files.includes(entry.path)) {
+    const obsolete=path.resolve(output,entry.path);
+    if(!obsolete.startsWith(output+path.sep)) throw Error('Invalid previous artifact path');
+    if(fs.existsSync(obsolete)&&fs.lstatSync(obsolete).isFile()) fs.unlinkSync(obsolete);
+  }
+}
 const manifest={site:'Reaperborn Forge',createdAt:new Date().toISOString(),files:[]};
 for(const file of files.sort()) {
   const data=fs.readFileSync(path.join(root,file));
