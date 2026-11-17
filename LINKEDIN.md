@@ -48,7 +48,7 @@ Removido do Sobre atual: "medindo retenção e monetização" (não há dado de 
 - Tiny Ruins Tycoon: idle economy game with five resources, era progression and prestige. Playable prototype on itch.io. Retention rework under way in the repository (uncapped bank, per-era costs, projects, automation, expeditions), calibrated with a calendar simulator.
 - Escape Adventure: 2D action-platformer with a playable prologue on itch.io, three difficulty levels and a countdown calibrated through playtests. In active development.
 
-### Legacy of Allard | Game Designer | mai 2022 a presente [CONFIRMAR data e cofundador]
+### Legacy of Allard | Game Designer | mai 2022 a presente (data confirmada) [CONFIRMAR cargo cofundador]
 
 **pt-BR**
 - Game design de um RPG tático multiplayer por turnos, com protótipo WebGL jogável e página na Steam (lançamento a anunciar).
@@ -69,7 +69,7 @@ Removido do Sobre atual: "medindo retenção e monetização" (não há dado de 
 - Assistente técnico de seguros, Liga Vitória Corretora de Seguros (jul a dez 2024).
 - Especialista em monitoramento, Serranalog Transportes (jul 2023 a jun 2024).
 - Certificado CPA-10 (ANBIMA), expirado em mar/2025.
-- Competências Microsoft Office e Desenvolvimento de aplicativos.
+- Competência Desenvolvimento de aplicativos. (Microsoft Office fica.)
 
 Mantidos: FIAP (Jogos Digitais, concluído em 2020), certificado de Mobile e Modelagem 3D (FIAP), Unity e os posts de game design.
 
@@ -90,6 +90,7 @@ Mantidos: FIAP (Jogos Digitais, concluído em 2020), certificado de Mobile e Mod
 13. Firebase
 14. Playtesting
 15. Git
+16. Microsoft Office (mantida, a seu pedido; fica por último)
 
 Fixar no topo as três primeiras do perfil: Design de jogos, Design de sistemas, Unity.
 
@@ -106,7 +107,6 @@ Mudanças: saem o link duplicado de Legacy of Allard no itch.io e o link genéri
 ## Pendências [CONFIRMAR]
 
 - Números do Play Console (conta Reaperborn Forge, lido em 16/11/2026): últimos 28 dias com 13 aquisições de dispositivos, 9 dispositivos ativos por mês, avaliação média 5,00, sem receita; versão de produção de 08/11/2026 em 100% dos usuários; base de instalações em torno de 40 dispositivos. São números pequenos, então não os usei como resultado. O "~330 instalações por dia no pico" do perfil e o "~40 MAU" ficaram fora: o primeiro não conferi (exige relatório do período de lançamento) e o segundo está desatualizado. O "cerca de 35 mil instalações" do CV antigo de recepção não bate com o painel atual; não use sem o relatório.
-- Início de Legacy of Allard: mai/2022 no LinkedIn, mar/2022 no primeiro commit do repositório.
 - Cargo em Legacy of Allard: "Game Designer" ou "Cofundador".
 - Tipo de vínculo ("meio período") nas duas posições.
 - Pronomes do perfil: não alterei.
