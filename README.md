@@ -7,8 +7,8 @@ Portfólio estático bilíngue de Otávio Antonio, com identidade visual dark fa
 - Recruiter: `/?view=recruiter&lang=pt` (modo padrão).
 - Studio: `/?view=studio&lang=pt`.
 - Inglês: substituir `lang=pt` por `lang=en`.
-- Currículos editáveis: `assets/resumes/content.json`.
-- PDFs públicos: `assets/Curriculo - Otavio Rosindo.pdf` e `assets/Resume - Otavio Rosindo.pdf`.
+- Páginas HTML dos currículos: `assets/resumes/content.json` (espelha os PDFs) → `node tools/build-resumes.mjs`.
+- PDFs públicos: `assets/cv/Otavio_Rosindo_CV_Game_Designer_PT.pdf` e `assets/cv/Otavio_Rosindo_CV_Game_Designer_EN.pdf` (copiados do Drive, nao gerados).
 - Fontes e decisões editoriais: [PORTFOLIO_REVIEW.md](PORTFOLIO_REVIEW.md).
 
 O site não exige instalação ou build no servidor. Os utilitários abaixo servem apenas para manutenção e verificação.

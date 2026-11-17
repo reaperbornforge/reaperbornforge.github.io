@@ -6,7 +6,7 @@ import {createCanvas} from '@napi-rs/canvas';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const out=path.join(root,'artifacts/screenshots');
 fs.mkdirSync(out,{recursive:true});
-for(const [lang,file] of [['pt','Curriculo - Otavio Rosindo.pdf'],['en','Resume - Otavio Rosindo.pdf']]) {
+for(const [lang,file] of [['pt','cv/Otavio_Rosindo_CV_Game_Designer_PT.pdf'],['en','cv/Otavio_Rosindo_CV_Game_Designer_EN.pdf']]) {
   const document=await getDocument({data:new Uint8Array(fs.readFileSync(path.join(root,'assets',file))),useSystemFonts:true}).promise;
   const page=await document.getPage(1);
   const viewport=page.getViewport({scale:1.5});

@@ -81,8 +81,8 @@ try {
     await page.keyboard.press('Escape');
     assert(!(await page.locator('#sharp-memories-modal').isVisible()));
     assert.equal(await page.locator(':focus').getAttribute('data-modal'),'sharp-memories-modal');
-    for(const name of ['Resume - Otavio Rosindo.pdf','Curriculo - Otavio Rosindo.pdf']) {
-      const response=await context.request.get(origin+'/assets/'+encodeURIComponent(name));
+    for(const name of ['cv/Otavio_Rosindo_CV_Game_Designer_EN.pdf','cv/Otavio_Rosindo_CV_Game_Designer_PT.pdf']) {
+      const response=await context.request.get(origin+'/assets/'+name);
       assert.equal(response.status(),200);assert(response.headers()['content-type'].startsWith('application/pdf'));
     }
     await context.close();

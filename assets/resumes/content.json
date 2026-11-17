@@ -1,121 +1,180 @@
 {
-  "name": "Otávio Antônio Rosman Rosindo",
-  "email": "otaviorosindo@gmail.com",
-  "portfolio": "https://reaperbornforge.github.io/?view=recruiter",
-  "linkedin": "https://www.linkedin.com/in/otavioantonio/",
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
+  "source": "Espelha os PDFs em assets/cv/. Edite aqui e rode node tools/build-resumes.mjs para regenerar en.html e pt.html.",
   "en": {
-    "title": "Game Designer | Unity Developer",
-    "location": "Brazil | Remote / International",
-    "summary": "Game Designer focused on systems, progression and F2P economy. Takes features from design document to Unity prototype, playtest and balance iteration. Designed and published Head Volley Clash on Google Play and works on three more game projects, solo and in collaboration.",
+    "lang": "en",
+    "name": "Otávio Antônio Rosman Rosindo",
+    "nav": {
+      "portfolio": "Portfolio",
+      "other": "Português",
+      "otherHref": "pt.html",
+      "title": "Resume"
+    },
+    "headline": "Game Designer | Gameplay Systems & F2P Economy | Unity",
+    "contact": "Brazil | Remote / International",
+    "summaryTitle": "SUMMARY",
+    "summary": "Game Designer with hands-on Unity implementation, focused on gameplay systems, progression and F2P economy. Published a free-to-play mobile game on Google Play as sole designer and developer, co-founded and designed a tactical multiplayer RPG with an active Steam page, and built a playable 2D action-platformer prologue. Works from GDD to Unity prototype, playtest and balance iteration. Independent developer since 2022; targeting junior-to-mid Game Designer roles, remote.",
     "skillsTitle": "SKILLS",
     "skills": [
-      "Design: systems, gameplay, progression, F2P economy, monetization, level design, balancing and GDD.",
-      "Technical: Unity, C#, ScriptableObjects, greybox prototyping, Firebase (Firestore, Auth), Git and WebGL builds.",
-      "Production & QA: playtesting, bug reproduction, regression checks, balance validation, Figma, Trello and AI-assisted workflows.",
-      "Languages: Portuguese (native), English (full professional proficiency)."
+      "Design: Systems design; economy and progression design; F2P monetization (IAP, rewarded ads, passes); combat and ability design; level design; balancing; GDD writing; tooltip and localization audits (EN/PT-BR)",
+      "Technical: Unity and C# gameplay programming with AI assistance, ScriptableObjects, Firebase Firestore, Unity IAP and Ads, WebGL builds, Git, grey-box prototyping; Photon PUN2 (Fusion migration in progress)",
+      "Production & QA: Playtesting, bug reproduction, regression testing, balance validation by simulation; Figma (wireframes), Trello (work organization)",
+      "AI workflows: AI-assisted programming and art; multi-agent orchestration in OpenMausBot (teams of 4–5 agents on Gemini, Claude Code, Codex and Qwen)",
+      "Languages: Portuguese (native) | English (full professional)"
     ],
-    "projectsTitle": "SELECTED GAME DEVELOPMENT EXPERIENCE",
+    "projectsTitle": "GAME DEVELOPMENT PROJECTS (Reaperborn Forge, independent studio)",
     "projects": [
       {
         "name": "Head Volley Clash",
-        "role": "Game Designer & Unity Developer (solo) | Published on Google Play, ongoing updates | Jan 2025–present",
-        "url": "https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash",
+        "url": "/projects/head-volley-clash/",
+        "role": "Game Designer & Unity Developer (solo)",
+        "period": "Jan 2025 – Present",
+        "meta": "F2P arcade volleyball, live on Google Play since June 2025 | Unity, Firebase Firestore, Unity IAP, Unity Ads",
         "bullets": [
-          "Designed and published an arcade F2P game: core gameplay, AI opponents, progression, cosmetic shop and passes.",
-          "Implemented account persistence with Firebase Firestore, Unity IAP and ads. Designed currencies and reward rules around progression and monetization goals.",
-          "Reworked onboarding, reward and energy economy, daily missions and AI difficulty in the 1.3.x updates, alongside a new UI theme."
+          "Designed a three-currency economy (Coins, Gems, Energy): win rewards of 50–100 coins vs normal AI and 100–250 vs higher difficulty, a +200 first-win-of-the-day bonus, rarity-tiered cosmetics (Epic and Legendary gems-only), a Starter Pack and a 10-tier Volley Pass (free and premium tracks).",
+          "Implemented per-account persistence with Firebase Firestore, plus Unity IAP and rewarded ads with one-time offers and anti-repurchase logic.",
+          "Oct 2026 rework (v1.3.x): new-player onboarding with anonymous sign-in, reworked reward and energy economy, daily missions, AI difficulty tuning, a new UI theme and functional local multiplayer (online not yet)."
         ]
       },
       {
         "name": "Legacy of Allard",
-        "role": "Game Designer, co-founder (design lead; support on programming and UI) | In development, Steam page up | Since 2022",
-        "url": "https://store.steampowered.com/app/2378100/Legacy_of_Allard/",
+        "url": "/projects/legacy-of-allard/",
+        "role": "Game Designer & Unity Developer (Co-founder)",
+        "period": "May 2022 – Present",
+        "meta": "Turn-based tactical multiplayer RPG | PC | Unity, Photon PUN2; backend by co-founder",
         "bullets": [
-          "Designed class kits, parameterized abilities and cross-class builds for a tactical multiplayer RPG with destructible terrain.",
-          "Co-founder who owns backend and networking; I also contributed on programming and UI (environmental hazards, tutorial level, steps of the Photon Fusion migration). Steam page up; release date to be announced."
+          "Designed a five-class roster with parameterized abilities, a cross-class debuff system (Fire, Frost, Venom, Shadow, Arcane) and the Sliver build system (four ability slots, each from any class).",
+          "Designed destructible terrain as a tactical resource: Critical hits widen the destruction radius, while support, buff and control abilities destroy none. Set the mana curve (starts at 1, +1 per round, cap 10).",
+          "Audited ability tooltips: found 8 damage abilities that hid their numbers and raised Portuguese coverage from 23 to 151 entries.",
+          "Delivered the full GDD (systems, abilities, economy), a playable WebGL alpha and an active Steam page."
         ]
       },
       {
         "name": "Tiny Ruins Tycoon",
-        "role": "Game Designer & Unity Developer (solo) | Playable prototype, active development",
-        "url": "https://zdarkreaper.itch.io/tiny-ruins-tycoon",
+        "url": "/projects/tiny-ruins-tycoon/",
+        "role": "Game Designer & Unity Developer (solo)",
+        "period": "2024 – Present",
+        "meta": "Cozy idle/management vertical slice, 3 of 5 planned eras playable | Unity 6, C#, ScriptableObjects | itch.io",
         "bullets": [
-          "Designed resource flows, production curves and era progression using ScriptableObjects in Unity 6; three of five planned eras are playable.",
-          "Reworking retention in the repository: uncapped bank, per-era cost multipliers, projects, automation and expeditions, calibrated with a calendar simulator. Player validation pending."
+          "Found and fixed an inverted cost curve: production grew ~1.316x per level against a 1.15x cost multiplier, so one building's payback fell from ~61 s to ~9 s by level 15. Raised the multiplier to ~1.38 (payback now climbs from ~61 s to ~118 s), through simulation and balancing math.",
+          "Replaced two stacking speed floors (4x and 10x, combined 40x) with a single combined floor, closing a latent exploit."
         ]
       },
       {
         "name": "Escape Adventure",
-        "role": "Game Designer & Unity Developer (solo) | Playable prologue, active development | 2026–present",
-        "url": "https://zdarkreaper.itch.io/escape-adventure",
+        "url": "/projects/escape-adventure/",
+        "role": "Game Designer & Unity Developer (solo)",
+        "period": "2026 – Present",
+        "meta": "2D action-platformer | Unity, HTML5 (browser) | itch.io, in development",
         "bullets": [
-          "Designed a four-stage 2D action-platformer prologue with three difficulty settings, mobility upgrades and English/Portuguese support.",
-          "Separated melee stamina from ranged charges; iterated level layouts and countdowns through playtesting, using editor checks and AI-assisted programming."
+          "Built a playable prologue (EN/PT): four stages, five enemy types, two boss fights, three difficulty levels, ~21 minutes for a first full run.",
+          "Level design from paper to playable: telegraphed hazards, enemies that each demand a different answer, a per-stage countdown clock and mobility upgrades bought with enemy fragments.",
+          "Split stamina (punches, jumps, dashes) from separate ranged-attack charges so attacking never removes the option to dash away; revised several mechanics against the GDD after playtests."
+        ]
+      },
+      {
+        "name": "Sharp Memories",
+        "url": "/",
+        "role": "Writer & Designer (solo)",
+        "period": "Paused",
+        "meta": "Original gothic mystery visual novel, not in active development",
+        "bullets": [
+          "Wrote the full story start to finish: four-act screenplay set in London (1777 and decades later) with defined character arcs. All art produced with AI tools."
         ]
       }
     ],
-    "educationTitle": "EDUCATION & CERTIFICATIONS",
+    "eduTitle": "EDUCATION & CERTIFICATIONS",
     "education": [
-      "Digital Games, FIAP | Completed 2020.",
-      "Professional certificates: Mobile Development & 3D Modelling; Web Programming & UI Design; Engines, Digital Marketing & Entrepreneurship; Scripting & Animation for Digital Games."
+      "Digital Games (Technologist degree), FIAP | 2019 – 2020",
+      "FIAP professional certificates: Mobile App Development & 3D Modelling | Web Programming & UI Design | Game Engines, Marketing & Entrepreneurship | Scripting & Animation for Digital Games"
     ]
   },
   "pt": {
-    "title": "Game Designer | Unity Developer",
-    "location": "Brasil | Remoto / Internacional",
-    "summary": "Game Designer com foco em sistemas, progressão e economia F2P. Leva features do documento de design ao protótipo em Unity, ao playtest e à iteração de balanceamento. Projetou e publicou Head Volley Clash na Google Play e atua em mais três projetos de jogos, de forma independente e em colaboração.",
+    "lang": "pt",
+    "name": "Otávio Antônio Rosman Rosindo",
+    "nav": {
+      "portfolio": "Portfólio",
+      "other": "English",
+      "otherHref": "en.html",
+      "title": "Currículo"
+    },
+    "headline": "Game Designer | Sistemas de Gameplay & Economia F2P | Unity",
+    "contact": "Brasil | Remoto / Internacional",
+    "summaryTitle": "RESUMO",
+    "summary": "Game Designer com implementação prática em Unity, focado em sistemas de gameplay, progressão e economia F2P. Publicou na Google Play, como único designer e desenvolvedor, um jogo mobile free-to-play, cofundou e projetou um RPG tático multiplayer com página ativa na Steam e construiu o prólogo jogável de um action-platformer 2D. Trabalha do GDD ao protótipo em Unity, com playtest e iteração de balanceamento. Desenvolvedor independente desde 2022; busca vagas de Game Designer júnior a pleno, remotas.",
     "skillsTitle": "COMPETÊNCIAS",
     "skills": [
-      "Design: sistemas, gameplay, progressão, economia F2P, monetização, level design, balanceamento e GDD.",
-      "Técnico: Unity, C#, ScriptableObjects, prototipagem em greybox, Firebase (Firestore, Auth), Git e builds WebGL.",
-      "Produção e QA: playtest, reprodução de bugs, verificações de regressão, validação de balanceamento, Figma, Trello e fluxos assistidos por IA.",
-      "Idiomas: português (nativo), inglês (proficiência profissional completa)."
+      "Design: Design de sistemas; economia e progressão; monetização F2P (IAP, anúncios recompensados, passes); design de combate e habilidades; level design; balanceamento; redação de GDD; auditoria de tooltips e localização (EN/PT-BR)",
+      "Técnico: Programação de gameplay em Unity e C# com apoio de IA, ScriptableObjects, Firebase Firestore, Unity IAP e Ads, builds WebGL, Git, prototipagem em grey-box; Photon PUN2 (migração para Fusion em andamento)",
+      "Produção & QA: Playtest, reprodução de bugs, testes de regressão, validação de balanceamento por simulação; Figma (wireframes), Trello (organização do trabalho)",
+      "Fluxos com IA: Programação e arte assistidas por IA; orquestração multiagente no OpenMausBot (equipes de 4–5 agentes em Gemini, Claude Code, Codex e Qwen)",
+      "Idiomas: Português (nativo) | Inglês (profissional completo)"
     ],
-    "projectsTitle": "EXPERIÊNCIA SELECIONADA EM DESENVOLVIMENTO DE JOGOS",
+    "projectsTitle": "PROJETOS DE DESENVOLVIMENTO DE JOGOS (Reaperborn Forge, estúdio independente)",
     "projects": [
       {
         "name": "Head Volley Clash",
-        "role": "Game Designer e Unity Developer (solo) | Publicado na Google Play, em atualização | Jan 2025–presente",
-        "url": "https://play.google.com/store/apps/details?id=com.DarkReaper.HeadVolleyClash",
+        "url": "/projects/head-volley-clash/",
+        "role": "Game Designer & Unity Developer (solo)",
+        "period": "Jan 2025 – Presente",
+        "meta": "Vôlei arcade F2P, no ar na Google Play desde jun/2025 | Unity, Firebase Firestore, Unity IAP, Unity Ads",
         "bullets": [
-          "Design e publicação de um arcade F2P: gameplay central, oponentes de IA, progressão, loja de cosméticos e passes.",
-          "Implementação de persistência por conta com Firebase Firestore, Unity IAP e anúncios. Design de moedas e regras de recompensa com objetivos de progressão e monetização.",
-          "Rework de onboarding, economia de recompensas e energia, missões diárias e dificuldade da IA nas atualizações 1.3.x, junto de um novo tema de interface."
+          "Projetou uma economia de três moedas (Coins, Gems, Energia): vitória rende 50–100 moedas contra a IA normal e 100–250 em dificuldade maior, bônus de +200 na primeira vitória do dia, cosméticos por raridade (Épico e Lendário só com gemas), Starter Pack e Volley Pass de 10 níveis (trilhas gratuita e premium).",
+          "Implementou persistência por conta com Firebase Firestore, além de Unity IAP e anúncios recompensados com ofertas únicas e lógica anti-recompra.",
+          "Rework de out/2026 (v1.3.x): onboarding de novos jogadores com login anônimo, economia de recompensas e energia revisada, missões diárias, ajuste da dificuldade da IA, novo tema de UI e multiplayer local funcional (online ainda não)."
         ]
       },
       {
         "name": "Legacy of Allard",
-        "role": "Game Designer, cofundador (todo o game design; apoio em programação e UI) | Em desenvolvimento, página na Steam | Desde 2022",
-        "url": "https://store.steampowered.com/app/2378100/Legacy_of_Allard/",
+        "url": "/projects/legacy-of-allard/",
+        "role": "Game Designer & Unity Developer (Cofundador)",
+        "period": "Mai 2022 – Presente",
+        "meta": "RPG tático multiplayer por turnos | PC | Unity, Photon PUN2; backend a cargo do cofundador",
         "bullets": [
-          "Design de kits de classes, habilidades parametrizadas e builds entre classes para um RPG tático multiplayer com terreno destrutível.",
-          "Sócio de programação lidera backend e rede; contribuí também em programação e UI (hazards de ambiente, tutorial, etapas da migração para Photon Fusion). Página na Steam; lançamento a anunciar."
+          "Projetou um elenco de cinco classes com habilidades parametrizadas, um sistema de debuffs entre classes (Fire, Frost, Venom, Shadow, Arcane) e o sistema de build Sliver (quatro slots de habilidade, cada um de qualquer classe).",
+          "Projetou terreno destrutível como recurso tático: o Critical amplia o raio de destruição, enquanto habilidades de suporte, buff e controle não destroem nada. Definiu a curva de mana (começa em 1, +1 por rodada, teto 10).",
+          "Auditou os tooltips de habilidades: encontrou 8 habilidades de dano que não mostravam o número e elevou a cobertura em português de 23 para 151 entradas.",
+          "Entregou o GDD completo (sistemas, habilidades, economia), uma alpha WebGL jogável e página ativa na Steam."
         ]
       },
       {
         "name": "Tiny Ruins Tycoon",
-        "role": "Game Designer e Unity Developer (solo) | Protótipo jogável, em desenvolvimento ativo",
-        "url": "https://zdarkreaper.itch.io/tiny-ruins-tycoon",
+        "url": "/projects/tiny-ruins-tycoon/",
+        "role": "Game Designer & Unity Developer (solo)",
+        "period": "2024 – Presente",
+        "meta": "Vertical slice de idle/management aconchegante, 3 de 5 eras jogáveis | Unity 6, C#, ScriptableObjects | itch.io",
         "bullets": [
-          "Design de fluxos de recursos, curvas de produção e progressão por eras com ScriptableObjects no Unity 6; três das cinco eras planejadas são jogáveis.",
-          "Rework de retenção no repositório: banco sem teto, multiplicadores de custo por era, projetos, automação e expedições, calibrados com simulador de calendário. Validação com jogadores pendente."
+          "Identificou e corrigiu uma curva de custo invertida: a produção crescia ~1,316x por nível contra um multiplicador de custo de 1,15x, e o retorno de uma construção caía de ~61 s para ~9 s no nível 15. Elevou o multiplicador para ~1,38 (o retorno agora sobe de ~61 s para ~118 s), via simulação e matemática de balanceamento.",
+          "Substituiu dois pisos de velocidade acumuláveis (4x e 10x, combinados 40x) por um único piso combinado, fechando uma brecha latente de exploit."
         ]
       },
       {
         "name": "Escape Adventure",
-        "role": "Game Designer e Unity Developer (solo) | Prólogo jogável, em desenvolvimento ativo | 2026–presente",
-        "url": "https://zdarkreaper.itch.io/escape-adventure",
+        "url": "/projects/escape-adventure/",
+        "role": "Game Designer & Unity Developer (solo)",
+        "period": "2026 – Presente",
+        "meta": "Action-platformer 2D | Unity, HTML5 (navegador) | itch.io, em desenvolvimento",
         "bullets": [
-          "Design de prólogo de action-platformer 2D com quatro fases, três dificuldades, upgrades de mobilidade e suporte a inglês e português.",
-          "Separação da stamina corpo a corpo e das cargas de tiro; iteração de fases e relógios por playtest, com verificações de editor e programação assistida por IA."
+          "Construiu um prólogo jogável (EN/PT): quatro fases, cinco tipos de inimigo, dois chefes, três níveis de dificuldade, cerca de 21 minutos na primeira jogada completa.",
+          "Level design do papel ao jogável: hazards telegrafados, inimigos que exigem respostas diferentes, contagem regressiva por fase e upgrades de mobilidade comprados com fragmentos de inimigos.",
+          "Separou a stamina (socos, pulos, dashes) das cargas do ataque à distância, para que atacar nunca tire a opção de escapar; revisou várias mecânicas em relação ao GDD após playtests."
+        ]
+      },
+      {
+        "name": "Sharp Memories",
+        "url": "/",
+        "role": "Roteirista & Designer (solo)",
+        "period": "Pausado",
+        "meta": "Visual novel de mistério gótico autoral, sem desenvolvimento ativo no momento",
+        "bullets": [
+          "Escreveu a história completa, do início ao fim: roteiro em quatro atos ambientado em Londres (1777 e décadas depois), com arcos de personagem definidos. Toda a arte produzida com ferramentas de IA."
         ]
       }
     ],
-    "educationTitle": "FORMAÇÃO E CERTIFICAÇÕES",
+    "eduTitle": "FORMAÇÃO & CERTIFICAÇÕES",
     "education": [
-      "Jogos Digitais, FIAP | Concluído em 2020.",
-      "Certificados profissionais: Desenvolvimento Mobile e Modelagem 3D; Programação Web e Design de Interface; Engines, Marketing Digital e Empreendedorismo; Scripting e Animação para Jogos Digitais."
+      "Tecnólogo em Jogos Digitais, FIAP | 2019 – 2020",
+      "Certificados profissionais FIAP: Desenvolvimento Mobile & Modelagem 3D | Programação Web & Design de Interface | Engines, Marketing Digital & Empreendedorismo | Scripting & Animação para Jogos Digitais"
     ]
   }
 }

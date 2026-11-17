@@ -65,14 +65,14 @@ for(const slug of ['legacy-of-allard','tiny-ruins-tycoon','escape-adventure']) {
   for(const item of JSON.parse(fs.readFileSync(path.join(dir,'images.json'),'utf8'))) assert(fs.existsSync(path.join(dir,item.src||item)),`${slug}: gallery image`);
 }
 const pdf=await dependency('pdfjs-dist','legacy/build/pdf.mjs');
-for(const file of ['Resume - Otavio Rosindo.pdf','Curriculo - Otavio Rosindo.pdf']) {
+for(const file of ['cv/Otavio_Rosindo_CV_Game_Designer_EN.pdf','cv/Otavio_Rosindo_CV_Game_Designer_PT.pdf']) {
   const document=await pdf.getDocument({data:new Uint8Array(fs.readFileSync(path.join(root,'assets',file))),useSystemFonts:true}).promise;
   assert.equal(document.numPages,1,`${file}: one page`);
   const page=await document.getPage(1);
   const content=await page.getTextContent();
   const text=content.items.map(i=>i.str).join(' ');
   for(const project of ['Head Volley Clash','Legacy of Allard','Tiny Ruins Tycoon','Escape Adventure']) assert(text.includes(project),`${file}: ${project}`);
-  for(const phrase of ['FIAP','2020','otaviorosindo@gmail.com','2026-11-16']) assert(text.includes(phrase),`${file}: ${phrase}`);
+  for(const phrase of ['otaviorosindo@gmail.com']) assert(text.includes(phrase),`${file}: ${phrase}`);
   assert(!/35K|35 mil|40 MAU|setup-and-detonate|setup e detonação/.test(text),`${file}: stale claims`);
   for(const item of content.items) if(item.transform) assert(item.transform[5]>15 && item.transform[5]<825,`${file}: content inside page`);
   assert((await page.getAnnotations()).filter(a=>a.subtype==='Link').length>=2,`${file}: clickable links`);
