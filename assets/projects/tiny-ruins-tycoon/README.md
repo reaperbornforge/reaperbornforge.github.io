@@ -2,32 +2,36 @@
 
 The gallery on /projects/tiny-ruins-tycoon/ reads this folder automatically.
 
-The seven captures here keep their original filenames and are pinned, in order
-and with bilingual captions, by images.json.
+## Current set (18 Nov 2026)
 
-To add more, name files 01, 02, 03 ... (.webp .png .jpg .jpeg). They are picked
-up in order, with no file to edit. Discovery stops at the first missing number,
-so keep the numbering contiguous. Numbered files appear AFTER the images.json
-entries.
+`images.json` pins seven captures of the development build, in order and with
+bilingual captions: `11_ruins_projeto`, `12_settlement_farm`,
+`13_arcane_collect_all`, `14_modern_placeholder`, `15_farm_interior`,
+`16_comida_prioridade`, `17_diario`.
 
-Still missing for this page, if they ever get captured:
-  - the Modern era, so the placeholder-art state is visible rather than only described
-  - the food / hunger panel, once the priority interface exists
+Source: `Tiny-Ruins-Tycoon/Audit/img/` in the game repository (files
+`mvp_02`, `mvp_07`, `mvp_04`, `fase1/after2_16x9_Modern_built`, `mvp_08`,
+`fix_UI-05_comida`, `fase4/journal_16x9`), converted to WebP, quality 82,
+1280 px wide. They were taken with debug shortcuts and some placeholder art on
+screen, and the captions say so.
 
-If you ever want to keep an arbitrary filename, or add a caption, list it in
-images.json here:
+## Earlier set (kept on disk, not in the gallery)
 
-    [
-      { "src": "farm-panel.webp",
-        "caption": { "en": "The Farm panel", "pt": "O painel da Farm" } },
-      { "src": "modern-era.webp" }
-    ]
+`01_ruins_inicio`, `03_settlement_expandindo`, `04_settlement_completa`,
+`06_arcane_completa`, `07_arcane_objetivos`, `08_guardian_dialogo` and
+`09_painel_arcaneforge` document the build before the retention rework (old HUD,
+objectives panel, capped bank). They were kept as a precaution and removed from
+`images.json`. Re-add an entry there to show one again.
 
-Manifest entries come first, then any numbered files not already listed, so the
-two approaches can coexist.
+## Adding more
 
-Gallery images are stored as WebP, resized to at most 1280px wide. To add
-a new one, convert it the same way (WebP, quality 82, max 1280px) so the
-page stays light.
+Add an entry to `images.json`:
 
-The gallery handles 1 image (arrows and dots hide themselves) up to 24.
+    { "src": "name.webp",
+      "caption": { "en": "...", "pt": "..." } }
+
+Gallery images are stored as WebP, resized to at most 1280px wide (quality 82).
+The gallery handles 1 image up to 24.
+
+Still worth capturing, if the game gets there: a Celestial/ascension screen and
+the Modern era with real Workshop and Power Core art.
