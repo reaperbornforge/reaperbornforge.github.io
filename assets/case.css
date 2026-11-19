@@ -1153,11 +1153,3 @@ html[data-lang="pt"] .i18n-en { display: none !important; }
    fill is the measured value that has to fit inside it. */
 .bar-h-track.track-pair { position: relative; }
 .track-pair .bar-h-fill { position: absolute; left: 0; top: 0; }
-
-/* Target band marker on horizontal bars (e.g. 50-70% food coverage) */
-.bar-h-track.track-band { position: relative; }
-.bar-h-track.track-band::after {
-  content: ""; position: absolute; left: 50%; width: 20%; top: -3px; bottom: -3px;
-  border-left: 1px dashed rgba(232,228,216,.5); border-right: 1px dashed rgba(232,228,216,.5);
-  background: rgba(232,228,216,.07); pointer-events: none;
-}
