@@ -2,3 +2,9 @@ tools/node_modules/
 .npm-cache/
 dist/
 artifacts/
+
+# Notas internas, historico e prototipos (mantidos so localmente)
+PORTFOLIO_REVIEW.md
+chats/
+project/
+assets/**/README.md

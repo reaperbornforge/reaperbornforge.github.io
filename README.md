@@ -9,7 +9,6 @@ Portfólio estático bilíngue de Otávio Antonio, com identidade visual dark fa
 - Inglês: substituir `lang=pt` por `lang=en`.
 - Páginas HTML dos currículos: `assets/resumes/content.json` (espelha os PDFs) → `node tools/build-resumes.mjs`.
 - PDFs públicos: `assets/cv/Otavio_Rosindo_CV_Game_Designer_PT.pdf` e `assets/cv/Otavio_Rosindo_CV_Game_Designer_EN.pdf` (copiados do Drive, nao gerados).
-- Fontes e decisões editoriais: [PORTFOLIO_REVIEW.md](PORTFOLIO_REVIEW.md).
 
 O site não exige instalação ou build no servidor. Os utilitários abaixo servem apenas para manutenção e verificação.
 
@@ -49,6 +48,4 @@ O script exige testes de navegador aprovados para o mesmo manifesto e verifica t
 
 ## Atualizar galerias
 
-Editar `images.json` na pasta de imagens de cada jogo e adicionar os arquivos correspondentes. O manifesto define a ordem e as legendas EN/PT; se não existir, a galeria procura arquivos numerados. As sete capturas de HVC foram obtidas da página atual na Google Play, com fontes registradas em `assets/HeadVolleyClash/sources.json`. As imagens de TRT ainda são registros anteriores ao rework visual, identificados como tal.
-
-`project/` e `chats/` preservam o protótipo e o histórico originais; não entram no pacote de publicação.
+Editar `images.json` na pasta de imagens de cada jogo e adicionar os arquivos correspondentes. O manifesto define a ordem e as legendas EN/PT; se não existir, a galeria procura arquivos numerados. As sete capturas de HVC foram obtidas da página atual na Google Play, com fontes registradas em `assets/HeadVolleyClash/sources.json`. As capturas de TRT foram feitas em 20/11/2026 a partir da build atual do repositório do jogo.
